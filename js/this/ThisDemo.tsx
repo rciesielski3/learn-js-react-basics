@@ -24,7 +24,7 @@ export default function JsThisPage() {
 
   return (
     <div className="p-6 max-w-3xl mx-auto space-y-6 text-white">
-      <h1 className="text-3xl font-bold mb-4">
+      <h1 className="text-2xl font-bold mb-4">
         ☝️ Understanding <code className="text-orange-500">this</code> in
         JavaScript
       </h1>
