@@ -2,12 +2,12 @@
 
 import { useState, ReactNode } from "react";
 
-interface InfoBoxProps {
+type InfoBoxProps = {
   title: string;
   description: string;
   code: string;
   children?: ReactNode;
-}
+};
 
 export function InfoBox({ title, description, code, children }: InfoBoxProps) {
   const [expanded, setExpanded] = useState(false);

@@ -1,6 +1,14 @@
 // app/page.tsx
 import Link from "next/link";
-import { BookOpen, Code, Zap, Repeat, Cpu, TerminalSquare } from "lucide-react";
+import {
+  BookOpen,
+  Code,
+  Zap,
+  Repeat,
+  Cpu,
+  TerminalSquare,
+  Search,
+} from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -59,9 +67,19 @@ export default function HomePage() {
             <li className="hover:translate-x-1 transition-transform">
               <Link
                 className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/react/demos"
+                href="/react/hooks"
               >
-                <Repeat size={18} /> React Hook Demos
+                <Repeat size={18} />
+                Hook Demos
+              </Link>
+            </li>
+            <li className="hover:translate-x-1 transition-transform">
+              <Link
+                className="flex items-center gap-2 text-blue-300 hover:underline"
+                href="/react/comparision"
+              >
+                <Search size={18} />
+                Comparing Similar Hooks
               </Link>
             </li>
             <li className="hover:translate-x-1 transition-transform">
@@ -69,7 +87,7 @@ export default function HomePage() {
                 className="flex items-center gap-2 text-blue-300 hover:underline"
                 href="/react/lifecycle"
               >
-                <Cpu size={18} /> React Lifecycle Demo
+                <Cpu size={18} /> Lifecycle Demo
               </Link>
             </li>
             <li className="hover:translate-x-1 transition-transform">
