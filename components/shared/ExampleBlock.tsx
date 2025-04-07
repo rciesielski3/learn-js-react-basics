@@ -1,16 +1,23 @@
 type Props = {
   id: string;
   name: string;
+  description?: string;
   code: string;
   usage: string;
   result: string;
 };
 
-export function ExampleBlock({ name, code, usage, result }: Props) {
+export function ExampleBlock({
+  name,
+  description,
+  code,
+  usage,
+  result,
+}: Props) {
   return (
     <div className="bg-gray-800 p-4 rounded mb-6">
       <h2 className="font-semibold text-lg mb-2">{name}</h2>
-
+      <p className="text-base text-gray-500 mb-6">ℹ️ {description}</p>
       <div className="mb-2">
         <span className="text-sm font-medium text-gray-400">Code block:</span>
         <pre className="bg-gray-700 text-green-300 p-2 rounded text-sm overflow-x-auto">
