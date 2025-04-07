@@ -22,7 +22,7 @@ export default function JSClassesDemo() {
   return (
     <div className="p-6 max-w-3xl mx-auto space-y-6 text-white">
       <h1 className="text-2xl font-bold mb-4">📚 JS Classes & Inheritance</h1>
-      <p className="text-sm text-gray-400 mb-6 max-w-2xl">
+      <p className="text-base text-gray-400 mb-6 max-w-2xl">
         This page demonstrates class syntax, inheritance, overriding methods,
         static methods, and constructor functions with prototypes.
       </p>

@@ -29,7 +29,7 @@ export default function JsThisPage() {
         JavaScript
       </h1>
 
-      <p className="text-sm text-gray-400 mb-6 max-w-2xl">
+      <p className="text-base text-gray-400 mb-6 max-w-2xl">
         The value of <code className="text-orange-500">this</code> in JavaScript
         depends on how a function is called. It can refer to the global object,
         the current class instance, a bound context, or even be{" "}
@@ -42,6 +42,7 @@ export default function JsThisPage() {
         <ExampleBlock
           key={example.id}
           id={example.id}
+          description={example.description}
           name={example.name}
           code={example.code}
           usage={example.usage}
