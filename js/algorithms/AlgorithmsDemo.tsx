@@ -35,6 +35,7 @@ export default function AlgorithmsDemo() {
           key={example.id}
           id={example.id}
           name={example.name}
+          description={example.description}
           code={example.code}
           usage={example.usage}
           result={results[example.id]}

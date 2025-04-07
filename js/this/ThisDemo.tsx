@@ -42,8 +42,8 @@ export default function JsThisPage() {
         <ExampleBlock
           key={example.id}
           id={example.id}
-          description={example.description}
           name={example.name}
+          description={example.description}
           code={example.code}
           usage={example.usage}
           result={results[example.id]}
