@@ -1,5 +1,9 @@
-import HookComparisonsSection from "@/components/sections/HookComparisonsSection";
+import HookComparisonsSection from "@/sections/lifecycle/HookComparisonsSection";
 
 export default function HookComparisonsSectionPage() {
-  return <HookComparisonsSection />;
+  return (
+    <div className="mx-auto p-6">
+      <HookComparisonsSection />
+    </div>
+  );
 }

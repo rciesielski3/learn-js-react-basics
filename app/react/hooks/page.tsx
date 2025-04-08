@@ -1,4 +1,4 @@
-import HooksSection from "@/components/sections/HooksSection";
+import HooksSection from "@/sections/hooks/HooksSection";
 
 export default function HooksSectionPage() {
   return <HooksSection />;

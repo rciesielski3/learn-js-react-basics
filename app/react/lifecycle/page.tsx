@@ -1,5 +1,9 @@
-import LifecycleSection from "@/components/sections/livecycle/LifecycleSection";
+import LifecycleSection from "@/sections/lifecycle/LifecycleSection";
 
 export default function LifecycleSectionPage() {
-  return <LifecycleSection />;
+  return (
+    <div className="mx-auto p-6">
+      <LifecycleSection />
+    </div>
+  );
 }

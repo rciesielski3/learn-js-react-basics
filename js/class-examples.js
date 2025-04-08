@@ -2,6 +2,8 @@ export const classExamples = [
   {
     id: "animal",
     name: "Base Class: Animal",
+    description:
+      "Defines a simple base class with a constructor and a method. Demonstrates object instantiation and method access.",
     code: `class Animal {
     constructor(name) {
       this.name = name;
@@ -26,6 +28,8 @@ export const classExamples = [
   {
     id: "dog",
     name: "Inheritance: Dog extends Animal",
+    description:
+      "Illustrates class inheritance and method overriding using the `extends` and `super()` keywords.",
     code: `class Dog extends Animal {
     constructor(name, breed) {
       super(name);
@@ -60,6 +64,8 @@ export const classExamples = [
   {
     id: "cat",
     name: "Subclass: Cat overrides speak()",
+    description:
+      "Shows how a subclass can override a method from the parent class to provide different behavior.",
     code: `class Cat extends Animal {
     speak() {
       return \`\${this.name} meows.\`;
@@ -86,6 +92,8 @@ export const classExamples = [
   {
     id: "static",
     name: "Static Method",
+    description:
+      "Demonstrates defining a method on the class itself rather than instances using the `static` keyword.",
     code: `class MyClass {
     static greet() {
       return "Hello from static!";
@@ -104,6 +112,8 @@ export const classExamples = [
   {
     id: "es5-constructor",
     name: "ES5 Constructor Function",
+    description:
+      "Illustrates how constructors and prototypes were used in ES5 before ES6 classes.",
     code: `function Person(name) {
     this.name = name;
   }
@@ -124,6 +134,8 @@ export const classExamples = [
   {
     id: "private-field",
     name: "Private Class Field (#secret)",
+    description:
+      "Demonstrates use of private class fields, accessible only within the class using the `#` syntax.",
     code: `class Secret {
     #secret = "shhh...";
     reveal() {
@@ -144,6 +156,8 @@ export const classExamples = [
   {
     id: "abstract",
     name: "Abstract-like Base Class",
+    description:
+      "Simulates abstract behavior where a base class throws an error if a method is not overridden by subclasses.",
     code: `class Shape {
     getArea() {
       throw new Error("getArea() must be implemented");

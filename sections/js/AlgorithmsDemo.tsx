@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { ExampleBlock } from "@/components/shared";
-import { algorithmExamples } from "./algorithms-examples";
+import { algorithmExamples } from "../../js/algorithms-examples";
 
 export default function AlgorithmsDemo() {
   const [results, setResults] = useState<Record<string, string>>({});
@@ -35,6 +35,7 @@ export default function AlgorithmsDemo() {
           key={example.id}
           id={example.id}
           name={example.name}
+          description={example.description}
           code={example.code}
           usage={example.usage}
           result={results[example.id]}
