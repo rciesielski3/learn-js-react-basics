@@ -17,11 +17,11 @@ export default function LifecycleSection() {
   React.useEffect(() => {
     log("[PARENT] Mounted");
     return () => log("[PARENT] Unmounted");
-  }, []);
+  }, [log]);
 
   React.useEffect(() => {
     log(`[PARENT] Count updated: ${count}`);
-  }, [count]);
+  }, [count, log]);
 
   return (
     <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded text-white">

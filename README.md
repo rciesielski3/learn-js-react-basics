@@ -4,6 +4,12 @@ A playground for exploring and understanding **core JavaScript concepts** and **
 
 ---
 
+## 🌍 Online version:
+
+https://learn-js-react-basics.vercel.app/
+
+---
+
 ## 🧠 What’s Inside
 
 ### 🔹 JavaScript Concepts
@@ -29,7 +35,7 @@ A playground for exploring and understanding **core JavaScript concepts** and **
 
 ```bash
 # Clone this repo
-git clone https://github.com/your-username/learn-js-react-basics.git
+git clone https://github.com/rciesielski3/learn-js-react-basics.git
 cd learn-js-react-basics
 
 # Install dependencies
@@ -69,7 +75,7 @@ public/           # Static assets
 ## 🙋‍♂️ Author
 
 Created with ❤️ by **Rafał Ciesielski**  
-[LinkedIn](https://www.linkedin.com/in/rafalciesielski) • [GitHub](https://github.com/rafalciesielski)
+[LinkedIn](https://www.linkedin.com/in/rafa%C5%82-ciesielski-820309100/) • [GitHub](https://github.com/rciesielski3) • [Portfolio](https://rciesielski3.github.io/portfolio/)
 
 ---
 
