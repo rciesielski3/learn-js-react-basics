@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { SectionHeader } from "../shared";
+import { SectionHeader } from "@/components/shared";
 
 export default function VirtualDomSection() {
   const [text, setText] = React.useState("Type something...");
@@ -22,7 +22,7 @@ export default function VirtualDomSection() {
         type="text"
         value={text}
         onChange={handleChange}
-        className="bg-gray-500 border border-gray-600 text-blue-300 p-2 rounded w-full mb-4"
+        className="bg-gray-600 border border-gray-600 text-blue-300 p-2 rounded w-full mb-4"
         placeholder="Type something..."
       />
 

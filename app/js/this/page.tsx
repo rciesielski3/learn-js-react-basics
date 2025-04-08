@@ -1,4 +1,4 @@
-import ThisDemo from "@/js/this/ThisDemo";
+import ThisDemo from "@/sections/js/ThisDemo";
 
 export default function JSThisPage() {
   return <ThisDemo />;

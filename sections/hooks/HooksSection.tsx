@@ -1,6 +1,6 @@
 "use client";
 
-import { demos } from "../hooks/hook-demos-config";
+import { demos } from "../../components/hooks/hook-demos-config";
 
 export default function HooksSection() {
   return (

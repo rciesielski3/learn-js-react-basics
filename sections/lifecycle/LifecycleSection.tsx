@@ -3,7 +3,7 @@
 import React from "react";
 
 import { LogBox, SectionHeader, useLogger } from "@/components/shared";
-import { LifecycleChild } from "./LifecycleChild";
+import { LifecycleChild } from "../../components/livecycle/LifecycleChild";
 
 export default function LifecycleSection() {
   const [count, setCount] = React.useState(0);

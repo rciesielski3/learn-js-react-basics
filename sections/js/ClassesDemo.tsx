@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { classExamples } from "./class-examples";
+import { classExamples } from "../../js/class-examples";
 import { ExampleBlock } from "../../components/shared/ExampleBlock";
 
 export default function JSClassesDemo() {

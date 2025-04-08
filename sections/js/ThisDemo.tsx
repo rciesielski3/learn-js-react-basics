@@ -3,7 +3,7 @@
 import React from "react";
 
 import { ExampleBlock } from "@/components/shared/ExampleBlock";
-import { thisExamples } from "./this-keyword";
+import { thisExamples } from "../../js/this-keyword";
 
 export default function JsThisPage() {
   const [results, setResults] = React.useState<Record<string, string>>({});
