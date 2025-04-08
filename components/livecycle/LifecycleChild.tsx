@@ -17,8 +17,6 @@ export function LifecycleChild({
   }, [count, log]);
 
   return (
-    <p className="text-sm text-orange-600 mt-2">
-      👶 I&apos;m a child component!
-    </p>
+    <p className="text-sm text-orange-600">👶 I&apos;m a child component!</p>
   );
 }

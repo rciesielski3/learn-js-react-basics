@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { ExampleBlock } from "../shared/ExampleBlock";
+import { ExampleBlock } from "../shared";
 
 export function MemoDemo() {
   const [a, setA] = React.useState(1);
@@ -29,13 +29,13 @@ export function MemoDemo() {
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setA(a + 1)}
-            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105 transition-transform"
+            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
           >
             A +1
           </button>
           <button
             onClick={() => setA(a - 1)}
-            className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105 transition-transform"
+            className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105"
           >
             A -1
           </button>

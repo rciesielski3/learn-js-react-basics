@@ -98,9 +98,8 @@ export default function HomePage() {
       </div>
       <footer className="bg-gray-800 border-t border-gray-700 text-center text-sm text-gray-400 py-4 mt-auto">
         <p>
-          Built with 💡 by
+          Built with 💡 by{" "}
           <a href="https://github.com/rciesielski3" className="underline">
-            {" "}
             Rafal Ciesielski
           </a>
         </p>

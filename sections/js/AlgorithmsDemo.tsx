@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React from "react";
 
-import { ExampleBlock } from "@/components/shared";
+import { ExampleBlock, SectionHeader } from "@/components/shared";
 import { algorithmExamples } from "../../js/algorithms-examples";
 
 export default function AlgorithmsDemo() {
-  const [results, setResults] = useState<Record<string, string>>({});
+  const [results, setResults] = React.useState<Record<string, string>>({});
 
-  useEffect(() => {
+  React.useEffect(() => {
     const newResults: Record<string, string> = {};
     for (const ex of algorithmExamples) {
       try {
@@ -22,25 +22,26 @@ export default function AlgorithmsDemo() {
   }, []);
 
   return (
-    <div className="p-6 text-white max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">⚙️ JavaScript Algorithms</h1>
-      <p className="text-sm text-gray-400 mb-6 max-w-2xl">
-        These classic algorithm examples demonstrate recursion, string
-        manipulation, and array operations using fundamental JavaScript
-        functions.
-      </p>
-
-      {algorithmExamples.map((example) => (
-        <ExampleBlock
-          key={example.id}
-          id={example.id}
-          name={example.name}
-          description={example.description}
-          code={example.code}
-          usage={example.usage}
-          result={results[example.id]}
+    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
+      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
+        <SectionHeader
+          title="⚙️ JavaScript Algorithms"
+          description="These classic algorithm examples demonstrate recursion, string
+          manipulation, and array operations using fundamental JavaScript
+          functions."
         />
-      ))}
+        {algorithmExamples.map((example) => (
+          <ExampleBlock
+            key={example.id}
+            id={example.id}
+            name={example.name}
+            description={example.description}
+            code={example.code}
+            usage={example.usage}
+            result={results[example.id]}
+          />
+        ))}
+      </div>
     </div>
   );
 }

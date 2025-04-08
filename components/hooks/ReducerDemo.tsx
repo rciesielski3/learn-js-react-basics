@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { ExampleBlock } from "../shared/ExampleBlock";
+import { ExampleBlock } from "../shared";
 
 const reducer = (state: number, action: { type: "inc" | "dec" }) => {
   switch (action.type) {
@@ -35,13 +35,13 @@ export function ReducerDemo() {
         <div className="flex gap-2">
           <button
             onClick={() => dispatch({ type: "dec" })}
-            className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105 transition-transform"
+            className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105"
           >
             Decrement
           </button>
           <button
             onClick={() => dispatch({ type: "inc" })}
-            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105 transition-transform"
+            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
           >
             Increment
           </button>

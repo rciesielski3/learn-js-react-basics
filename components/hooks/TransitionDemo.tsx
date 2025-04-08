@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { ExampleBlock } from "../shared/ExampleBlock";
+import { ExampleBlock } from "../shared";
 
 export function TransitionDemo() {
   const [input, setInput] = React.useState("");
@@ -13,7 +13,7 @@ export function TransitionDemo() {
     const value = e.target.value;
     setInput(value);
     startTransition(() => {
-      const newList = Array.from({ length: 500 }, (_, i) => `${value} ${i}`);
+      const newList = Array.from({ length: 50 }, (_, i) => `${value} ${i}`);
       setList(newList);
     });
   };
