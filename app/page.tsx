@@ -14,7 +14,6 @@ export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col justify-between bg-gray-900 text-white">
       <div className="p-8 max-w-4xl mx-auto">
-        {/* Hero Banner */}
         <div className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 p-6 rounded-lg shadow mb-8 text-center">
           <h1 className="text-4xl font-bold mb-2">
             🚀 JS & React Fundamentals Lab
@@ -24,8 +23,6 @@ export default function HomePage() {
             fundamentals of JavaScript and React.
           </p>
         </div>
-
-        {/* JavaScript Section */}
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
             📘 JavaScript Fundamentals
@@ -57,8 +54,6 @@ export default function HomePage() {
             </li>
           </ul>
         </section>
-
-        {/* React Section */}
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4 text-green-400">
             ⚛️ React Core Concepts
@@ -101,11 +96,10 @@ export default function HomePage() {
           </ul>
         </section>
       </div>
-
       <footer className="bg-gray-800 border-t border-gray-700 text-center text-sm text-gray-400 py-4 mt-auto">
         <p>
-          Built with 💡 by{" "}
-          <a href="https://github.com/rafalciesielski" className="underline">
+          Built with 💡 by
+          <a href="https://github.com/rciesielski3" className="underline">
             Rafal Ciesielski
           </a>
         </p>
