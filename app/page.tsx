@@ -100,6 +100,7 @@ export default function HomePage() {
         <p>
           Built with 💡 by
           <a href="https://github.com/rciesielski3" className="underline">
+            {" "}
             Rafal Ciesielski
           </a>
         </p>
