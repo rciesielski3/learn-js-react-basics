@@ -10,13 +10,15 @@ export function LifecycleChild({
   React.useEffect(() => {
     log("[CHILD] Mounted");
     return () => log("[CHILD] Unmounted");
-  }, []);
+  }, [log]);
 
   React.useEffect(() => {
     log(`[CHILD] Count changed: ${count}`);
-  }, [count]);
+  }, [count, log]);
 
   return (
-    <p className="text-sm text-orange-600 mt-2">👶 I'm a child component!</p>
+    <p className="text-sm text-orange-600 mt-2">
+      👶 I&apos;m a child component!
+    </p>
   );
 }

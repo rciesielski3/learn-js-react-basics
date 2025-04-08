@@ -5,7 +5,7 @@ import React from "react";
 import { SectionHeader } from "@/components/shared";
 
 export default function VirtualDomSection() {
-  const [text, setText] = React.useState("Type something...");
+  const [text, setText] = React.useState("Text entered above will appear here");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -20,14 +20,13 @@ export default function VirtualDomSection() {
       <div className="text-sm font-medium text-gray-400">Enter text:</div>
       <input
         type="text"
-        value={text}
         onChange={handleChange}
-        className="bg-gray-600 border border-gray-600 text-blue-300 p-2 rounded w-full mb-4"
+        className="bg-gray-800 border border-gray-600 text-blue-300 p-2 rounded w-full mb-4 text-base"
         placeholder="Type something..."
       />
 
       <div className="text-sm text-gray-400 mb-1">Rendered Text:</div>
-      <div className="bg-gray-900 p-2 text-yellow-300 rounded border border-gray-600">
+      <div className="bg-gray-900 p-2 text-yellow-300 rounded border border-gray-600 text-base">
         {text}
       </div>
     </div>
