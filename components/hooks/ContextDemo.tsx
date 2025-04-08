@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { ExampleBlock } from "../shared/ExampleBlock";
+import { ExampleBlock } from "../shared";
 
 const CountContext = React.createContext<number>(42);
 

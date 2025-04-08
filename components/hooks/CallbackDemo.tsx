@@ -1,13 +1,14 @@
 // components/hooks/CallbackDemo.tsx
 "use client";
 
-import React, { useCallback, useState } from "react";
-import { ExampleBlock } from "../shared/ExampleBlock";
+import React from "react";
+
+import { ExampleBlock } from "../shared";
 
 export function CallbackDemo() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = React.useState(0);
 
-  const callback = useCallback(() => {
+  const callback = React.useCallback(() => {
     alert(`Callback fired! Current count: ${count}`);
   }, [count]);
 
@@ -28,13 +29,13 @@ export function CallbackDemo() {
         <div className="flex gap-2 flex-wrap">
           <button
             onClick={() => setCount((c) => c + 1)}
-            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105 transition-transform"
+            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
           >
             Count +1
           </button>
           <button
             onClick={callback}
-            className="px-3 py-1 bg-blue-600 text-white rounded hover:scale-105 transition-transform"
+            className="px-3 py-1 bg-blue-600 text-white rounded hover:scale-105"
           >
             Fire Callback
           </button>

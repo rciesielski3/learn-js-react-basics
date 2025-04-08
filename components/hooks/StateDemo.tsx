@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { ExampleBlock } from "../shared/ExampleBlock";
+import { ExampleBlock } from "../shared";
 
 export function StateDemo() {
   const [value, setValue] = React.useState(0);
@@ -25,13 +25,13 @@ Each change triggers a re-render`}
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setValue((v) => v - 1)}
-            className="px-3 py-1 bg-red-600 text-white rounded"
+            className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105"
           >
             Decrement
           </button>
           <button
             onClick={() => setValue((v) => v + 1)}
-            className="px-3 py-1 bg-green-600 text-white rounded"
+            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
           >
             Increment
           </button>
