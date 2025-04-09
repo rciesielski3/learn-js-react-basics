@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { InfoBox } from "@/components/shared";
+import { InfoBox, Tooltip } from "@/components/shared";
 
 type Props = {
   log: (msg: string) => void;
@@ -9,32 +9,43 @@ type Props = {
 
 export default function MemoVsCallback({ log }: Props) {
   const [count, setCount] = React.useState(0);
-  const [other, setOther] = React.useState(0);
+  const [_otherState, setOtherState] = React.useState(0);
 
   const memoizedValue = React.useMemo(() => {
-    log(`[useMemo] Recalculating value for count: ${count}`);
-    return count * 2;
-  }, [count]);
+    const result = count * 2;
+    log(`[useMemo] Recomputed: ${count} * 2 = ${result}`);
+    return result;
+  }, [count, log]);
 
   const memoizedCallback = React.useCallback(() => {
-    log(`[useCallback] Memoized function called with count: ${count}`);
-    return count * 3;
-  }, [count]);
+    const result = count * 3;
+    log(`[useCallback] Called with count ${count}: ${count} * 3 = ${result}`);
+    return result;
+  }, [count, log]);
 
   return (
     <InfoBox
       title="useMemo vs useCallback"
-      description="useMemo memoizes a value; useCallback memoizes a function."
-      code={`useMemo(() => expensiveCalculation(), [deps]);
+      description="useMemo memoizes computed values; useCallback memoizes function references."
+      code={`useMemo(() => computeValue(), [deps]);
 useCallback(() => handler(), [deps]);`}
     >
-      <pre className="bg-gray-900 text-yellow-300 p-2 rounded text-sm">
-        <code>Memoized Value (count * 2): {memoizedValue}</code>
-      </pre>
+      <div className="flex gap-4">
+        <div className="w-full sm:w-1/2 border border-yellow-400 rounded p-4">
+          <p className="text-yellow-300 font-semibold">useMemo</p>
+          <p className="text-white">
+            Memoized Value (count × 2): {memoizedValue}
+          </p>
+        </div>
+        <div className="w-full sm:w-1/2 border border-cyan-400 rounded p-4">
+          <p className="text-cyan-300 font-semibold">useCallback</p>
+          <p className="text-white text-sm">
+            Call logs show memoized function usage
+          </p>
+        </div>
+      </div>
 
-      <p className="text-base text-gray-400 py-2">
-        🛠️ Update the count or call the callback:
-      </p>
+      <p className="text-base text-gray-400 py-2">🛠️ Try updating:</p>
       <div className="flex gap-2 flex-wrap mt-2">
         <button
           onClick={() => setCount((c) => c + 1)}
@@ -43,20 +54,38 @@ useCallback(() => handler(), [deps]);`}
           Increment Count
         </button>
         <button
-          onClick={() => setOther((o) => o + 1)}
+          onClick={() => setOtherState((s) => s + 1)}
           className="px-3 py-1 bg-blue-600 text-white rounded hover:scale-105"
         >
           Change Unrelated State
         </button>
         <button
-          onClick={() => {
-            const result = memoizedCallback();
-            log(`[useCallback] Result: ${result}`);
-          }}
-          className="px-3 py-1 bg-purple-600 text-white rounded hover:scale-105"
+          onClick={() => memoizedCallback()}
+          className="px-3 py-1 bg-cyan-600 text-white rounded hover:scale-105"
         >
-          Call Memoized Callback
+          Call useCallback
         </button>
+
+        <Tooltip
+          content={
+            <div className="text-sm text-white max-w-xs">
+              <ul className="list-disc list-inside ml-2">
+                <li>
+                  <b>useMemo</b> avoids recalculation unless deps change.
+                </li>
+                <li>
+                  <b>useCallback</b> avoids function recreation unless deps
+                  change.
+                </li>
+              </ul>
+            </div>
+          }
+          position="right"
+        >
+          <span className="text-gray-300 hover:text-white cursor-help text-lg">
+            ℹ️
+          </span>
+        </Tooltip>
       </div>
     </InfoBox>
   );

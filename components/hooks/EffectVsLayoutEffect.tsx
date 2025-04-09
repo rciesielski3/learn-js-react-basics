@@ -12,21 +12,19 @@ export default function EffectVsLayoutEffect({
   const [effectBg, setEffectBg] = React.useState("transparent");
   const [layoutBg, setLayoutBg] = React.useState("transparent");
 
-  // Layout effect – runs first, before paint
   React.useLayoutEffect(() => {
     setLayoutBg("lightblue");
     log(`[useLayoutEffect] Ran for count = ${count}`);
     const timeout = setTimeout(() => setLayoutBg("transparent"), 100);
     return () => clearTimeout(timeout);
-  }, [count]);
+  }, [count, log]);
 
-  // Effect – runs second, after paint
   React.useEffect(() => {
     setEffectBg("yellow");
     log(`[useEffect] Ran for count = ${count}`);
     const timeout = setTimeout(() => setEffectBg("transparent"), 100);
     return () => clearTimeout(timeout);
-  }, [count]);
+  }, [count, log]);
 
   return (
     <InfoBox
