@@ -9,7 +9,7 @@ type Props = {
 
 export default function MemoVsCallback({ log }: Props) {
   const [count, setCount] = React.useState(0);
-  const [_otherState, setOtherState] = React.useState(0);
+  const [otherState, setOtherState] = React.useState(0);
 
   const memoizedValue = React.useMemo(() => {
     const result = count * 2;
@@ -41,6 +41,9 @@ useCallback(() => handler(), [deps]);`}
           <p className="text-cyan-300 font-semibold">useCallback</p>
           <p className="text-white text-sm">
             Call logs show memoized function usage
+          </p>
+          <p className="text-sm text-gray-400 mt-2">
+            Unrelated State: {otherState}
           </p>
         </div>
       </div>
