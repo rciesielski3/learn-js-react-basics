@@ -13,7 +13,7 @@ export function InfoBox({ title, description, code, children }: InfoBoxProps) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="mb-6 border border-gray-500 rounded bg-gray-800 text-white p-4">
+    <div className="w-full mb-6 border border-gray-500 rounded bg-gray-800 text-white p-4">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setExpanded((e) => !e)}
@@ -26,7 +26,9 @@ export function InfoBox({ title, description, code, children }: InfoBoxProps) {
 
       {expanded && (
         <div className="mt-3">
-          <p className="text-sm text-gray-300 mb-2">{description}</p>
+          <p className="text-sm text-gray-300 mb-2 whitespace-pre-wrap">
+            {description}
+          </p>
           <pre className="bg-gray-900 text-green-400 text-xs p-2 rounded overflow-x-auto">
             <code>{code}</code>
           </pre>

@@ -22,6 +22,14 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "components/hooks/hook-demos-config.js",
+    "js/algorithms/algorithms-examples.js",
+    "js/class-examples.js"
+  ],
   "exclude": ["node_modules"]
 }
