@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { InfoBox } from "@/components/shared";
+import { InfoBox, Tooltip } from "@/components/shared";
 
 type Props = {
   log: (msg: string) => void;
@@ -11,17 +11,10 @@ export default function RefVsState({ log }: Props) {
   const refValue = React.useRef(0);
   const [stateValue, setStateValue] = React.useState(0);
 
+  const [pendingRefLog, setPendingRefLog] = React.useState<string | null>(null);
   const [pendingStateLog, setPendingStateLog] = React.useState<string | null>(
     null
   );
-  const [pendingRefLog, setPendingRefLog] = React.useState<string | null>(null);
-
-  React.useEffect(() => {
-    if (pendingStateLog) {
-      log(pendingStateLog);
-      setPendingStateLog(null);
-    }
-  }, [stateValue, pendingStateLog, log]);
 
   React.useEffect(() => {
     if (pendingRefLog) {
@@ -30,21 +23,32 @@ export default function RefVsState({ log }: Props) {
     }
   }, [pendingRefLog, log]);
 
+  React.useEffect(() => {
+    if (pendingStateLog) {
+      log(pendingStateLog);
+      setPendingStateLog(null);
+    }
+  }, [stateValue, pendingStateLog, log]);
+
   return (
     <InfoBox
       title="useRef vs useState"
-      description="useRef persists a mutable value without causing re-renders, unlike useState."
-      code={`const ref = useRef(0);
-ref.current++;
-
+      description="See how useRef can persist values across renders without triggering rerenders, unlike useState."
+      code={`const ref = useRef(0); ref.current++;
 const [state, setState] = useState(0);`}
     >
-      <span className="text-sm font-medium text-gray-400">Output:</span>
-      <pre className="bg-gray-900 text-yellow-300 p-2 rounded text-sm">
-        <code className="block">useRef (no re-render): {refValue.current}</code>
-        <code>useState: {stateValue}</code>
-      </pre>
-      <p className="text-base text-gray-400 py-2">🛠️ Try updating both:</p>
+      <div className="flex gap-4">
+        <div className="w-full sm:w-1/2 border border-purple-400 rounded p-4">
+          <p className="text-purple-300 font-semibold">useRef (no re-render)</p>
+          <p className="text-white">Value: {refValue.current}</p>
+        </div>
+        <div className="w-full sm:w-1/2 border border-green-400 rounded p-4">
+          <p className="text-green-300 font-semibold">useState</p>
+          <p className="text-white">Value: {stateValue}</p>
+        </div>
+      </div>
+
+      <p className="text-base text-gray-400 py-2">🛠️ Interact below:</p>
       <div className="flex gap-2 mt-2">
         <button
           onClick={() => {
@@ -64,6 +68,26 @@ const [state, setState] = useState(0);`}
         >
           Update State
         </button>
+
+        <Tooltip
+          content={
+            <div className="text-sm text-white max-w-xs">
+              <ul className="list-disc list-inside ml-2">
+                <li>
+                  <b>useRef</b> keeps values stable but doesn’t re-render.
+                </li>
+                <li>
+                  <b>useState</b> causes re-renders on every update.
+                </li>
+              </ul>
+            </div>
+          }
+          position="right"
+        >
+          <span className="text-gray-300 hover:text-white cursor-help text-lg">
+            ℹ️
+          </span>
+        </Tooltip>
       </div>
     </InfoBox>
   );

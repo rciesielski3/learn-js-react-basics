@@ -11,11 +11,7 @@ export default function MemoVsCallback({ log }: Props) {
   const [count, setCount] = React.useState(0);
   const [otherState, setOtherState] = React.useState(0);
 
-  const memoizedValue = React.useMemo(() => {
-    const result = count * 2;
-    log(`[useMemo] Recomputed: ${count} * 2 = ${result}`);
-    return result;
-  }, [count, log]);
+  const memoizedValue = React.useMemo(() => count * 2, [count]);
 
   const memoizedCallback = React.useCallback(() => {
     const result = count * 3;
@@ -23,10 +19,14 @@ export default function MemoVsCallback({ log }: Props) {
     return result;
   }, [count, log]);
 
+  React.useEffect(() => {
+    log(`[useMemo] Recomputed: ${count} * 2 = ${memoizedValue}`);
+  }, [count, memoizedValue, log]);
+
   return (
     <InfoBox
       title="useMemo vs useCallback"
-      description="useMemo memoizes computed values; useCallback memoizes function references."
+      description={`useMemo memoizes computed values; \nuseCallback memoizes function references.`}
       code={`useMemo(() => computeValue(), [deps]);
 useCallback(() => handler(), [deps]);`}
     >

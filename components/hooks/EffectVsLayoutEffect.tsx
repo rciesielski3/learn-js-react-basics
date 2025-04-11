@@ -29,7 +29,7 @@ export default function EffectVsLayoutEffect({
   return (
     <InfoBox
       title="useEffect vs useLayoutEffect"
-      description="Observe how useLayoutEffect executes before paint (no flicker), while useEffect runs after paint (may flicker). Trigger both at once to compare!"
+      description={`Observe how useLayoutEffect executes before paint (no flicker), \nwhile useEffect runs after paint (may flicker). \nTrigger both at once to compare!`}
       code={`useLayoutEffect(() => { ... }, [deps]);
 useEffect(() => { ... }, [deps]);`}
     >
