@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { SectionHeader, LogBox, useLogger } from "@/components/shared";
 import {
   EffectVsLayoutEffect,
@@ -9,9 +10,6 @@ import {
   RefVsState,
   StateVsReducer,
 } from "@/components/hooks";
-// import EffectVsLayoutEffect from "./components/hooks/EffectVsLayoutEffect";
-// import StateVsReducer from "./components/hooks/StateVsReducer";
-// import RefVsState from "./components/hooks/RefVsState";
 
 export default function HookComparisonsSection() {
   const [logs, setLogs] = React.useState<string[]>([]);

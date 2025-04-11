@@ -1,16 +1,16 @@
 "use client";
 
-import { useState, ReactNode } from "react";
+import React from "react";
 
 type InfoBoxProps = {
   title: string;
   description: string;
   code: string;
-  children?: ReactNode;
+  children?: React.ReactNode;
 };
 
 export function InfoBox({ title, description, code, children }: InfoBoxProps) {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = React.useState(false);
 
   return (
     <div className="w-full mb-6 border border-gray-500 rounded bg-gray-800 text-white p-4">
