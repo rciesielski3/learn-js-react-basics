@@ -1,5 +1,3 @@
-import React from "react";
-
 type SectionHeaderProps = {
   title: string;
   description?: string;

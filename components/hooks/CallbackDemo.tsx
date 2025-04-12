@@ -1,4 +1,3 @@
-// components/hooks/CallbackDemo.tsx
 "use client";
 
 import React from "react";
