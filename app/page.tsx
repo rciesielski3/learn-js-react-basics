@@ -1,4 +1,3 @@
-// app/page.tsx
 import Link from "next/link";
 import {
   BookOpen,
@@ -8,6 +7,7 @@ import {
   Cpu,
   TerminalSquare,
   Search,
+  Diff,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -50,6 +50,14 @@ export default function HomePage() {
                 href="/js/algorithms"
               >
                 <Zap size={18} /> Common JS Algorithms
+              </Link>
+            </li>
+            <li className="hover:translate-x-1 transition-transform">
+              <Link
+                className="flex items-center gap-2 text-blue-300 hover:underline"
+                href="/js/ts-vs-js"
+              >
+                <Diff size={18} /> JavaScript vs. TypeScript
               </Link>
             </li>
           </ul>
