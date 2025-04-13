@@ -14,20 +14,21 @@ https://learn-js-react-basics.vercel.app/
 
 ### 🔹 JavaScript Concepts
 
-| Topic                 | Location         | Description                                                                      |
-| --------------------- | ---------------- | -------------------------------------------------------------------------------- |
-| `this` keyword        | `/js/this`       | Compare global, strict, object, arrow, bound, and class contexts of `this`       |
-| Classes & Inheritance | `/js/classes`    | Explore ES6 classes, inheritance, prototypes, static methods, and private fields |
-| Algorithms            | `/js/algorithms` | Run common and advanced JS algorithm examples interactively                      |
+| Topic                 | Location                 | Description                                                                      |
+| --------------------- | ------------------------ | -------------------------------------------------------------------------------- |
+| `this` keyword        | `/js/ThisDemo.tsx`       | Compare global, strict, object, arrow, bound, and class contexts of `this`       |
+| Classes & Inheritance | `/js/ClassesDemo.tsx`    | Explore ES6 classes, inheritance, prototypes, static methods, and private fields |
+| Algorithms            | `/js/AlgorithmsDemo.tsx` | Run common and advanced JS algorithm examples interactively                      |
+| JS vs TS Comparison   | `/js/TypeComparison.tsx` | Run common and advanced JS algorithm examples interactively                      |
 
 ### 🔸 React Fundamentals
 
-| Topic            | Location             | Description                                                                                   |
-| ---------------- | -------------------- | --------------------------------------------------------------------------------------------- |
-| Lifecycle        | `/react/lifecycle`   | Observe React mount/update/unmount behaviors and logs                                         |
-| Virtual DOM      | `/react/virtual-dom` | See how updates re-render efficiently                                                         |
-| Hooks Playground | `/react/hooks`       | Test and compare key hooks like `useState`, `useMemo`, `useReducer`, and more                 |
-| Hook Comparisons | `/react/comparision` | Understand nuanced differences between similar hooks (`useEffect` vs `useLayoutEffect`, etc.) |
+| Topic            | Location                     | Description                                                                                   |
+| ---------------- | ---------------------------- | --------------------------------------------------------------------------------------------- |
+| Lifecycle        | `LifecycleSection.tsx`       | Observe React mount/update/unmount behaviors and logs                                         |
+| Virtual DOM      | `VirtualDomSection.tsx`      | See how updates re-render efficiently                                                         |
+| Hooks Playground | `HooksSection.tsx`           | Test and compare key hooks like `useState`, `useMemo`, `useReducer`, and more                 |
+| Hook Comparisons | `HookComparisonsSection.tsx` | Understand nuanced differences between similar hooks (`useEffect` vs `useLayoutEffect`, etc.) |
 
 ---
 
