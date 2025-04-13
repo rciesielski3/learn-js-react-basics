@@ -11,7 +11,7 @@ export default function TypeComparison() {
       <div className="mt-6 p-6 max-w-5xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
           title="🆚 JavaScript vs TypeScript"
-          description="This table compares core JavaScript features with TypeScript equivalents. Use it to understand how TypeScript enhances JavaScript with type safety and developer tooling."
+          description="Page compares core JavaScript features with TypeScript equivalents. Use it to understand how TypeScript enhances JavaScript with type safety and developer tooling."
         />
 
         {tsVsJsExamples.map((example, idx) => (
