@@ -3,9 +3,11 @@
 import React from "react";
 
 import { ExampleBlock } from "../shared";
+import { exampleData } from "../shared/exampleData";
 
 export function StateDemo() {
   const [value, setValue] = React.useState(0);
+  const details = exampleData.useState;
 
   return (
     <>
@@ -17,6 +19,8 @@ export function StateDemo() {
         usage={`Click buttons below to update state
 Each change triggers a re-render`}
         result={`Current value: ${value}`}
+        sampleSnippet={details.sampleSnippet}
+        visualReprezentation={details.visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
         <p className="text-base text-gray-400 mb-2">
