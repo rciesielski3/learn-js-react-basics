@@ -2,25 +2,30 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 type ModalProps = {
+  name: string;
   onClose: () => void;
   sampleSnippet: string;
   visualReprezentation: string;
 };
 
 export function ExampleModal({
+  name,
   onClose,
   sampleSnippet,
   visualReprezentation,
 }: ModalProps) {
   return ReactDOM.createPortal(
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex items-center justify-center">
       <div className="bg-gray-800 p-6 rounded-lg max-w-4xl w-full shadow-lg relative">
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 px-2 py-1 rounded text-sm"
-        >
-          Close
-        </button>
+        <div className="flex items-center justify-between mb-4">
+          <p className="mb-2 font-semibold text-lg">{name}</p>
+          <button
+            onClick={onClose}
+            className="absolute top-5 right-5 text-white bg-red-500 hover:bg-red-600 px-2 py-1 rounded text-sm"
+          >
+            Close
+          </button>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div>
