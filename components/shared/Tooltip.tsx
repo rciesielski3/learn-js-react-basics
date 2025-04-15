@@ -2,15 +2,9 @@
 
 import React from "react";
 
-export function Tooltip({
-  children,
-  content,
-  position = "top",
-}: {
-  children: React.ReactNode;
-  content: React.ReactNode;
-  position?: "top" | "bottom" | "left" | "right";
-}) {
+import { TooltipProps } from "./types";
+
+export function Tooltip({ children, content, position = "top" }: TooltipProps) {
   return (
     <div className="relative group inline-block">
       {children}

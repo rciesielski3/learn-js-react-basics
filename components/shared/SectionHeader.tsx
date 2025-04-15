@@ -1,7 +1,4 @@
-type SectionHeaderProps = {
-  title: string;
-  description?: string;
-};
+import { SectionHeaderProps } from "./types";
 
 export function SectionHeader({ title, description }: SectionHeaderProps) {
   return (

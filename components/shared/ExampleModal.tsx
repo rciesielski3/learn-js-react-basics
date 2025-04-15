@@ -1,12 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-type ModalProps = {
-  name: string;
-  onClose: () => void;
-  sampleSnippet: string;
-  visualReprezentation: string;
-};
+import { ModalProps } from "./types";
 
 export function ExampleModal({
   name,

@@ -1,18 +1,7 @@
 import React from "react";
 
 import { ExampleModal } from "./ExampleModal";
-import { title } from "process";
-
-type Props = {
-  id: string;
-  name: string;
-  description?: string;
-  code: string;
-  usage: string;
-  result: string;
-  sampleSnippet?: string;
-  visualReprezentation?: string;
-};
+import { Props } from "./types";
 
 export function ExampleBlock({
   name,
