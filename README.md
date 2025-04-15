@@ -1,64 +1,82 @@
 # 🧪 Learn JS & React Fundamentals Lab
 
-A playground for exploring and understanding **core JavaScript concepts** and **React fundamentals** like lifecycle, hooks, virtual DOM, classes, and more – interactively and visually.
+An interactive playground to explore and understand **core JavaScript concepts** and **React fundamentals** – visually, experimentally, and in real-time.
 
 ---
 
-## 🌍 Online version:
+## 🌍 Live Demo
 
-https://learn-js-react-basics.vercel.app/
+▶️ [learn-js-react-basics.vercel.app](https://learn-js-react-basics.vercel.app/)
 
 ---
 
-## 🧠 What’s Inside
+## 🧠 What's Inside?
 
-### 🔹 JavaScript Concepts
+### 🔹 JavaScript Fundamentals
 
-| Topic                 | Location                 | Description                                                                      |
-| --------------------- | ------------------------ | -------------------------------------------------------------------------------- |
-| `this` keyword        | `/js/ThisDemo.tsx`       | Compare global, strict, object, arrow, bound, and class contexts of `this`       |
-| Classes & Inheritance | `/js/ClassesDemo.tsx`    | Explore ES6 classes, inheritance, prototypes, static methods, and private fields |
-| Algorithms            | `/js/AlgorithmsDemo.tsx` | Run common and advanced JS algorithm examples interactively                      |
-| JS vs TS Comparison   | `/js/TypeComparison.tsx` | Run common and advanced JS algorithm examples interactively                      |
+| Topic                 | Path                              | Description                                                                     |
+| --------------------- | --------------------------------- | ------------------------------------------------------------------------------- |
+| `this` keyword        | `/sections/js/ThisDemo.tsx`       | Compare how `this` behaves in different contexts (global, strict, arrow, class) |
+| Classes & Inheritance | `/sections/js/ClassesDemo.tsx`    | ES6 class syntax, prototypes, static/private fields                             |
+| Algorithms            | `/sections/js/AlgorithmsDemo.tsx` | Run and inspect classic and advanced algorithms                                 |
+| JS vs TS Comparison   | `/sections/js/TypeComparison.tsx` | Side-by-side comparison between TypeScript and JavaScript                       |
 
 ### 🔸 React Fundamentals
 
-| Topic            | Location                     | Description                                                                                   |
-| ---------------- | ---------------------------- | --------------------------------------------------------------------------------------------- |
-| Lifecycle        | `LifecycleSection.tsx`       | Observe React mount/update/unmount behaviors and logs                                         |
-| Virtual DOM      | `VirtualDomSection.tsx`      | See how updates re-render efficiently                                                         |
-| Hooks Playground | `HooksSection.tsx`           | Test and compare key hooks like `useState`, `useMemo`, `useReducer`, and more                 |
-| Hook Comparisons | `HookComparisonsSection.tsx` | Understand nuanced differences between similar hooks (`useEffect` vs `useLayoutEffect`, etc.) |
+| Topic            | Path                                             | Description                                                             |
+| ---------------- | ------------------------------------------------ | ----------------------------------------------------------------------- |
+| Lifecycle        | `/sections/lifecycle/LifecycleSection.tsx`       | Observe component mount/update/unmount patterns and logs                |
+| Virtual DOM      | `/sections/virtual-dom/VirtualDomSection.tsx`    | See how virtual DOM optimizes updates                                   |
+| Hooks Playground | `/sections/hooks/HooksSection.tsx`               | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
+| Hook Comparisons | `/sections/lifecycle/HookComparisonsSection.tsx` | Visualize subtle differences (e.g., `useEffect` vs `useLayoutEffect`)   |
 
 ---
 
 ## 🚀 Getting Started
 
 ```bash
-# Clone this repo
+# Clone the repo
 git clone https://github.com/rciesielski3/learn-js-react-basics.git
 cd learn-js-react-basics
 
 # Install dependencies
 npm install
 
-# Start development server
+# Run locally
 npm run dev
 ```
 
-> Make sure you have Node.js ≥ 18 and npm ≥ 9 installed.
+> ⚠️ Requires **Node.js ≥ 18** and **npm ≥ 9**
 
 ---
 
 ## 📁 Project Structure
 
 ```
-app/              # Next.js app routes (pages)
-components/       # Reusable UI and hook demo components
-sections/         # Feature sections like Lifecycle, Hooks, JS Demos
-js/               # Demo logic: algorithms, class examples, this-keyword
-shared/           # Reusable utilities like loggers and headers
-public/           # Static assets
+app/                  # Route-level grouping for JS and React examples
+│
+├── js/               # JavaScript-focused pages
+│   ├── algorithms/
+│   ├── classes/
+│   ├── this/
+│   └── ts-vs-js/
+│
+├── react/            # React-focused pages
+│   ├── hooks/
+│   ├── lifecycle/
+│   ├── comparision/
+│   └── virtual-dom/
+│
+components/           # UI components (hook demos, shared elements)
+│
+sections/             # Feature views grouped by topic (JS, Hooks, Lifecycle, etc.)
+│
+data/                 # 🔢 Static example data (code + visual breakdowns)
+│   ├── hooks/        # Data per React hook
+│   └── js/           # Data for JS concept examples
+│
+shared/               # Shared utilities, types, UI blocks
+public/               # Static assets
 ```
 
 ---
@@ -69,17 +87,20 @@ public/           # Static assets
 - [React 19](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- Functional code examples, visual logs, and real-time interactivity
+- Functional examples, logs, transitions, and reactive visuals
 
 ---
 
-## 🙋‍♂️ Author
+## 🧑‍💻 Author
 
-Created with ❤️ by **Rafał Ciesielski**  
-[LinkedIn](https://www.linkedin.com/in/rafa%C5%82-ciesielski-820309100/) • [GitHub](https://github.com/rciesielski3) • [Portfolio](https://rciesielski3.github.io/portfolio/)
+Created with ❤️ by [**Rafał Ciesielski**](https://github.com/rciesielski3)
+
+- [LinkedIn](https://www.linkedin.com/in/rafa%C5%82-ciesielski-820309100/)
+- [GitHub](https://github.com/rciesielski3)
+- [Portfolio](https://rciesielski3.github.io/portfolio/)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+Licensed under the MIT License.
