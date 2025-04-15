@@ -2,12 +2,7 @@
 
 import React from "react";
 
-type InfoBoxProps = {
-  title: string;
-  description: string;
-  code: string;
-  children?: React.ReactNode;
-};
+import { InfoBoxProps } from "./types";
 
 export function InfoBox({ title, description, code, children }: InfoBoxProps) {
   const [expanded, setExpanded] = React.useState(false);

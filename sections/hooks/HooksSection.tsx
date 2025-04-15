@@ -12,18 +12,23 @@ export default function HooksSection() {
           <code>useContext</code>, <code>useMemo</code>, and others behave with
           live updates and examples.
         </p>
-        Select a demo:
-        <nav className="flex gap-6 flex-wrap text-sm text-blue-300 underline mb-6">
-          {demos.map(({ id, label }) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              className="hover:text-blue-200 transition-colors"
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
+        <div className="border border-solid p-4 rounded-lg mb-6 bg-gray-600">
+          <p className="text-sm mb-4">
+            Click on the demo name to see the code and live example:
+          </p>
+          <nav className="flex gap-6 flex-wrap text-sm text-blue-300 mt-5">
+            {demos.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                className="hover:scale-105 bg-gray-800 rounded px-2 py-1"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <p className="text-sm text-gray-400 mb-2">Hook lists:</p>
         {demos.map(({ id, Component }) => (
           <section
             key={id}

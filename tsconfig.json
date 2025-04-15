@@ -28,8 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/hooks/hook-demos-config.js",
-    "js/algorithms/algorithms-examples.js",
-    "js/class-examples.js"
+    "data/js/algorithms/algorithms-examples.js",
+    "data/js/class-examples.js"
   ],
   "exclude": ["node_modules"]
 }

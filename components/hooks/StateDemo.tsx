@@ -2,10 +2,13 @@
 
 import React from "react";
 
+import { hookData } from "@/data/hooks";
 import { ExampleBlock } from "../shared";
 
 export function StateDemo() {
   const [value, setValue] = React.useState(0);
+
+  const { sampleSnippet, visualReprezentation } = hookData.useState;
 
   return (
     <>
@@ -17,6 +20,8 @@ export function StateDemo() {
         usage={`Click buttons below to update state
 Each change triggers a re-render`}
         result={`Current value: ${value}`}
+        sampleSnippet={sampleSnippet}
+        visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
         <p className="text-base text-gray-400 mb-2">
