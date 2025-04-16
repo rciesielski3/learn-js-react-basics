@@ -16,6 +16,7 @@ An interactive playground to explore and understand **core JavaScript concepts**
 
 | Topic                 | Path                              | Description                                                                     |
 | --------------------- | --------------------------------- | ------------------------------------------------------------------------------- |
+| basics                | `/sections/js/JsBasics.tsx`       | Introduces JavaScript fundamentals                                              |
 | `this` keyword        | `/sections/js/ThisDemo.tsx`       | Compare how `this` behaves in different contexts (global, strict, arrow, class) |
 | Classes & Inheritance | `/sections/js/ClassesDemo.tsx`    | ES6 class syntax, prototypes, static/private fields                             |
 | Algorithms            | `/sections/js/AlgorithmsDemo.tsx` | Run and inspect classic and advanced algorithms                                 |
@@ -56,6 +57,7 @@ npm run dev
 app/                  # Route-level grouping for JS and React examples
 │
 ├── js/               # JavaScript-focused pages
+│   ├── basics/
 │   ├── algorithms/
 │   ├── classes/
 │   ├── this/
@@ -93,7 +95,7 @@ public/               # Static assets
 
 ## 🧑‍💻 Author
 
-Created with ❤️ by [**Rafał Ciesielski**](https://github.com/rciesielski3)
+Created with 💡 by [**Rafał Ciesielski**](https://github.com/rciesielski3)
 
 - [LinkedIn](https://www.linkedin.com/in/rafa%C5%82-ciesielski-820309100/)
 - [GitHub](https://github.com/rciesielski3)
