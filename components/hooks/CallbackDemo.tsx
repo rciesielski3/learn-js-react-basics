@@ -2,10 +2,13 @@
 
 import React from "react";
 
+import { hookData } from "@/data/hooks";
 import { ExampleBlock } from "../shared";
 
 export function CallbackDemo() {
   const [count, setCount] = React.useState(0);
+
+  const { sampleSnippet, visualReprezentation } = hookData.useCallback;
 
   const callback = React.useCallback(() => {
     alert(`Callback fired! Current count: ${count}`);
@@ -20,6 +23,8 @@ export function CallbackDemo() {
         code={`const memoized = useCallback(() => doSomething(), [deps]);`}
         usage={`Useful when passing callbacks to child components\nPrevents unnecessary re-renders when props remain unchanged`}
         result={`Current count: ${count}`}
+        sampleSnippet={sampleSnippet}
+        visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
         <p className="text-sm text-gray-400 mb-2">
