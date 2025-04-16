@@ -2,11 +2,14 @@
 
 import React from "react";
 
+import { hookData } from "@/data/hooks";
 import { ExampleBlock } from "../shared";
 
 export function MemoDemo() {
   const [a, setA] = React.useState(1);
   const [b, setB] = React.useState(1);
+
+  const { sampleSnippet, visualReprezentation } = hookData.useMemo;
 
   const product = React.useMemo(() => {
     return a * b;
@@ -21,6 +24,8 @@ export function MemoDemo() {
         code={`const memo = useMemo(() => compute(), [deps]);`}
         usage={`Useful for optimizing expensive calculations\nReturns memoized value unless dependencies change`}
         result={`A: ${a}, B: ${b}, A * B = ${product}`}
+        sampleSnippet={sampleSnippet}
+        visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
         <p className="text-base text-gray-400 mb-2">
