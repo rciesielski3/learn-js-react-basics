@@ -8,6 +8,7 @@ import {
   TerminalSquare,
   Search,
   Diff,
+  BadgeCheck,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -28,6 +29,14 @@ export default function HomePage() {
             📘 JavaScript Fundamentals
           </h2>
           <ul className="space-y-3 pl-10">
+            <li className="hover:translate-x-1 transition-transform">
+              <Link
+                className="flex items-center gap-2 text-blue-300 hover:underline"
+                href="/js/basics"
+              >
+                <BadgeCheck size={18} /> Java Scripts basics
+              </Link>
+            </li>
             <li className="hover:translate-x-1 transition-transform">
               <Link
                 className="flex items-center gap-2 text-blue-300 hover:underline"
@@ -79,7 +88,7 @@ export default function HomePage() {
             <li className="hover:translate-x-1 transition-transform">
               <Link
                 className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/react/comparision"
+                href="/react/comparison"
               >
                 <Search size={18} />
                 Comparing Similar Hooks
