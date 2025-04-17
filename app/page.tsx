@@ -9,6 +9,7 @@ import {
   Search,
   Diff,
   BadgeCheck,
+  GalleryThumbnails,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -76,6 +77,15 @@ export default function HomePage() {
             ⚛️ React Core Concepts
           </h2>
           <ul className="space-y-3 pl-10">
+            <li className="hover:translate-x-1 transition-transform">
+              <Link
+                className="flex items-center gap-2 text-blue-300 hover:underline"
+                href="/react/basics"
+              >
+                <GalleryThumbnails size={18} />
+                React basics
+              </Link>
+            </li>
             <li className="hover:translate-x-1 transition-transform">
               <Link
                 className="flex items-center gap-2 text-blue-300 hover:underline"

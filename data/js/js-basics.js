@@ -12,12 +12,10 @@ export const jsBasicsExamples = [
   
   // 'const' is block-scoped and cannot be reassigned
   const z = 30;`,
-    usage: `(() => {
-    var x = 10;
-    let y = 20;
-    const z = 30;
-    return x + y + z; // Returns 60
-  })()`,
+    usage: `var x = 10;
+  let y = 20;
+  const z = 30;
+  const result = x + y + z; // Returns 60`,
     run: () => {
       var x = 10;
       let y = 20;
@@ -43,12 +41,10 @@ export const jsBasicsExamples = [
   
   // Object
   let obj = { name: "Alice", age: 25 };`,
-    usage: `(() => {
-    let str = "JS";
-    let num = 10;
-    let arr = [str, num];
-    return arr.join("-"); // "JS-10"
-  })()`,
+    usage: `let str = "JS";
+  let num = 10;
+  let arr = [str, num];
+  const result = arr.join("-"); // "JS-10"`,
     run: () => {
       let str = "JS";
       let num = 10;
@@ -67,10 +63,8 @@ export const jsBasicsExamples = [
   
   // Arrow function (ES6+)
   const greetArrow = (name) => "Hi " + name;`,
-    usage: `(() => {
-    const greetArrow = (name) => "Hi " + name;
-    return greetArrow("Bob"); // "Hi Bob"
-  })()`,
+    usage: `const greetArrow = (name) => "Hi " + name;
+  const result = greetArrow("Bob"); // "Hi Bob"`,
     run: () => {
       const greetArrow = (name) => "Hi " + name;
       return greetArrow("Bob");
@@ -88,10 +82,8 @@ export const jsBasicsExamples = [
   } else {
     console.log("Keep going");
   }`,
-    usage: `(() => {
-    let score = 75;
-    return score > 80 ? "Great" : "Keep going"; // "Keep going"
-  })()`,
+    usage: `let score = 75;
+  const result = score > 80 ? "Great" : "Keep going"; // "Keep going"`,
     run: () => {
       let score = 75;
       return score > 80 ? "Great" : "Keep going";
@@ -107,11 +99,10 @@ export const jsBasicsExamples = [
   numbers.forEach(num => {
     console.log(num);
   });`,
-    usage: `(() => {
-    let result = "";
-    [1, 2, 3].forEach(n => result += n); // Concatenates "123"
-    return result;
-  })()`,
+    usage: `let result = "";
+  [1, 2, 3].forEach(n => {
+    result += n;
+  }); // "123"`,
     run: () => {
       let result = "";
       [1, 2, 3].forEach((n) => (result += n));
@@ -126,13 +117,11 @@ export const jsBasicsExamples = [
   for (let i = 0; i < 3; i++) {
     console.log("i =", i);
   }`,
-    usage: `(() => {
-    let sum = 0;
-    for (let i = 0; i < 3; i++) {
-      sum += i; // 0 + 1 + 2 = 3
-    }
-    return sum;
-  })()`,
+    usage: `let sum = 0;
+  for (let i = 0; i < 3; i++) {
+    sum += i; // 0 + 1 + 2 = 3
+  }
+  const result = sum;`,
     run: () => {
       let sum = 0;
       for (let i = 0; i < 3; i++) {
