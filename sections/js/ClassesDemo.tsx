@@ -3,7 +3,7 @@
 import React from "react";
 
 import { ExampleBlock, SectionHeader } from "@/components/shared";
-import { classExamples } from "../../data/js/class-examples";
+import { classExamples } from "@/data/js/class-examples";
 
 export default function JSClassesDemo() {
   const [results, setResults] = React.useState<Record<string, any>>({});

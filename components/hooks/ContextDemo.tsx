@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import { hookData } from "@/data/hooks";
 import { ExampleBlock } from "../shared";
 
 const CountContext = React.createContext<number>(42);
@@ -14,6 +15,8 @@ function ContextChild() {
 }
 
 export function ContextDemo() {
+  const { sampleSnippet, visualReprezentation } = hookData.useContext;
+
   return (
     <>
       <ExampleBlock
@@ -25,6 +28,8 @@ const value = useContext(CountContext);`}
         usage={`Wrap a component tree in a Provider
 Access values from any child using useContext()`}
         result={`Context value: 42`}
+        sampleSnippet={sampleSnippet}
+        visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
         <CountContext.Provider value={42}>
