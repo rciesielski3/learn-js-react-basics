@@ -3,7 +3,7 @@
 import React from "react";
 
 import { ExampleBlock, SectionHeader } from "@/components/shared";
-import { reactBasicsExamples } from "@/data/react-basics";
+import { reactBasicsExamples } from "@/data/react/basics";
 
 export default function ReactBasics() {
   const [results, setResults] = React.useState<Record<string, string>>({});

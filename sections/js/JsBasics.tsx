@@ -2,8 +2,8 @@
 
 import React from "react";
 
-import { jsBasicsExamples } from "@/data/js/js-basics";
 import { ExampleBlock, SectionHeader } from "@/components/shared";
+import { jsBasicsExamples } from "@/data/js/basics";
 
 export default function JsBasics() {
   const [results, setResults] = React.useState<Record<string, string>>({});
