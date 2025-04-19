@@ -16,7 +16,7 @@ An interactive playground to explore and understand **core JavaScript concepts**
 
 | Topic                 | Path                              | Description                                                                     |
 | --------------------- | --------------------------------- | ------------------------------------------------------------------------------- |
-| basics                | `/sections/js/JsBasics.tsx`       | Introduces JavaScript fundamentals                                              |
+| Basics                | `/sections/js/JsBasics.tsx`       | Introduces JavaScript fundamentals                                              |
 | `this` keyword        | `/sections/js/ThisDemo.tsx`       | Compare how `this` behaves in different contexts (global, strict, arrow, class) |
 | Classes & Inheritance | `/sections/js/ClassesDemo.tsx`    | ES6 class syntax, prototypes, static/private fields                             |
 | Algorithms            | `/sections/js/AlgorithmsDemo.tsx` | Run and inspect classic and advanced algorithms                                 |
@@ -26,6 +26,7 @@ An interactive playground to explore and understand **core JavaScript concepts**
 
 | Topic            | Path                                             | Description                                                             |
 | ---------------- | ------------------------------------------------ | ----------------------------------------------------------------------- |
+| Basics           | `/sections/lifecycle/ReactBasics.tsx`            | Introduces React                                                        |
 | Lifecycle        | `/sections/lifecycle/LifecycleSection.tsx`       | Observe component mount/update/unmount patterns and logs                |
 | Virtual DOM      | `/sections/virtual-dom/VirtualDomSection.tsx`    | See how virtual DOM optimizes updates                                   |
 | Hooks Playground | `/sections/hooks/HooksSection.tsx`               | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
@@ -64,6 +65,7 @@ app/                  # Route-level grouping for JS and React examples
 │   └── ts-vs-js/
 │
 ├── react/            # React-focused pages
+│   ├── basics/
 │   ├── hooks/
 │   ├── lifecycle/
 │   ├── comparision/
@@ -75,6 +77,7 @@ sections/             # Feature views grouped by topic (JS, Hooks, Lifecycle, et
 │
 data/                 # 🔢 Static example data (code + visual breakdowns)
 │   ├── hooks/        # Data per React hook
+│   ├── react/        # Data for React basics
 │   └── js/           # Data for JS concept examples
 │
 shared/               # Shared utilities, types, UI blocks
