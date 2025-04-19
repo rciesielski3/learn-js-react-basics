@@ -3,7 +3,7 @@
 import React from "react";
 
 import { SectionHeader } from "@/components/shared";
-import { tsVsJsExamples } from "@/data/js/ts-vs-js";
+import { tsVsJsExamples } from "@/data/js/tsVsJs";
 
 export default function TypeComparison() {
   return (

@@ -1,4 +1,4 @@
-export const classExamples = [
+export const classesExamples = [
   {
     id: "animal",
     name: "Base Class: Animal",

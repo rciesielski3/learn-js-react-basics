@@ -3,14 +3,14 @@
 import React from "react";
 
 import { ExampleBlock, SectionHeader } from "@/components/shared";
-import { classExamples } from "@/data/js/class-examples";
+import { classesExamples } from "@/data/js/classes";
 
 export default function JSClassesDemo() {
   const [results, setResults] = React.useState<Record<string, any>>({});
 
   React.useEffect(() => {
     const newResults: Record<string, any> = {};
-    classExamples.forEach((ex) => {
+    classesExamples.forEach((ex) => {
       try {
         newResults[ex.id] = String(ex.run());
       } catch (err) {
@@ -28,7 +28,7 @@ export default function JSClassesDemo() {
           description="This page demonstrates class syntax, inheritance, overriding methods,
         static methods, and constructor functions with prototypes."
         />
-        {classExamples.map((example) => (
+        {classesExamples.map((example) => (
           <ExampleBlock
             key={example.id}
             {...example}
