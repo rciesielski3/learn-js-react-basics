@@ -3,7 +3,7 @@
 import React from "react";
 
 import { ExampleBlock, SectionHeader } from "@/components/shared";
-import { algorithmExamples } from "../../data/js/algorithms-examples";
+import { algorithmExamples } from "@/data/js/algorithms";
 
 export default function AlgorithmsDemo() {
   const [results, setResults] = React.useState<Record<string, string>>({});
