@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import { hookData } from "@/data/hooks";
 import { ExampleBlock } from "../shared";
 
 const reducer = (state: number, action: { type: "inc" | "dec" }) => {
@@ -18,6 +19,8 @@ const reducer = (state: number, action: { type: "inc" | "dec" }) => {
 export function ReducerDemo() {
   const [count, dispatch] = React.useReducer(reducer, 0);
 
+  const { sampleSnippet, visualReprezentation } = hookData.useReducer;
+
   return (
     <>
       <ExampleBlock
@@ -27,6 +30,8 @@ export function ReducerDemo() {
         code={`const [state, dispatch] = useReducer(reducer, initialState);`}
         usage={`Great for toggles, counters, or managing logic-heavy state updates\nDispatch actions like: dispatch({ type: 'inc' })`}
         result={`Reducer count: ${count}`}
+        sampleSnippet={sampleSnippet}
+        visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
         <p className="text-base text-gray-400 mb-2">
