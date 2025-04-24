@@ -1,5 +1,5 @@
-import JSBasics from "@/sections/js/JsBasics";
+import Basics from "@/sections/js/Basics";
 
-export default function JsBasicsPage() {
-  return <JSBasics />;
+export default function BasicsPage() {
+  return <Basics />;
 }
