@@ -108,4 +108,7 @@ Created with 💡 by [**Rafał Ciesielski**](https://github.com/rciesielski3)
 
 ## 📄 License
 
-Licensed under the MIT License.
+MIT License  
+Please credit if you reuse it in your own work 🙌
+
+[☕ buy coffee](https://buycoffee.to/adateo)
