@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { eventLoopExamples } from "@/data/js/eventLoop";
+
 import { SectionHeader, ExampleBlock } from "@/components/shared";
+import { eventLoopExamples } from "@/data/js/eventLoop";
 
 export default function EventLoop() {
   const [results, setResults] = React.useState<Record<string, string>>({});

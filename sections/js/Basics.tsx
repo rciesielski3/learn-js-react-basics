@@ -5,7 +5,7 @@ import React from "react";
 import { ExampleBlock, SectionHeader } from "@/components/shared";
 import { jsBasicsExamples } from "@/data/js/basics";
 
-export default function JsBasics() {
+export default function Basics() {
   const [results, setResults] = React.useState<Record<string, string>>({});
 
   React.useEffect(() => {

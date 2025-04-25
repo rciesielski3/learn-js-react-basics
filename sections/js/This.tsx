@@ -5,7 +5,7 @@ import React from "react";
 import { ExampleBlock } from "@/components/shared/ExampleBlock";
 import { thisExamples } from "@/data/js/thisKeyword";
 
-export default function JsThisPage() {
+export default function This() {
   const [results, setResults] = React.useState<Record<string, string>>({});
 
   React.useEffect(() => {

@@ -5,7 +5,7 @@ import React from "react";
 import { ExampleBlock, SectionHeader } from "@/components/shared";
 import { algorithmExamples } from "@/data/js/algorithms";
 
-export default function AlgorithmsDemo() {
+export default function Algorithms() {
   const [results, setResults] = React.useState<Record<string, string>>({});
 
   React.useEffect(() => {

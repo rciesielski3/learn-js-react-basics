@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { closuresExamples } from "@/data/js/closures";
-import { SectionHeader, ExampleBlock } from "@/components/shared";
 
-export default function JsClosures() {
+import { SectionHeader, ExampleBlock } from "@/components/shared";
+import { closuresExamples } from "@/data/js/closures";
+
+export default function Closures() {
   const [results, setResults] = React.useState<Record<string, string>>({});
 
   React.useEffect(() => {

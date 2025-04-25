@@ -1,5 +1,5 @@
-import ThisDemo from "@/sections/js/ThisDemo";
+import This from "@/sections/js/This";
 
-export default function JSThisPage() {
-  return <ThisDemo />;
+export default function ThisPage() {
+  return <This />;
 }

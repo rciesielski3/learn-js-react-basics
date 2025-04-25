@@ -5,11 +5,11 @@ import React from "react";
 import { ExampleBlock, SectionHeader } from "@/components/shared";
 import { classesExamples } from "@/data/js/classes";
 
-export default function JSClassesDemo() {
-  const [results, setResults] = React.useState<Record<string, any>>({});
+export default function Classes() {
+  const [results, setResults] = React.useState<Record<string, string>>({});
 
   React.useEffect(() => {
-    const newResults: Record<string, any> = {};
+    const newResults: Record<string, string> = {};
     classesExamples.forEach((ex) => {
       try {
         newResults[ex.id] = String(ex.run());
