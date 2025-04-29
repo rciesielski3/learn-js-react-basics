@@ -1,5 +1,5 @@
-import ClassesDemo from "@/sections/js/ClassesDemo";
+import Classes from "@/sections/js/Classes";
 
-export default function JSClassesPage() {
-  return <ClassesDemo />;
+export default function ClassesPage() {
+  return <Classes />;
 }

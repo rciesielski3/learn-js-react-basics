@@ -3,14 +3,14 @@
 import React from "react";
 
 import { SectionHeader, ExampleBlock } from "@/components/shared";
-import { closuresExamples } from "@/data/js/closures";
+import { eventLoopExamples } from "@/data/js/eventLoop";
 
-export default function Closures() {
+export default function EventLoop() {
   const [results, setResults] = React.useState<Record<string, string>>({});
 
   React.useEffect(() => {
     const newResults: Record<string, string> = {};
-    for (const ex of closuresExamples) {
+    for (const ex of eventLoopExamples) {
       try {
         const result = ex.run();
         newResults[ex.id] = String(result);
@@ -25,10 +25,10 @@ export default function Closures() {
     <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
       <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
-          title="🧠 Closures & Scope"
-          description="Closures are functions that 'remember' the environment in which they were created. Understanding closures and lexical scope is key to mastering JavaScript."
+          title="⏱️ Event Loop & Async"
+          description="JavaScript runs code synchronously, but it handles async operations using the event loop. Explore how the call stack, Web APIs, and task queues work together."
         />
-        {closuresExamples.map((example) => (
+        {eventLoopExamples.map((example) => (
           <ExampleBlock
             key={example.id}
             id={example.id}

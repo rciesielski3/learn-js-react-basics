@@ -1,16 +1,4 @@
-import Link from "next/link";
-import {
-  BookOpen,
-  Code,
-  Zap,
-  Repeat,
-  Cpu,
-  TerminalSquare,
-  Search,
-  Diff,
-  BadgeCheck,
-  GalleryThumbnails,
-} from "lucide-react";
+import Sidebar from "@/components/Sidebar";
 
 export default function HomePage() {
   return (
@@ -18,110 +6,14 @@ export default function HomePage() {
       <div className="p-8 max-w-4xl mx-auto">
         <div className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 p-6 rounded-lg shadow mb-8 text-center">
           <h1 className="text-4xl font-bold mb-2">
-            🚀 JS & React Fundamentals Lab
+            🚀 JavaScript & React Fundamentals Lab
           </h1>
           <p className="text-sm text-gray-200">
             A curated interactive space to explore, learn, and master the
             fundamentals of JavaScript and React.
           </p>
         </div>
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
-            📘 JavaScript Fundamentals
-          </h2>
-          <ul className="space-y-3 pl-10">
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/js/basics"
-              >
-                <BadgeCheck size={18} /> Java Scripts basics
-              </Link>
-            </li>
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/js/this"
-              >
-                <BookOpen size={18} /> Understanding <code>this</code> in JS
-              </Link>
-            </li>
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/js/classes"
-              >
-                <Code size={18} /> JS Classes & Inheritance
-              </Link>
-            </li>
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/js/algorithms"
-              >
-                <Zap size={18} /> Common JS Algorithms
-              </Link>
-            </li>
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/js/ts-vs-js"
-              >
-                <Diff size={18} /> JavaScript vs. TypeScript
-              </Link>
-            </li>
-          </ul>
-        </section>
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-4 text-green-400">
-            ⚛️ React Core Concepts
-          </h2>
-          <ul className="space-y-3 pl-10">
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/react/basics"
-              >
-                <GalleryThumbnails size={18} />
-                React basics
-              </Link>
-            </li>
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/react/hooks"
-              >
-                <Repeat size={18} />
-                Hook Demos
-              </Link>
-            </li>
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/react/comparison"
-              >
-                <Search size={18} />
-                Comparing Similar Hooks
-              </Link>
-            </li>
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/react/lifecycle"
-              >
-                <Cpu size={18} /> Lifecycle Demo
-              </Link>
-            </li>
-            <li className="hover:translate-x-1 transition-transform">
-              <Link
-                className="flex items-center gap-2 text-blue-300 hover:underline"
-                href="/react/virtual-dom"
-              >
-                <TerminalSquare size={18} /> Virtual DOM Visualizer
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <Sidebar />
       </div>
       <footer className="bg-gray-800 border-t border-gray-700 text-center text-sm text-gray-400 py-4 mt-auto">
         <p>

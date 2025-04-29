@@ -1,5 +1,5 @@
-import AlgorithmsDemo from "@/sections/js/AlgorithmsDemo";
+import Algorithms from "@/sections/js/Algorithms";
 
 export default function AlgorithmsPage() {
-  return <AlgorithmsDemo />;
+  return <Algorithms />;
 }
