@@ -1,6 +1,4 @@
-"use client";
-
-import ReactBasics from "@/sections/lifecycle/ReactBasics";
+import ReactBasics from "@/sections/react/ReactBasics";
 
 export default function ReactBasicsPage() {
   return <ReactBasics />;

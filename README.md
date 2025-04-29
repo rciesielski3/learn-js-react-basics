@@ -21,12 +21,14 @@ An interactive playground to explore and understand **core JavaScript concepts**
 | Classes & Inheritance | `/sections/js/ClassesDemo.tsx`    | ES6 class syntax, prototypes, static/private fields                             |
 | Algorithms            | `/sections/js/AlgorithmsDemo.tsx` | Run and inspect classic and advanced algorithms                                 |
 | JS vs TS Comparison   | `/sections/js/TypeComparison.tsx` | Side-by-side comparison between TypeScript and JavaScript                       |
+| Event Loop            | `/sections/js/EventLoop.tsx`      | Understand JavaScript concurrency and event queue                               |
 
 ### 🔸 React Fundamentals
 
 | Topic            | Path                                             | Description                                                             |
-| ---------------- | ------------------------------------------------ | ----------------------------------------------------------------------- |
+| ---------------- | ------------------------------------------------ | ----------------------------------------------------------------------- | --- |
 | Basics           | `/sections/lifecycle/ReactBasics.tsx`            | Introduces React                                                        |
+| State Management | `/sections/react/StateManagement.tsx`            | Concepts like `useState`, derived state, controlled inputs              |     |
 | Lifecycle        | `/sections/lifecycle/LifecycleSection.tsx`       | Observe component mount/update/unmount patterns and logs                |
 | Virtual DOM      | `/sections/virtual-dom/VirtualDomSection.tsx`    | See how virtual DOM optimizes updates                                   |
 | Hooks Playground | `/sections/hooks/HooksSection.tsx`               | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
@@ -58,25 +60,14 @@ npm run dev
 app/                  # Route-level grouping for JS and React examples
 │
 ├── js/               # JavaScript-focused pages
-│   ├── basics/
-│   ├── algorithms/
-│   ├── classes/
-│   ├── this/
-│   └── ts-vs-js/
 │
 ├── react/            # React-focused pages
-│   ├── basics/
-│   ├── hooks/
-│   ├── lifecycle/
-│   ├── comparision/
-│   └── virtual-dom/
 │
 components/           # UI components (hook demos, shared elements)
 │
 sections/             # Feature views grouped by topic (JS, Hooks, Lifecycle, etc.)
 │
 data/                 # 🔢 Static example data (code + visual breakdowns)
-│   ├── hooks/        # Data per React hook
 │   ├── react/        # Data for React basics
 │   └── js/           # Data for JS concept examples
 │

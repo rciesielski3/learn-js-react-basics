@@ -1,4 +1,4 @@
-import HooksSection from "@/sections/hooks/HooksSection";
+import HooksSection from "@/sections/react/hooks/HooksSection";
 
 export default function HooksSectionPage() {
   return <HooksSection />;
