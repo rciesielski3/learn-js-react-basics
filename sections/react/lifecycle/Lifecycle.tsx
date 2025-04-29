@@ -5,7 +5,7 @@ import React from "react";
 import { LogBox, SectionHeader, useLogger } from "@/components/shared";
 import { LifecycleChild } from "@/components/livecycle/LifecycleChild";
 
-export default function LifecycleSection() {
+export default function Lifecycle() {
   const [count, setCount] = React.useState(0);
   const [logs, setLogs] = React.useState<string[]>([]);
   const [showChild, setShowChild] = React.useState(true);

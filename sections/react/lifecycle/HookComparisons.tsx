@@ -11,7 +11,7 @@ import {
   StateVsReducer,
 } from "@/components/hooks";
 
-export default function HookComparisonsSection() {
+export default function HookComparisons() {
   const [logs, setLogs] = React.useState<string[]>([]);
   const log = useLogger(setLogs);
 
