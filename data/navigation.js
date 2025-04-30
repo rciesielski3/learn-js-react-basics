@@ -15,10 +15,11 @@ export const sidebarLinks = [
     title: "⚛️ React Core Concepts",
     items: [
       { label: "Basics", path: "/react/basics", icon: "🔶" },
+      { label: "State Architecture", path: "/react/state", icon: "🔼" },
       { label: "Hook Demos", path: "/react/hooks", icon: "🔁" },
       {
         label: "Comparing Similar Hooks",
-        path: "/react/hooks-compare",
+        path: "/react/comparison",
         icon: "🔍",
       },
       { label: "Lifecycle Demo", path: "/react/lifecycle", icon: "🧬" },
