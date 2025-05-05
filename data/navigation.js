@@ -18,6 +18,7 @@ export const sidebarLinks = [
       { label: "State Architecture", path: "/react/state", icon: "🔼" },
       { label: "React Context", path: "/react/context", icon: "🌐" },
       { label: "Composition", path: "/react/composition", icon: "🧩" },
+      { label: "UseRef", path: "/react/use-ref", icon: "📍" },
       { label: "Hook Demos", path: "/react/hooks", icon: "🔁" },
       {
         label: "Comparing Similar Hooks",
