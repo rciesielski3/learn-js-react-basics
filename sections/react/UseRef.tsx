@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useRefExamples } from "@/data/react/use-ref";
+import { useRefExamples } from "@/data/react/useRef";
 import { SectionHeader, ExampleBlock } from "@/components/shared";
 
 export default function UseRef() {
