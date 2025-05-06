@@ -1,5 +1,5 @@
-import HookComparisonsSection from "@/sections/react/lifecycle/HookComparisonsSection";
+import HookComparisons from "@/sections/react/HookComparisons";
 
-export default function HookComparisonsSectionPage() {
-  return <HookComparisonsSection />;
+export default function HookComparisonsPage() {
+  return <HookComparisons />;
 }

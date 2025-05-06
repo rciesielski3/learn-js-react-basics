@@ -1,5 +1,5 @@
-import LifecycleSection from "@/sections/react/lifecycle/Lifecycle";
+import Lifecycle from "@/sections/react/Lifecycle";
 
-export default function LifecycleSectionPage() {
-  return <LifecycleSection />;
+export default function LifecyclePage() {
+  return <Lifecycle />;
 }

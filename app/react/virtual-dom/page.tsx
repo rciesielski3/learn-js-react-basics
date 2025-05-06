@@ -1,7 +1,7 @@
 "use client";
 
-import VirtualDomSection from "@/sections/react/virtual-dom/VirtualDomSection";
+import VirtualDom from "@/sections/react/VirtualDom";
 
 export default function VirtualDomPage() {
-  return <VirtualDomSection />;
+  return <VirtualDom />;
 }
