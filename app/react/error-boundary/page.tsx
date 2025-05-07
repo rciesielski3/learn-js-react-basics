@@ -1,5 +1,5 @@
-import UseRef from "@/sections/react/UseRef";
+import ErrorBoundary from "@/sections/react/ErrorBoundary";
 
-export default function UseRefPage() {
-  return <UseRef />;
+export default function ErrorBoundaryPage() {
+  return <ErrorBoundary />;
 }
