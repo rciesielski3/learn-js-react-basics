@@ -19,11 +19,8 @@ export const sidebarLinks = [
       { label: "React Context", path: "/react/context", icon: "🌐" },
       { label: "Composition", path: "/react/composition", icon: "🧩" },
       { label: "UseRef", path: "/react/use-ref", icon: "📍" },
-      {
-        label: "React Suspense & Lazy Loading",
-        path: "/react/suspense",
-        icon: "⏳",
-      },
+      { label: "Suspense Examples", path: "/react/suspense", icon: "⏳" },
+      { label: "Error Boundary", path: "/react/error-boundary", icon: "🚨" },
       { label: "Hook Demos", path: "/react/hooks", icon: "🔁" },
       {
         label: "Comparing Similar Hooks",
