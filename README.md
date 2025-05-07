@@ -25,14 +25,19 @@ An interactive playground to explore and understand **core JavaScript concepts**
 
 ### 🔸 React Fundamentals
 
-| Topic            | Path                                             | Description                                                             |
-| ---------------- | ------------------------------------------------ | ----------------------------------------------------------------------- | --- |
-| Basics           | `/sections/lifecycle/ReactBasics.tsx`            | Introduces React                                                        |
-| State Management | `/sections/react/StateManagement.tsx`            | Concepts like `useState`, derived state, controlled inputs              |     |
-| Lifecycle        | `/sections/lifecycle/LifecycleSection.tsx`       | Observe component mount/update/unmount patterns and logs                |
-| Virtual DOM      | `/sections/virtual-dom/VirtualDomSection.tsx`    | See how virtual DOM optimizes updates                                   |
-| Hooks Playground | `/sections/hooks/HooksSection.tsx`               | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
-| Hook Comparisons | `/sections/lifecycle/HookComparisonsSection.tsx` | Visualize subtle differences (e.g., `useEffect` vs `useLayoutEffect`)   |
+| Topic                   | Path                                    | Description                                                             |
+| ----------------------- | --------------------------------------- | ----------------------------------------------------------------------- |
+| Basics                  | `/sections/react/ReactBasics.tsx`       | Introduces React                                                        |
+| State Management        | `/sections/react/StateManagement.tsx`   | Concepts like `useState`, derived state, controlled inputs              |
+| Component Composition   | `/sections/react/Composition.tsx`       | Composing components with children and slots                            |
+| Context API             | `/sections/react/ContextManagement.tsx` | Global state sharing with useContext and custom providers               |
+| useRef                  | `/sections/react/UseRef.tsx`            | Referencing DOM elements, storing persistent values, layout measurement |
+| Lifecycle               | `/sections/react/Lifecycle.tsx`         | Observe component mount/update/unmount patterns and logs                |
+| Suspense & Lazy Loading | `/sections/react/SuspenseExamples.tsx`  | Async components with React.lazy and Suspense fallback                  |
+| Error Boundaries        | `/sections/react/ErrorBoundary.tsx`     | Catch render errors using class components and fallback UI              |
+| Hook Comparisons        | `/sections/react/HookComparisons.tsx`   | Visualize subtle differences (e.g., `useEffect` vs `useLayoutEffect`)   |
+| Hooks Playground        | `/sections/hooks/Hooks.tsx`             | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
+| Virtual DOM             | `/sections/virtual-dom/VirtualDom.tsx`  | See how virtual DOM optimizes updates                                   |
 
 ---
 
