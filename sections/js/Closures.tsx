@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { SectionHeader, ExampleBlock } from "@/components/shared";
-import { closuresExamples } from "@/data/js/closures";
+import { SectionHeader, ExampleBlock } from '@/components/shared';
+import { closuresExamples } from '@/data/js/closures';
 
 export default function Closures() {
   const [results, setResults] = React.useState<Record<string, string>>({});
@@ -15,7 +15,7 @@ export default function Closures() {
         const result = ex.run();
         newResults[ex.id] = String(result);
       } catch (err) {
-        newResults[ex.id] = "Error: " + (err as Error).message;
+        newResults[ex.id] = 'Error: ' + (err as Error).message;
       }
     }
     setResults(newResults);
@@ -25,7 +25,7 @@ export default function Closures() {
     <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
       <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
-          title="🧠 Closures & Scope"
+          title="🚸 Closures & Scope"
           description="Closures are functions that 'remember' the environment in which they were created. Understanding closures and lexical scope is key to mastering JavaScript."
         />
         {closuresExamples.map((example) => (
