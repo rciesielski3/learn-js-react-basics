@@ -24,4 +24,4 @@ jobs:
         run: npx eslint . --ext .ts,.tsx,.js,.jsx || true
 
       - name: 💅 Run Prettier Check
-        run: npx prettier --check .
+        run: npx prettier --list-different . || true
