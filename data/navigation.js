@@ -7,7 +7,7 @@ export const sidebarLinks = [
       { label: 'JS Classes & Inheritance', path: '/js/classes', icon: '👑' },
       { label: 'Common JS Algorithms', path: '/js/algorithms', icon: '⚡' },
       { label: 'JavaScript vs TypeScript', path: '/js/js-vs-ts', icon: '🆚' },
-      { label: 'Closures & Scope', path: '/js/closures', icon: '🧠' },
+      { label: 'Closures & Scope', path: '/js/closures', icon: '🚸' },
       { label: 'Event Loop & Async', path: '/js/event-loop', icon: '⏱️' }
     ]
   },
@@ -15,6 +15,7 @@ export const sidebarLinks = [
     title: '⚛️ React Core Concepts',
     items: [
       { label: 'Basics', path: '/react/basics', icon: '🔶' },
+      { label: 'Architecture', path: '/react/architecture', icon: '🧠' },
       { label: 'State Architecture', path: '/react/state', icon: '🔼' },
       { label: 'React Context', path: '/react/context', icon: '🌐' },
       { label: 'Composition', path: '/react/composition', icon: '🧩' },
