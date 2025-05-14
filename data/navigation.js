@@ -41,8 +41,8 @@ export const sidebarLinks = [
     title: '⚡ Next.js Fundamentals',
     items: [
       { label: 'Overview', path: '/nextjs/overview', icon: '📘' },
-      { label: 'Rendering & Hydration', path: '/nextjs/rendering', icon: '🧩' }
-      // { label: 'Routing (App vs Pages)', path: '/nextjs/routing', icon: '🗂️' },
+      { label: 'Rendering & Hydration', path: '/nextjs/rendering', icon: '🧩' },
+      { label: 'Routing (App vs Pages)', path: '/nextjs/routing', icon: '🗂️' }
       // { label: 'Caching & Revalidation', path: '/nextjs/caching', icon: '🗃️' },
       // { label: 'Server Components', path: '/nextjs/server-components', icon: '🧱' },
       // { label: 'Server Actions', path: '/nextjs/server-actions', icon: '🛰️' },
