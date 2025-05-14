@@ -39,6 +39,18 @@ An interactive playground to explore and understand **core JavaScript concepts**
 | Hooks Playground        | `/sections/hooks/Hooks.tsx`             | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
 | Virtual DOM             | `/sections/virtual-dom/VirtualDom.tsx`  | See how virtual DOM optimizes updates                                   |
 
+### 🟩 Next.js Fundamentals
+
+| Topic                   | Path                                    | Description                                                               |
+| ----------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
+| Overview                | `/sections/nextjs/Overview.tsx`         | Intro to Next.js vs React, features like routing, caching, SSR, hydration |
+| Rendering & Hydration   | `/sections/nextjs/Rendering.tsx`        | Covers SSR, CSR, SSG, ISR, hydration flow                                 |
+| Routing (App vs Pages)  | `/sections/nextjs/Routing.tsx`          | Differences between App Router and Pages Router                           |
+| Caching & Revalidation  | `/sections/nextjs/Caching.tsx`          | Static caching, revalidation, and ISR                                     |
+| Server Components       | `/sections/nextjs/ServerComponents.tsx` | Render React components fully on the server                               |
+| Server Actions          | `/sections/nextjs/ServerActions.tsx`    | Server-side mutation handling without client roundtrips                   |
+| Optimization Techniques | `/sections/nextjs/Optimization.tsx`     | Built-in Next.js optimization like image, fonts, and script loading       |
+
 ---
 
 ## 🚀 Getting Started
@@ -68,12 +80,15 @@ app/                  # Route-level grouping for JS and React examples
 │
 ├── react/            # React-focused pages
 │
+├── nextjs/           # Next.js-focused pages
+│
 components/           # UI components (hook demos, shared elements)
 │
 sections/             # Feature views grouped by topic (JS, Hooks, Lifecycle, etc.)
 │
 data/                 # 🔢 Static example data (code + visual breakdowns)
 │   ├── react/        # Data for React basics
+│   ├── nextjs/       # Data for Nextjs basics
 │   └── js/           # Data for JS concept examples
 │
 shared/               # Shared utilities, types, UI blocks
