@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import { SectionHeader, ExampleBlock } from '@/components/shared';
 import { routingExamples } from '@/data/nextjs/routing';
 
