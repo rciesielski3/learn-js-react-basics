@@ -10,7 +10,7 @@ export default function RenderingStrategies() {
     <div className="flex justify-center items-center min-h-screen p-6 bg-gray-800 text-white">
       <div className="max-w-3xl p-6 bg-gray-700 rounded border border-gray-500">
         <SectionHeader
-          title="🧩 Next.js Rendering Strategies"
+          title="🧩 Next.js - Rendering Strategies"
           description="Understand CSR, SSR, SSG, ISR and how hydration connects them to interactive UI."
         />
         {renderingExamples.map((ex) => (

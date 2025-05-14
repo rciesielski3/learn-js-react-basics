@@ -9,7 +9,7 @@ export default function Routing() {
     <div className="flex justify-center items-center min-h-screen p-6 bg-gray-800 text-white">
       <div className="max-w-3xl p-6 bg-gray-700 border border-gray-500 rounded">
         <SectionHeader
-          title="🗂️ Next.js Routing"
+          title="🗂️ Next.js - Routing"
           description="Understand Pages vs App Router, dynamic routes, nesting, layouts, and key differences in behavior."
         />
         {routingExamples.map((ex) => (
