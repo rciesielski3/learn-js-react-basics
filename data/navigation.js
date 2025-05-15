@@ -44,8 +44,8 @@ export const sidebarLinks = [
       { label: 'Rendering & Hydration', path: '/nextjs/rendering', icon: '🧩' },
       { label: 'Routing (App vs Pages)', path: '/nextjs/routing', icon: '🗂️' },
       { label: 'Caching & Revalidation', path: '/nextjs/caching', icon: '🗃️' },
-      { label: 'Server Components', path: '/nextjs/server-components', icon: '🧱' }
-      // { label: 'Server Actions', path: '/nextjs/server-actions', icon: '🛰️' },
+      { label: 'Server Components', path: '/nextjs/server-components', icon: '🧱' },
+      { label: 'Server Actions', path: '/nextjs/server-actions', icon: '🛰️' }
       // { label: 'Optimization', path: '/nextjs/optimization', icon: '⚙️' }
     ]
   }
