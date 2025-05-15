@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { SectionHeader, ExampleBlock } from '@/components/shared';
+import { SectionHeader } from '@/components/shared';
 import { nextOverviewTopics } from '@/data/nextjs/overview';
 
 export default function NextOverview() {
