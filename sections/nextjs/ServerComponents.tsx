@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { SectionHeader, ExampleBlock } from '@/components/shared';
-import { serverComponentExamples } from '@/data/nextjs/server-components';
+import { serverComponentExamples } from '@/data/nextjs/serverComponents';
 
 export default function ServerComponents() {
   return (
