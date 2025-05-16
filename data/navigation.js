@@ -46,7 +46,8 @@ export const sidebarLinks = [
       { label: 'Caching & Revalidation', path: '/nextjs/caching', icon: '🗃️' },
       { label: 'Server Components', path: '/nextjs/server-components', icon: '🧱' },
       { label: 'Server Actions', path: '/nextjs/server-actions', icon: '🛰️' },
-      { label: 'Optimization', path: '/nextjs/optimization', icon: '⚙️' }
+      { label: 'Optimization', path: '/nextjs/optimization', icon: '⚙️' },
+      { label: 'Summary', path: '/nextjs/summary', icon: '🔄' }
     ]
   }
 ];
