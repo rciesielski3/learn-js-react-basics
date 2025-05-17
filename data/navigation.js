@@ -5,6 +5,7 @@ export const sidebarLinks = [
       { label: 'Basics', path: '/js/basics', icon: '⚙️' },
       { label: 'Understanding this', path: '/js/this', icon: '📖' },
       { label: 'JS Classes & Inheritance', path: '/js/classes', icon: '👑' },
+      { label: 'Object-Oriented', path: '/js/object-oriented', icon: '📦' },
       { label: 'Common JS Algorithms', path: '/js/algorithms', icon: '⚡' },
       { label: 'JavaScript vs TypeScript', path: '/js/js-vs-ts', icon: '🆚' },
       { label: 'Closures & Scope', path: '/js/closures', icon: '🚸' },
