@@ -43,7 +43,7 @@ export default function Sidebar() {
                   <li key={item.path}>
                     <Link
                       href={item.path}
-                      className="flex items-center gap-2 hover:text-blue-400 hover:scale-110 transition-colors"
+                      className="flex items-center gap-2 hover:text-blue-400 hover:scale-105 transition-colors"
                     >
                       <span>{item.icon}</span>
                       <span>{item.label}</span>
