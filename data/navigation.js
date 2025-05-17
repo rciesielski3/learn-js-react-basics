@@ -29,6 +29,11 @@ export const sidebarLinks = [
         path: '/react/comparison',
         icon: '🔍'
       },
+      {
+        label: 'Performance',
+        path: '/react/performance',
+        icon: '🔋'
+      },
       { label: 'Lifecycle Demo', path: '/react/lifecycle', icon: '🧬' },
       {
         label: 'Virtual DOM Visualizer',
