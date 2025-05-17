@@ -47,6 +47,7 @@ export const sidebarLinks = [
       { label: 'Server Components', path: '/nextjs/server-components', icon: '🧱' },
       { label: 'Server Actions', path: '/nextjs/server-actions', icon: '🛰️' },
       { label: 'Optimization', path: '/nextjs/optimization', icon: '⚙️' },
+      { label: 'Middleware', path: '/nextjs/middleware', icon: '🗼' },
       { label: 'Next.js vs React Summary', path: '/nextjs/summary', icon: '🔄' }
     ]
   }
