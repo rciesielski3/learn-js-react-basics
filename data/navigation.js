@@ -39,6 +39,11 @@ export const sidebarLinks = [
         label: 'Virtual DOM Visualizer',
         path: '/react/virtual-dom',
         icon: '🧠'
+      },
+      {
+        label: 'React DevTools',
+        path: '/react/devtools',
+        icon: '🛠️'
       }
     ]
   },
