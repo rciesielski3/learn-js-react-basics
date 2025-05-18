@@ -9,14 +9,14 @@ export default function MainNav() {
       <div className="flex flex-wrap justify-center gap-4">
         <Link
           href="/glossary"
-          className="bg-purple-600 hover:bg-purple-700 hover:scale-105 text-white p-2 rounded shadow"
+          className="bg-purple-600 hover:bg-purple-700 hover:scale-105 text-white p-2 rounded font-bold"
         >
           📚 Glossary
         </Link>
 
         <Link
-          href="/"
-          className="bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white p-2 rounded shadow"
+          href="/quiz"
+          className="bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white p-2 rounded font-bold"
         >
           🧠 Quiz
         </Link>
