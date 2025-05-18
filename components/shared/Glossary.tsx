@@ -18,7 +18,6 @@ export default function Glossary() {
   const [activeTab, setActiveTab] = React.useState<Category>('javascript');
 
   return (
-    // <div className="flex justify-center items-start min-h-screen p-6 bg-gray-900 text-white">
     <div className="flex items-center justify-center min-h-screen p-6 bg-gray-900 text-white">
       <div className="max-w-3xl w-full bg-gray-800 p-6 rounded border border-gray-700 text-shadow-md">
         <SectionHeader
