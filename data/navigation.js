@@ -3,12 +3,14 @@ export const sidebarLinks = [
     title: '📘 JavaScript Fundamentals',
     items: [
       { label: 'Basics', path: '/js/basics', icon: '⚙️' },
+      { label: 'Functional', path: '/js/functional', icon: '➕' },
       { label: 'Understanding this', path: '/js/this', icon: '📖' },
       { label: 'JS Classes & Inheritance', path: '/js/classes', icon: '👑' },
       { label: 'Common JS Algorithms', path: '/js/algorithms', icon: '⚡' },
-      { label: 'JavaScript vs TypeScript', path: '/js/js-vs-ts', icon: '🆚' },
+      { label: 'Object-Oriented', path: '/js/object-oriented', icon: '📦' },
+      { label: 'Event Loop & Async', path: '/js/event-loop', icon: '⏱️' },
       { label: 'Closures & Scope', path: '/js/closures', icon: '🚸' },
-      { label: 'Event Loop & Async', path: '/js/event-loop', icon: '⏱️' }
+      { label: 'JavaScript vs TypeScript', path: '/js/js-vs-ts', icon: '🆚' }
     ]
   },
   {
