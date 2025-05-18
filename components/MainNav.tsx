@@ -15,7 +15,7 @@ export default function MainNav() {
         </Link>
 
         <Link
-          href="/quiz"
+          href="/"
           className="bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white p-2 rounded shadow"
         >
           🧠 Quiz
