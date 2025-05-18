@@ -1,10 +1,11 @@
+import MainNav from '@/components/MainNav';
 import Sidebar from '@/components/Sidebar';
 
 export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col justify-between bg-gray-900 text-white">
       <div className="p-8 max-w-4xl mx-auto">
-        <div className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 p-6 rounded-lg shadow mb-8 text-center">
+        <div className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 p-6 rounded-t-lg shadow text-center">
           <h1 className="text-3xl font-bold mb-2">
             🚀 JavaScript, React & Next.js Fundamentals Lab
           </h1>
@@ -13,6 +14,7 @@ export default function HomePage() {
             React and Next.js.
           </p>
         </div>
+        <MainNav />
         <Sidebar />
       </div>
       <footer className="bg-gray-800 border-t border-gray-700 text-center text-sm text-gray-400 py-4 mt-auto">
