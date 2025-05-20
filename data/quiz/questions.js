@@ -369,5 +369,45 @@ export const quizQuestions = [
     question: 'Which of the following prevents re-renders in child components?',
     options: ['useEffect', 'React.memo', 'useRef', 'Suspense'],
     answer: 'React.memo'
+  },
+  {
+    question: 'What is a key benefit of using TypeScript in React projects?',
+    options: [
+      'Improves SEO',
+      'Adds runtime performance',
+      'Enables type safety and autocompletion',
+      'Eliminates all bugs'
+    ],
+    answer: 'Enables type safety and autocompletion'
+  },
+  {
+    question: 'Which lifecycle method is replaced by useEffect in functional components?',
+    options: [
+      'componentWillMount',
+      'componentDidMount',
+      'shouldComponentUpdate',
+      'componentWillUnmount'
+    ],
+    answer: 'componentDidMount'
+  },
+  {
+    question: "What does the 'revalidate' property in getStaticProps do?",
+    options: [
+      'Disables caching',
+      'Re-fetches the page on every render',
+      'Enables Incremental Static Regeneration',
+      'Refreshes the client'
+    ],
+    answer: 'Enables Incremental Static Regeneration'
+  },
+  {
+    question: 'Which React hook lets you store a mutable value without causing re-renders?',
+    options: ['useMemo', 'useRef', 'useState', 'useCallback'],
+    answer: 'useRef'
+  },
+  {
+    question: 'How do you define a catch-all route in Next.js App Router?',
+    options: ['[...slug]', '[[slug]]', 'slug[]', '...slug'],
+    answer: '[...slug]'
   }
 ];
