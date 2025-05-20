@@ -284,5 +284,90 @@ export const quizQuestions = [
       'A state management library'
     ],
     answer: 'Nested elements/components passed into a component'
+  },
+  {
+    question: 'What is the purpose of useLayoutEffect in React?',
+    options: [
+      'Runs before rendering and before painting',
+      'Runs after painting',
+      'Only runs on unmount',
+      'Same as useEffect'
+    ],
+    answer: 'Runs before rendering and before painting'
+  },
+  {
+    question: 'Which hook is best for managing complex form state?',
+    options: ['useMemo', 'useRef', 'useReducer', 'useEffect'],
+    answer: 'useReducer'
+  },
+  {
+    question: "What does the 'children' prop allow in React?",
+    options: [
+      'Injecting text into HTML',
+      'Passing multiple props',
+      'Rendering nested components',
+      'Overriding component layout'
+    ],
+    answer: 'Rendering nested components'
+  },
+  {
+    question: 'Which of the following best describes a controlled component?',
+    options: [
+      'It stores state in a ref',
+      'It relies only on external props',
+      'It controls its own DOM manually',
+      'Its state is driven by React'
+    ],
+    answer: 'Its state is driven by React'
+  },
+  {
+    question: 'What’s the default HTTP method for a form using action in Next.js App Router?',
+    options: ['POST', 'PUT', 'GET', 'PATCH'],
+    answer: 'POST'
+  },
+  {
+    question: 'How does getServerSideProps differ from getStaticProps?',
+    options: [
+      'getServerSideProps runs once at build time',
+      'getServerSideProps fetches data per request',
+      'They are identical',
+      'getStaticProps is slower'
+    ],
+    answer: 'getServerSideProps fetches data per request'
+  },
+  {
+    question: 'What is the role of Suspense in React?',
+    options: [
+      'To pause rendering until data or code is ready',
+      'To cancel requests',
+      'To unmount components on error',
+      'To log performance'
+    ],
+    answer: 'To pause rendering until data or code is ready'
+  },
+  {
+    question: "Which statement about 'useEffect' is FALSE?",
+    options: [
+      'It can return a cleanup function',
+      'It runs synchronously after render',
+      'It is useful for fetching data',
+      'It can depend on props and state'
+    ],
+    answer: 'It runs synchronously after render'
+  },
+  {
+    question: 'What does the dynamic route file name [id].tsx enable in Next.js?',
+    options: [
+      'Dynamic layout switching',
+      'Nested client components',
+      'Route parameters for pages',
+      'Global routing configuration'
+    ],
+    answer: 'Route parameters for pages'
+  },
+  {
+    question: 'Which of the following prevents re-renders in child components?',
+    options: ['useEffect', 'React.memo', 'useRef', 'Suspense'],
+    answer: 'React.memo'
   }
 ];
