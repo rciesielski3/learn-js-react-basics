@@ -7,7 +7,7 @@ import { quizQuestions } from '@/data/quiz/questions';
 
 import { QuizQuestion } from './types';
 
-const getRandomQuestions = (count = 10): QuizQuestion[] => {
+const getRandomQuestions = (count = 8): QuizQuestion[] => {
   return [...quizQuestions]
     .filter((q): q is QuizQuestion => q !== undefined)
     .sort(() => Math.random() - 0.5)
