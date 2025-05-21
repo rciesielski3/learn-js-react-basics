@@ -1,10 +1,10 @@
-import { useStateData } from "@/data/hooks/useState";
-import { ExampleHookData } from "../../components/shared/types";
-import { useContextData } from "@/data/hooks/useContext";
-import { useMemoData } from "@/data/hooks/useMemo";
-import { useReducerData } from "@/data/hooks/useReducer";
-import { useCallbackData } from "@/data/hooks/useCallback";
-import { useTransitionData } from "@/data/hooks/useTransition";
+import { useStateData } from '@/data/react/hooks/useState';
+import { ExampleHookData } from '@/components/shared/types';
+import { useContextData } from '@/data/react/hooks/useContext';
+import { useMemoData } from '@/data/react/hooks/useMemo';
+import { useReducerData } from '@/data/react/hooks/useReducer';
+import { useCallbackData } from '@/data/react/hooks/useCallback';
+import { useTransitionData } from '@/data/react/hooks/useTransition';
 
 export const hookData: Record<string, ExampleHookData> = {
   useState: useStateData,
@@ -12,5 +12,5 @@ export const hookData: Record<string, ExampleHookData> = {
   useMemo: useMemoData,
   useReducer: useReducerData,
   useCallback: useCallbackData,
-  useTransition: useTransitionData,
+  useTransition: useTransitionData
 };
