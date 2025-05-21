@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { hookData } from "@/data/hooks";
-import { ExampleBlock } from "../shared";
+import { ExampleBlock } from '@/components/shared';
+import { hookData } from '@/data/react/hooks';
 
-const reducer = (state: number, action: { type: "inc" | "dec" }) => {
+const reducer = (state: number, action: { type: 'inc' | 'dec' }) => {
   switch (action.type) {
-    case "inc":
+    case 'inc':
       return state + 1;
-    case "dec":
+    case 'dec':
       return state - 1;
     default:
       return state;
@@ -39,13 +39,13 @@ export function ReducerDemo() {
         </p>
         <div className="flex gap-2">
           <button
-            onClick={() => dispatch({ type: "dec" })}
+            onClick={() => dispatch({ type: 'dec' })}
             className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105"
           >
             Decrement
           </button>
           <button
-            onClick={() => dispatch({ type: "inc" })}
+            onClick={() => dispatch({ type: 'inc' })}
             className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
           >
             Increment

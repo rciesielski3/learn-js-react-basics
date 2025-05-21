@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { ExampleModal } from "./ExampleModal";
-import { Props } from "./types";
+import { ExampleModal } from './ExampleModal';
+import { Props } from './types';
 
 export function ExampleBlock({
   name,
@@ -10,7 +10,7 @@ export function ExampleBlock({
   usage,
   result,
   sampleSnippet,
-  visualReprezentation,
+  visualReprezentation
 }: Props) {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -19,9 +19,7 @@ export function ExampleBlock({
   return (
     <div className="bg-gray-800 p-4 rounded mb-6 relative">
       <h2 className="font-semibold text-lg mb-2">{name}</h2>
-      {description && (
-        <p className="text-sm text-orange-500 mb-2">ℹ️ {description}</p>
-      )}
+      {description && <p className="text-sm text-orange-500 mb-2">ℹ️ {description}</p>}
 
       <div className="mb-2">
         <span className="text-sm font-medium text-gray-400">Code block:</span>
@@ -31,9 +29,7 @@ export function ExampleBlock({
       </div>
 
       <div className="mb-2">
-        <span className="text-sm font-medium text-gray-400">
-          Example usage:
-        </span>
+        <span className="text-sm font-medium text-gray-400">Example usage:</span>
         <pre className="bg-gray-700 text-blue-300 p-2 rounded text-sm">
           <code>{usage}</code>
         </pre>
@@ -42,7 +38,7 @@ export function ExampleBlock({
       <div>
         <span className="text-sm font-medium text-gray-400">Output:</span>
         <pre className="bg-gray-900 text-yellow-300 p-2 rounded text-sm">
-          <code>{result ?? "..."}</code>
+          <code>{result ?? '...'}</code>
         </pre>
       </div>
 

@@ -38,6 +38,8 @@ An interactive playground to explore and understand **core JavaScript concepts**
 | Hook Comparisons        | `/sections/react/HookComparisons.tsx`   | Visualize subtle differences (e.g., `useEffect` vs `useLayoutEffect`)   |
 | Hooks Playground        | `/sections/hooks/Hooks.tsx`             | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
 | Virtual DOM             | `/sections/virtual-dom/VirtualDom.tsx`  | See how virtual DOM optimizes updates                                   |
+| Glossary                | `/sections/glossary/Glossary.tsx`       | Interactive glossary for terms used across JS/React/Next topics         |
+| Quiz                    | `/sections/quiz/Quiz.tsx`               | 10-question quiz with instant feedback and summary breakdown            |
 
 ### 🟩 Next.js Fundamentals
 
@@ -50,6 +52,55 @@ An interactive playground to explore and understand **core JavaScript concepts**
 | Server Components       | `/sections/nextjs/ServerComponents.tsx` | Render React components fully on the server                               |
 | Server Actions          | `/sections/nextjs/ServerActions.tsx`    | Server-side mutation handling without client roundtrips                   |
 | Optimization Techniques | `/sections/nextjs/Optimization.tsx`     | Built-in Next.js optimization like image, fonts, and script loading       |
+
+---
+
+## 📁 Project Structure
+
+```
+app/                  # Route-level grouping for JS and React examples
+│
+├── js/               # JavaScript-focused pages
+│
+├── react/            # React-focused pages
+│
+├── nextjs/           # Next.js-focused pages
+│
+├── glossary/         # Interactive glossary component and data
+├── quiz/             # Quiz logic and question display
+│
+components/           # UI components (hook demos, shared elements)
+│
+sections/             # Feature views grouped by topic (JS, Hooks, Lifecycle, etc.)
+│
+data/                 # Static example data (code + visual breakdowns)
+│   ├── react/        # Data for React basics
+│   ├── nextjs/       # Data for Nextjs basics
+│   ├── js/           # Data for JS concept examples
+│   ├── glossary      # Glossary for JS, React and Nextjs
+│   └── navigation    # Main Page navigation elements
+│
+shared/               # Shared utilities, types, UI blocks
+public/               # Static assets
+```
+
+---
+
+## 🎯 Bonus Features
+
+### 🧩 Glossary
+
+A quick-access glossary of essential terms and concepts used across the platform. Hover or click terms to reveal concise explanations. Ideal for beginners or quick review.
+
+### 🧠 Quiz Mode
+
+Test your understanding with a dynamic quiz mode! Each session presents:
+
+- 10 randomized multiple-choice questions
+- Immediate feedback per question
+- End-of-quiz summary with correct/incorrect stats
+
+Great for reinforcing concepts interactively.
 
 ---
 
@@ -68,32 +119,6 @@ npm run dev
 ```
 
 > ⚠️ Requires **Node.js ≥ 18** and **npm ≥ 9**
-
----
-
-## 📁 Project Structure
-
-```
-app/                  # Route-level grouping for JS and React examples
-│
-├── js/               # JavaScript-focused pages
-│
-├── react/            # React-focused pages
-│
-├── nextjs/           # Next.js-focused pages
-│
-components/           # UI components (hook demos, shared elements)
-│
-sections/             # Feature views grouped by topic (JS, Hooks, Lifecycle, etc.)
-│
-data/                 # 🔢 Static example data (code + visual breakdowns)
-│   ├── react/        # Data for React basics
-│   ├── nextjs/       # Data for Nextjs basics
-│   └── js/           # Data for JS concept examples
-│
-shared/               # Shared utilities, types, UI blocks
-public/               # Static assets
-```
 
 ---
 

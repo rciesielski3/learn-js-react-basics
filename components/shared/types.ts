@@ -33,10 +33,16 @@ export type SectionHeaderProps = {
   description?: string;
 };
 
-type TooltipPosition = "top" | "bottom" | "left" | "right";
+type TooltipPosition = 'top' | 'bottom' | 'left' | 'right';
 
 export type TooltipProps = {
   children: React.ReactNode;
   content: React.ReactNode;
   position?: TooltipPosition;
+};
+
+export type QuizQuestion = {
+  question: string;
+  options: string[];
+  answer: string;
 };
