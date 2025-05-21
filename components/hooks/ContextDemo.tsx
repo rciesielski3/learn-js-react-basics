@@ -1,17 +1,15 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { hookData } from "@/data/hooks";
-import { ExampleBlock } from "../shared";
+import { hookData } from '@/data/react/hooks';
+import { ExampleBlock } from '../shared';
 
 const CountContext = React.createContext<number>(42);
 
 function ContextChild() {
   const value = React.useContext(CountContext);
-  return (
-    <p className="text-sm text-yellow-300">Accessed from context: {value}</p>
-  );
+  return <p className="text-sm text-yellow-300">Accessed from context: {value}</p>;
 }
 
 export function ContextDemo() {

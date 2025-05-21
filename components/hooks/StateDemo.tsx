@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { hookData } from "@/data/hooks";
-import { ExampleBlock } from "../shared";
+import { hookData } from '@/data/react/hooks';
+import { ExampleBlock } from '../shared';
 
 export function StateDemo() {
   const [value, setValue] = React.useState(0);
@@ -24,9 +24,7 @@ Each change triggers a re-render`}
         visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
-        <p className="text-base text-gray-400 mb-2">
-          🛠️ Change value using the buttons:
-        </p>
+        <p className="text-base text-gray-400 mb-2">🛠️ Change value using the buttons:</p>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setValue((v) => v - 1)}

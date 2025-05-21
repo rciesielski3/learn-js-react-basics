@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { hookData } from "@/data/hooks";
-import { ExampleBlock } from "../shared";
+import { hookData } from '@/data/react/hooks';
+import { ExampleBlock } from '../shared';
 
 export function CallbackDemo() {
   const [count, setCount] = React.useState(0);

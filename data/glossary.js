@@ -1,5 +1,3 @@
-// data/glossary.js
-
 export const glossary = {
   javascript: [
     {
