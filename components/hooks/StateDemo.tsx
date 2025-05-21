@@ -2,8 +2,8 @@
 
 import React from 'react';
 
+import { ExampleBlock } from '@/components/shared';
 import { hookData } from '@/data/react/hooks';
-import { ExampleBlock } from '../shared';
 
 export function StateDemo() {
   const [value, setValue] = React.useState(0);

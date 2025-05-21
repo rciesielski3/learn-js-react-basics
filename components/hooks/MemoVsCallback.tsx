@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { InfoBox, Tooltip } from "@/components/shared";
+import { InfoBox, Tooltip } from '@/components/shared';
 
 type Props = {
   log: (msg: string) => void;
@@ -34,18 +34,12 @@ useCallback(() => handler(), [deps]);`}
       <div className="flex gap-4">
         <div className="w-full sm:w-1/2 border border-yellow-400 rounded p-4">
           <p className="text-yellow-300 font-semibold">useMemo</p>
-          <p className="text-white">
-            Memoized Value (count × 2): {memoizedValue}
-          </p>
+          <p className="text-white">Memoized Value (count × 2): {memoizedValue}</p>
         </div>
         <div className="w-full sm:w-1/2 border border-cyan-400 rounded p-4">
           <p className="text-cyan-300 font-semibold">useCallback</p>
-          <p className="text-white text-sm">
-            Call logs show memoized function usage
-          </p>
-          <p className="text-sm text-gray-400 mt-2">
-            Unrelated State: {otherState}
-          </p>
+          <p className="text-white text-sm">Call logs show memoized function usage</p>
+          <p className="text-sm text-gray-400 mt-2">Unrelated State: {otherState}</p>
         </div>
       </div>
 
@@ -78,17 +72,14 @@ useCallback(() => handler(), [deps]);`}
                   <b>useMemo</b> avoids recalculation unless deps change.
                 </li>
                 <li>
-                  <b>useCallback</b> avoids function recreation unless deps
-                  change.
+                  <b>useCallback</b> avoids function recreation unless deps change.
                 </li>
               </ul>
             </div>
           }
           position="right"
         >
-          <span className="text-gray-300 hover:text-white cursor-help text-lg">
-            ℹ️
-          </span>
+          <span className="text-gray-300 hover:text-white cursor-help text-lg">ℹ️</span>
         </Tooltip>
       </div>
     </InfoBox>

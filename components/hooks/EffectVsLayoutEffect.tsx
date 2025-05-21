@@ -1,29 +1,25 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { InfoBox, Tooltip } from "@/components/shared";
+import { InfoBox, Tooltip } from '@/components/shared';
 
-export default function EffectVsLayoutEffect({
-  log,
-}: {
-  log: (msg: string) => void;
-}) {
+export default function EffectVsLayoutEffect({ log }: { log: (msg: string) => void }) {
   const [count, setCount] = React.useState(0);
-  const [effectBg, setEffectBg] = React.useState("transparent");
-  const [layoutBg, setLayoutBg] = React.useState("transparent");
+  const [effectBg, setEffectBg] = React.useState('transparent');
+  const [layoutBg, setLayoutBg] = React.useState('transparent');
 
   React.useLayoutEffect(() => {
-    setLayoutBg("lightblue");
+    setLayoutBg('lightblue');
     log(`[useLayoutEffect] Ran for count = ${count}`);
-    const timeout = setTimeout(() => setLayoutBg("transparent"), 100);
+    const timeout = setTimeout(() => setLayoutBg('transparent'), 100);
     return () => clearTimeout(timeout);
   }, [count, log]);
 
   React.useEffect(() => {
-    setEffectBg("yellow");
+    setEffectBg('yellow');
     log(`[useEffect] Ran for count = ${count}`);
-    const timeout = setTimeout(() => setEffectBg("transparent"), 100);
+    const timeout = setTimeout(() => setEffectBg('transparent'), 100);
     return () => clearTimeout(timeout);
   }, [count, log]);
 
@@ -34,9 +30,7 @@ export default function EffectVsLayoutEffect({
       code={`useLayoutEffect(() => { ... }, [deps]);
 useEffect(() => { ... }, [deps]);`}
     >
-      <div className="text-sm font-medium text-gray-400 mb-1">
-        Visual Comparison:
-      </div>
+      <div className="text-sm font-medium text-gray-400 mb-1">Visual Comparison:</div>
       <div className="flex gap-4 ">
         <div
           style={{ backgroundColor: effectBg }}
@@ -68,22 +62,18 @@ useEffect(() => { ... }, [deps]);`}
               <p>🧠 On click:</p>
               <ul className="list-disc list-inside ml-2 mt-1">
                 <li>
-                  <b>useLayoutEffect</b> runs first: blue flash happens before
-                  paint
+                  <b>useLayoutEffect</b> runs first: blue flash happens before paint
                 </li>
                 <li>Then the browser paints the DOM</li>
                 <li>
-                  <b>useEffect</b> runs after paint: yellow flash may cause
-                  flicker
+                  <b>useEffect</b> runs after paint: yellow flash may cause flicker
                 </li>
               </ul>
             </div>
           }
           position="right"
         >
-          <span className="text-gray-300 hover:text-white cursor-help text-lg">
-            ℹ️
-          </span>
+          <span className="text-gray-300 hover:text-white cursor-help text-lg">ℹ️</span>
         </Tooltip>
       </div>
     </InfoBox>

@@ -2,8 +2,8 @@
 
 import React from 'react';
 
+import { ExampleBlock } from '@/components/shared';
 import { hookData } from '@/data/react/hooks';
-import { ExampleBlock } from '../shared';
 
 const CountContext = React.createContext<number>(42);
 

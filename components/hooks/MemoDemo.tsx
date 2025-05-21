@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import { hookData } from '@/data/react/hooks';
 import { ExampleBlock } from '@/components/shared';
+import { hookData } from '@/data/react/hooks';
 
 export function MemoDemo() {
   const [a, setA] = React.useState(1);

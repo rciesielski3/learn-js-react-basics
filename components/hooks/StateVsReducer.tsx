@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { InfoBox, Tooltip } from "@/components/shared";
+import { InfoBox, Tooltip } from '@/components/shared';
 
 type Props = {
   log: (msg: string) => void;
@@ -11,17 +11,13 @@ type Props = {
 export default function StateVsReducer({ log }: Props) {
   const [stateValue, setStateValue] = React.useState(0);
   const [reducerValue, dispatch] = React.useReducer(
-    (state: number, action: { type: "inc" | "dec" }) =>
-      action.type === "inc" ? state + 1 : state - 1,
+    (state: number, action: { type: 'inc' | 'dec' }) =>
+      action.type === 'inc' ? state + 1 : state - 1,
     0
   );
 
-  const [pendingStateLog, setPendingStateLog] = React.useState<string | null>(
-    null
-  );
-  const [pendingReducerLog, setPendingReducerLog] = React.useState<
-    string | null
-  >(null);
+  const [pendingStateLog, setPendingStateLog] = React.useState<string | null>(null);
+  const [pendingReducerLog, setPendingReducerLog] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     if (pendingStateLog) {
@@ -77,7 +73,7 @@ const [value, dispatch] = useReducer(reducer, 0);`}
         </button>
         <button
           onClick={() => {
-            dispatch({ type: "dec" });
+            dispatch({ type: 'dec' });
             setPendingReducerLog(`[useReducer] dispatch({ type: "dec" })`);
           }}
           className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105"
@@ -86,7 +82,7 @@ const [value, dispatch] = useReducer(reducer, 0);`}
         </button>
         <button
           onClick={() => {
-            dispatch({ type: "inc" });
+            dispatch({ type: 'inc' });
             setPendingReducerLog(`[useReducer] dispatch({ type: "inc" })`);
           }}
           className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
@@ -102,17 +98,14 @@ const [value, dispatch] = useReducer(reducer, 0);`}
                   <b>useState</b> is simpler and great for isolated values.
                 </li>
                 <li>
-                  <b>useReducer</b> is better for complex or interrelated state
-                  logic.
+                  <b>useReducer</b> is better for complex or interrelated state logic.
                 </li>
               </ul>
             </div>
           }
           position="right"
         >
-          <span className="text-gray-300 hover:text-white cursor-help text-lg">
-            ℹ️
-          </span>
+          <span className="text-gray-300 hover:text-white cursor-help text-lg">ℹ️</span>
         </Tooltip>
       </div>
     </InfoBox>
