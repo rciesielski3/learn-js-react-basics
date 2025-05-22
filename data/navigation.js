@@ -25,6 +25,7 @@ export const sidebarLinks = [
       { label: 'Suspense Examples', path: '/react/suspense', icon: '⏳' },
       { label: 'Error Boundary', path: '/react/error-boundary', icon: '🚨' },
       { label: 'Portals', path: '/react/portals', icon: '🌀' },
+      { label: 'Reconciliation & Key Prop', path: '/react/reconciliation', icon: '🔑' },
       { label: 'Hook Demos', path: '/react/hooks', icon: '🔁' },
       {
         label: 'Comparing Similar Hooks',
