@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { glossary } from '@/data/glossary';
+import { glossary } from '@/data/navElements/glossary';
 import { SectionHeader } from '@/components/shared';
 
 const categories = ['javascript', 'react', 'nextjs'] as const;
