@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { SectionHeader } from '@/components/shared';
-import { flashcards } from '@/data/flashcards';
+import { flashcards } from '@/data/navElements/flashcards';
 
 export default function Flashcards() {
   const [current, setCurrent] = React.useState(0);
