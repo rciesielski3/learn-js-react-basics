@@ -33,7 +33,7 @@ export default function Sidebar() {
             <div className="min-w-[180px]">
               <button
                 onClick={() => toggleSection(index)}
-                className="w-full text-left font-bold text-lg hover:text-blue-400 transition-colors flex justify-between items-center"
+                className="w-full hover:scale-105 text-left font-bold text-lg hover:text-blue-400 transition-colors flex justify-between items-center"
               >
                 <span>{section.title}</span>
                 <span className={`ml-2 ${animate}`}>{arrow}</span>
@@ -47,12 +47,11 @@ export default function Sidebar() {
               <ul className="space-y-1">
                 {section.items.map((item) => (
                   <li key={item.path}>
-                    <Link
-                      href={item.path}
-                      className="flex items-center gap-2 hover:text-blue-400 hover:scale-105 transition-colors"
-                    >
+                    <Link href={item.path} className="flex items-center gap-2 transition-colors">
                       <span>{item.icon}</span>
-                      <span>{item.label}</span>
+                      <span className="hover:text-blue-400 hover:scale-105 hover:font-semibold">
+                        {item.label}
+                      </span>
                     </Link>
                   </li>
                 ))}

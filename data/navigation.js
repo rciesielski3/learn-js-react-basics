@@ -63,6 +63,7 @@ export const sidebarLinks = [
       { label: 'Middleware', path: '/nextjs/middleware', icon: '🗼' },
       { label: 'Metadata API', path: '/nextjs/metadata', icon: '🔖' },
       { label: 'Deploy & Monitor', path: '/nextjs/deploy-monitor', icon: '🚀' },
+      { label: 'Authentication', path: '/nextjs/authentication', icon: '🔐' },
       { label: 'Next.js vs React Summary', path: '/nextjs/summary', icon: '🔄' }
     ]
   }
