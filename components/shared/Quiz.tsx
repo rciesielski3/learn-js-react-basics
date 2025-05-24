@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { SectionHeader } from '@/components/shared';
-import { quizQuestions } from '@/data/quiz/questions';
+import { quizQuestions } from '@/data/navElements/questions';
 
 import { QuizQuestion } from './types';
 
