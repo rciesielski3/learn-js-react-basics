@@ -264,7 +264,6 @@ export const quizQuestions = [
     ],
     answer: 'componentDidMount'
   },
-  ,
   {
     question: "What does \"'dynamic = 'force-dynamic' \" do in Next.js?",
     options: [

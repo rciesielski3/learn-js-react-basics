@@ -9,18 +9,26 @@ export default function Flashcards() {
   const [current, setCurrent] = React.useState(0);
   const [showAnswer, setShowAnswer] = React.useState(false);
 
-  const card = quizQuestions[current];
+  const card = quizQuestions[current] ?? null;
 
   const next = () => {
     setShowAnswer(false);
     setCurrent((prev) => (prev + 1) % quizQuestions.length);
   };
 
+  if (!card) {
+    return (
+      <div className="flex items-center justify-center min-h-screen text-white">
+        <p>❌ No flashcard available.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-900 text-white">
       <div className="mt-6 p-6 w-full max-w-xl mx-auto border border-gray-600 bg-gray-800 rounded-lg text-center">
         <SectionHeader
-          title="📚 Interview Prep"
+          title="🧾 Interview Prep"
           description="Quick flashcards to help you review core concepts in JavaScript, React and Next.js."
         />
         <div className=" text-white bg-gray-900 border border-gray-700 p-4 gap-4">
