@@ -3,17 +3,17 @@
 import React from 'react';
 
 import { SectionHeader } from '@/components/shared';
-import { flashcards } from '@/data/navElements/flashcards';
+import { quizQuestions } from '@/data/navElements/questions';
 
 export default function Flashcards() {
   const [current, setCurrent] = React.useState(0);
   const [showAnswer, setShowAnswer] = React.useState(false);
 
-  const card = flashcards[current];
+  const card = quizQuestions[current];
 
   const next = () => {
     setShowAnswer(false);
-    setCurrent((prev) => (prev + 1) % flashcards.length);
+    setCurrent((prev) => (prev + 1) % quizQuestions.length);
   };
 
   return (
