@@ -409,5 +409,195 @@ export const quizQuestions = [
     question: 'How do you define a catch-all route in Next.js App Router?',
     options: ['[...slug]', '[[slug]]', 'slug[]', '...slug'],
     answer: '[...slug]'
+  },
+  {
+    question: 'What is the purpose of the "key" prop in React lists?',
+    options: [
+      'To uniquely identify elements for reconciliation',
+      'To style list items',
+      'To bind event handlers',
+      'To create unique IDs'
+    ],
+    answer: 'To uniquely identify elements for reconciliation'
+  },
+  {
+    question: 'What does the "use client" directive do in Next.js?',
+    options: [
+      'Converts a server component to a client component',
+      'Enables server-side rendering',
+      'Caches the component on the server',
+      'Disables hydration'
+    ],
+    answer: 'Converts a server component to a client component'
+  },
+  {
+    question: 'What is the purpose of the "useCallback" hook in React?',
+    options: [
+      'To memoize functions to prevent re-creation',
+      'To store mutable values',
+      'To fetch data',
+      'To create new components'
+    ],
+    answer: 'To memoize functions to prevent re-creation'
+  },
+  {
+    question: 'Which of the following is NOT a valid way to define a React component?',
+    options: ['Function declaration', 'Arrow function', 'Class declaration', 'Object literal'],
+    answer: 'Object literal'
+  },
+  {
+    question: 'What is the purpose of the "useMemo" hook in React?',
+    options: [
+      'To memoize values to prevent re-computation',
+      'To store mutable values',
+      'To fetch data',
+      'To create new components'
+    ],
+    answer: 'To memoize values to prevent re-computation'
+  },
+  {
+    question: 'What does the "getInitialProps" method do in Next.js?',
+    options: [
+      'Fetches data at build time',
+      'Fetches data on every request',
+      'Caches data for later use',
+      'Defines static routes'
+    ],
+    answer: 'Fetches data on every request'
+  },
+  {
+    question: 'Which of the following is a valid way to define a React component?',
+    options: ['Function declaration', 'Arrow function', 'Class declaration', 'All of the above'],
+    answer: 'All of the above'
+  },
+  {
+    question: 'What is the purpose of the "useReducer" hook in React?',
+    options: [
+      'To manage complex state logic',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To manage complex state logic'
+  },
+  {
+    question: 'What does the "getStaticPaths" method do in Next.js?',
+    options: [
+      'Defines static routes for pages',
+      'Fetches data at build time',
+      'Generates dynamic routes',
+      'Caches data for later use'
+    ],
+    answer: 'Generates dynamic routes'
+  },
+  {
+    question: 'What is the purpose of the "useContext" hook in React?',
+    options: [
+      'To access global state',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To access global state'
+  },
+  {
+    question: 'What does the "getStaticProps" method do in Next.js?',
+    options: [
+      'Fetches data at build time',
+      'Fetches data on every request',
+      'Caches data for later use',
+      'Defines static routes'
+    ],
+    answer: 'Fetches data at build time'
+  },
+  {
+    question: 'What is the purpose of the "useLayoutEffect" hook in React?',
+    options: [
+      'To run effects synchronously after DOM mutations',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To run effects synchronously after DOM mutations'
+  },
+  {
+    question: 'What does the "getServerSideProps" method do in Next.js?',
+    options: [
+      'Fetches data at build time',
+      'Fetches data on every request',
+      'Caches data for later use',
+      'Defines static routes'
+    ],
+    answer: 'Fetches data on every request'
+  },
+  {
+    question: 'What is the purpose of the "useImperativeHandle" hook in React?',
+    options: [
+      'To customize the instance value exposed by a ref',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To customize the instance value exposed by a ref'
+  },
+  {
+    question: 'What is the purpose of the "useDebugValue" hook in React?',
+    options: [
+      'To display a label for custom hooks in React DevTools',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To display a label for custom hooks in React DevTools'
+  },
+  {
+    question: 'What is the purpose of the "useTransition" hook in React?',
+    options: [
+      'To manage concurrent rendering',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To manage concurrent rendering'
+  },
+  {
+    question: 'What is the purpose of the "useDeferredValue" hook in React?',
+    options: [
+      'To defer updates to a value until the next render',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To defer updates to a value until the next render'
+  },
+  {
+    question: 'What is the purpose of the "useId" hook in React?',
+    options: [
+      'To generate unique IDs for components',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To generate unique IDs for components'
+  },
+  {
+    question: 'What is the purpose of the "useSyncExternalStore" hook in React?',
+    options: [
+      'To subscribe to external stores and synchronize state',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To subscribe to external stores and synchronize state'
+  },
+  {
+    question: 'What is the purpose of the "useInsertionEffect" hook in React?',
+    options: [
+      'To perform side effects before DOM mutations',
+      'To fetch data',
+      'To store mutable values',
+      'To create new components'
+    ],
+    answer: 'To perform side effects before DOM mutations'
   }
 ];
