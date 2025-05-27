@@ -11,6 +11,7 @@ export const sidebarLinks = [
       { label: 'Promises & Async/Await', path: '/js/promises', icon: '🕊️' },
       { label: 'Event Loop & Async', path: '/js/event-loop', icon: '⏱️' },
       { label: 'Closures & Scope', path: '/js/closures', icon: '🚸' },
+      { label: 'Modules & Import/Export', path: '/js/modules', icon: '📥' },
       { label: 'JavaScript vs TypeScript', path: '/js/js-vs-ts', icon: '🆚' }
     ]
   },
@@ -26,6 +27,7 @@ export const sidebarLinks = [
       { label: 'Suspense Examples', path: '/react/suspense', icon: '⏳' },
       { label: 'Error Boundary', path: '/react/error-boundary', icon: '🚨' },
       { label: 'Portals', path: '/react/portals', icon: '🌀' },
+      { label: 'Controlled vs Uncontrolled', path: '/react/controlled', icon: '🎛️' },
       { label: 'Hook Demos', path: '/react/hooks', icon: '🔁' },
       {
         label: 'Comparing Similar Hooks',
@@ -63,6 +65,7 @@ export const sidebarLinks = [
       { label: 'Middleware', path: '/nextjs/middleware', icon: '🗼' },
       { label: 'Metadata API', path: '/nextjs/metadata', icon: '🔖' },
       { label: 'Deploy & Monitor', path: '/nextjs/deploy-monitor', icon: '🚀' },
+      { label: 'Authentication', path: '/nextjs/authentication', icon: '🔐' },
       { label: 'Next.js vs React Summary', path: '/nextjs/summary', icon: '🔄' }
     ]
   }
