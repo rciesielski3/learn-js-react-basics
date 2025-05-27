@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { SectionHeader, ExampleBlock } from "@/components/shared";
-import { eventLoopExamples } from "@/data/js/eventLoop";
+import { SectionHeader, ExampleBlock } from '@/components/shared';
+import { eventLoopExamples } from '@/data/js/eventLoop';
 
 export default function EventLoop() {
   const [results, setResults] = React.useState<Record<string, string>>({});
@@ -15,7 +15,7 @@ export default function EventLoop() {
         const result = ex.run();
         newResults[ex.id] = String(result);
       } catch (err) {
-        newResults[ex.id] = "Error: " + (err as Error).message;
+        newResults[ex.id] = 'Error: ' + (err as Error).message;
       }
     }
     setResults(newResults);

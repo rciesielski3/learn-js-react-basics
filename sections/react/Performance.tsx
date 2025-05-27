@@ -22,8 +22,8 @@ export default function Performance() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800 text-white">
-      <div className="max-w-3xl w-full p-6 bg-gray-700 border border-gray-600 rounded">
+    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
+      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
           title="🔋 React Performance Optimization"
           description="Learn to optimize React apps using memoization, preventing re-renders, and avoiding unnecessary calculations."

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { useRefExamples } from "@/data/react/useRef";
-import { SectionHeader, ExampleBlock } from "@/components/shared";
+import { useRefExamples } from '@/data/react/useRef';
+import { SectionHeader, ExampleBlock } from '@/components/shared';
 
 export default function UseRef() {
   const [results, setResults] = React.useState<Record<string, string>>({});
@@ -13,9 +13,9 @@ export default function UseRef() {
     for (const ex of useRefExamples) {
       try {
         const result = ex.run?.();
-        newResults[ex.id] = String(result ?? "N/A");
+        newResults[ex.id] = String(result ?? 'N/A');
       } catch (err) {
-        newResults[ex.id] = "Error: " + (err as Error).message;
+        newResults[ex.id] = 'Error: ' + (err as Error).message;
       }
     }
     setResults(newResults);

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { ExampleBlock, SectionHeader } from "@/components/shared";
-import { reactBasicsExamples } from "@/data/react/basics";
+import { ExampleBlock, SectionHeader } from '@/components/shared';
+import { reactBasicsExamples } from '@/data/react/basics';
 
 export default function ReactBasics() {
   const [results, setResults] = React.useState<Record<string, string>>({});
@@ -13,9 +13,9 @@ export default function ReactBasics() {
     for (const ex of reactBasicsExamples) {
       try {
         const result = ex.run?.();
-        newResults[ex.id] = String(result ?? "N/A");
+        newResults[ex.id] = String(result ?? 'N/A');
       } catch (err) {
-        newResults[ex.id] = "Error: " + (err as Error).message;
+        newResults[ex.id] = 'Error: ' + (err as Error).message;
       }
     }
     setResults(newResults);

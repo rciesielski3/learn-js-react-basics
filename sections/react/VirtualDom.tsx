@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { SectionHeader } from "@/components/shared";
+import { SectionHeader } from '@/components/shared';
 
 export default function VirtualDomSection() {
-  const [text, setText] = React.useState("Text entered above will appear here");
+  const [text, setText] = React.useState('Text entered above will appear here');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -13,7 +13,7 @@ export default function VirtualDomSection() {
 
   return (
     <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
-      <div className="text-white max-w-3xl mx-auto p-6 border border-gray-400 bg-gray-700 rounded">
+      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
           title="⚛️ Virtual DOM Visualizer"
           description="This demo shows how React efficiently re-renders only the part of the DOM that changes. Type below to see real-time updates."

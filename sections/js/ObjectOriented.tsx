@@ -22,8 +22,8 @@ export default function JsObjectOriented() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800 text-white">
-      <div className="max-w-3xl w-full p-6 bg-gray-700 border border-gray-600 rounded">
+    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
+      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
           title="📦 Object-Oriented JavaScript"
           description="Learn how JavaScript supports object-oriented programming with classes, prototypes, constructors, and inheritance."
