@@ -12,7 +12,8 @@ export const sidebarLinks = [
       { label: 'Event Loop & Async', path: '/js/event-loop', icon: '⏱️' },
       { label: 'Closures & Scope', path: '/js/closures', icon: '🚸' },
       { label: 'Modules & Import/Export', path: '/js/modules', icon: '📥' },
-      { label: 'JavaScript vs TypeScript', path: '/js/js-vs-ts', icon: '🆚' }
+      { label: 'JavaScript vs TypeScript', path: '/js/js-vs-ts', icon: '🆚' },
+      { label: 'JS, JSX, TS, and TSX Explained', path: '/js/types-explanation', icon: '📄' }
     ]
   },
   {
