@@ -41,3 +41,30 @@ function Hello({ name }: Props) {
 export default Hello;`
   }
 ];
+
+export const fileComparison = [
+  {
+    ext: '.js',
+    jsxSupport: 'No',
+    typeCheck: 'No',
+    useCase: 'Plain JavaScript'
+  },
+  {
+    ext: '.jsx',
+    jsxSupport: 'Yes',
+    typeCheck: 'No',
+    useCase: 'React with JS'
+  },
+  {
+    ext: '.ts',
+    jsxSupport: 'No',
+    typeCheck: 'Yes',
+    useCase: 'TypeScript without JSX'
+  },
+  {
+    ext: '.tsx',
+    jsxSupport: 'Yes',
+    typeCheck: 'Yes',
+    useCase: 'React with TypeScript'
+  }
+];
