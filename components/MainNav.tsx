@@ -27,7 +27,7 @@ export default function MainNav() {
         >
           🧠 Quiz
         </Link>
-        <p className="text-white p-2 rounded font-bold bg-zinc-900 coursor-not-allowed">
+        <p className="text-white p-2 rounded font-bold bg-zinc-900">
           👁️ Visitors:{' '}
           <span className="text-blue-500 font-semibold">
             {count !== null ? count : 'Loading...'}
