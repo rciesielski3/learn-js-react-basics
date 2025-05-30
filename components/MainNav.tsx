@@ -13,7 +13,12 @@ export default function MainNav() {
         >
           📚 Glossary
         </Link>
-
+        <Link
+          href="/flashcards"
+          className="bg-green-600 hover:bg-green-700 hover:scale-105 text-white p-2 rounded font-bold"
+        >
+          🧾 Flashcards
+        </Link>
         <Link
           href="/quiz"
           className="bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white p-2 rounded font-bold"
