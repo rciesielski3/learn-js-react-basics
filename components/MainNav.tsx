@@ -25,6 +25,13 @@ export default function MainNav() {
         >
           🧠 Quiz
         </Link>
+        <Link
+          href="https://buycoffee.to/adateo"
+          target="_blank"
+          className="bg-gray-700 hover:bg-gray-900 hover:scale-105 text-white p-2 rounded font-bold"
+        >
+          ☕ Buy Me a Coffee
+        </Link>
       </div>
     </div>
   );
