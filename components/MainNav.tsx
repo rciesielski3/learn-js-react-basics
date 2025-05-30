@@ -4,10 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function MainNav() {
-  const handleBuyCoffee = () => {
-    window.open('https://buycoffee.to/adateo', '_blank');
-  };
-
   return (
     <div className="w-full py-2 px-4 border-t border-b rounded-b-lg border-gray-700 bg-gray-800 text-center">
       <div className="flex flex-wrap justify-center gap-4">
