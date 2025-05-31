@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { ExampleBlock, SectionHeader } from "@/components/shared";
-import { classesExamples } from "@/data/js/classes";
+import { ExampleBlock, SectionHeader } from '@/components/shared';
+import { classesExamples } from '@/data/js/classes';
 
 export default function Classes() {
   const [results, setResults] = React.useState<Record<string, string>>({});
@@ -29,11 +29,7 @@ export default function Classes() {
         static methods, and constructor functions with prototypes."
         />
         {classesExamples.map((example) => (
-          <ExampleBlock
-            key={example.id}
-            {...example}
-            result={results[example.id]}
-          />
+          <ExampleBlock key={example.id} {...example} result={results[example.id]} />
         ))}
       </div>
     </div>

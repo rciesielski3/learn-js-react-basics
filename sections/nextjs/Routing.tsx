@@ -7,8 +7,8 @@ import { routingExamples } from '@/data/nextjs/routing';
 
 export default function Routing() {
   return (
-    <div className="flex justify-center items-center min-h-screen p-6 bg-gray-800 text-white">
-      <div className="max-w-3xl p-6 bg-gray-700 border border-gray-500 rounded">
+    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
+      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
           title="🗂️ Next.js - Routing"
           description="Understand Pages vs App Router, dynamic routes, nesting, layouts, and key differences in behavior."

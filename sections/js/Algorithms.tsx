@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { ExampleBlock, SectionHeader } from "@/components/shared";
-import { algorithmExamples } from "@/data/js/algorithms";
+import { ExampleBlock, SectionHeader } from '@/components/shared';
+import { algorithmExamples } from '@/data/js/algorithms';
 
 export default function Algorithms() {
   const [results, setResults] = React.useState<Record<string, string>>({});
@@ -15,7 +15,7 @@ export default function Algorithms() {
         const result = ex.run();
         newResults[ex.id] = String(result);
       } catch (err) {
-        newResults[ex.id] = "Error: " + (err as Error).message;
+        newResults[ex.id] = 'Error: ' + (err as Error).message;
       }
     }
     setResults(newResults);

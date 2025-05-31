@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { SectionHeader, LogBox, useLogger } from "@/components/shared";
+import { SectionHeader, LogBox, useLogger } from '@/components/shared';
 import {
   EffectVsLayoutEffect,
   MemoVsCallback,
   RefVsMemo,
   RefVsState,
-  StateVsReducer,
-} from "@/components/hooks";
+  StateVsReducer
+} from '@/components/hooks';
 
 export default function HookComparisons() {
   const [logs, setLogs] = React.useState<string[]>([]);
