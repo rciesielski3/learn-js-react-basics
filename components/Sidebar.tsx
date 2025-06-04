@@ -47,12 +47,9 @@ export default function Sidebar() {
               <ul className="space-y-1">
                 {section.items.map((item) => (
                   <li key={item.path}>
-                    <Link
-                      href={item.path}
-                      className="flex items-center gap-2 hover:text-blue-400 hover:scale-105 transition-colors"
-                    >
+                    <Link href={item.path} className="flex items-center gap-2  transition-colors">
                       <span>{item.icon}</span>
-                      <span>{item.label}</span>
+                      <span className="hover:text-blue-400 hover:scale-105">{item.label}</span>
                     </Link>
                   </li>
                 ))}
