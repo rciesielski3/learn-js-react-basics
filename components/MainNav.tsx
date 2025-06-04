@@ -3,9 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { useVisitorCount } from './hooks/useVisitorCount';
+
 export default function MainNav() {
+  const count = useVisitorCount();
   return (
-    <div className="w-full py-2 px-4 border-t border-b rounded-b-lg border-gray-700 bg-gray-800 text-center">
+    <div className="w-full py-2 px-4 border-t border-b rounded-b-lg border-gray-600 bg-gray-600 text-center">
       <div className="flex flex-wrap justify-center gap-4">
         <Link
           href="/glossary"
@@ -28,10 +31,16 @@ export default function MainNav() {
         <Link
           href="https://buycoffee.to/adateo"
           target="_blank"
-          className="bg-gray-700 hover:bg-gray-900 hover:scale-105 text-white p-2 rounded font-bold"
+          className="bg-indigo-700 hover:bg-indigo-900 hover:scale-105 text-white p-2 rounded font-bold"
         >
           ☕ Buy Me a Coffee
         </Link>
+        <p className="text-white p-2 rounded font-bold bg-gray-800">
+          👁️ Visitors:{' '}
+          <span className="text-blue-500 font-semibold">
+            {count !== null ? count : 'Loading...'}
+          </span>
+        </p>
       </div>
     </div>
   );
