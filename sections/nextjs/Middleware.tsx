@@ -7,8 +7,8 @@ import { middlewareExamples } from '@/data/nextjs/middleware';
 
 export default function Middleware() {
   return (
-    <div className="flex justify-center items-center min-h-screen p-6 bg-gray-800 text-white">
-      <div className="max-w-3xl p-6 bg-gray-700 border border-gray-500 rounded">
+    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
+      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
           title="🧱 Next.js Middleware"
           description="Middleware lets you run code before a request is completed. Use it for redirects, rewrites, headers, auth, and more."

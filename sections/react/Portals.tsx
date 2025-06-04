@@ -23,7 +23,7 @@ export default function Portals() {
 
   return (
     <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
-      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded text-white">
+      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
           title="🌀 React Portals"
           description="Portals let you render components into a DOM node outside the root hierarchy. Ideal for modals, popovers, and overlays."

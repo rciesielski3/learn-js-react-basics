@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { SectionHeader, ExampleBlock } from "@/components/shared";
-import { stateManagementExamples } from "@/data/react/stateManagement";
+import { SectionHeader, ExampleBlock } from '@/components/shared';
+import { stateManagementExamples } from '@/data/react/stateManagement';
 
 export default function StateManagement() {
   const [results, setResults] = React.useState<Record<string, string>>({});
@@ -13,9 +13,9 @@ export default function StateManagement() {
     for (const ex of stateManagementExamples) {
       try {
         const result = ex.run?.();
-        newResults[ex.id] = String(result ?? "N/A");
+        newResults[ex.id] = String(result ?? 'N/A');
       } catch (err) {
-        newResults[ex.id] = "Error: " + (err as Error).message;
+        newResults[ex.id] = 'Error: ' + (err as Error).message;
       }
     }
     setResults(newResults);

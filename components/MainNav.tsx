@@ -28,7 +28,14 @@ export default function MainNav() {
         >
           🧠 Quiz
         </Link>
-        <p className="text-white p-2 rounded font-bold bg-zinc-900">
+        <Link
+          href="https://buycoffee.to/adateo"
+          target="_blank"
+          className="bg-gray-700 hover:bg-gray-900 hover:scale-105 text-white p-2 rounded font-bold"
+        >
+          ☕ Buy Me a Coffee
+        </Link>
+        <p className="text-white p-2 rounded font-bold bg-neutral-600">
           👁️ Visitors:{' '}
           <span className="text-blue-500 font-semibold">
             {count !== null ? count : 'Loading...'}
