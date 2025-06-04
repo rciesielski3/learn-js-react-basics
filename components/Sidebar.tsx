@@ -19,7 +19,7 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="p-4 w-full bg-gray-900 text-white space-y-6">
+    <aside className="p-4 w-full bg-gray-900 text-white space-y-6 rounded-lg">
       {sidebarLinks.map((section, index) => {
         const isOpen = openIndex === index;
         const arrow = isOpen ? '⬇️' : '➡️';

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { ExampleBlock, SectionHeader } from "@/components/shared";
-import { jsBasicsExamples } from "@/data/js/basics";
+import { ExampleBlock, SectionHeader } from '@/components/shared';
+import { jsBasicsExamples } from '@/data/js/basics';
 
 export default function Basics() {
   const [results, setResults] = React.useState<Record<string, string>>({});
@@ -15,14 +15,14 @@ export default function Basics() {
         const result = ex.run();
         newResults[ex.id] = String(result);
       } catch (err) {
-        newResults[ex.id] = "Error: " + (err as Error).message;
+        newResults[ex.id] = 'Error: ' + (err as Error).message;
       }
     }
     setResults(newResults);
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
+    <div className="flex items-center justify-center min-h-screen p-6 bg-gradient-to-b from-gray-800 to-gray-500">
       <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
           title="📘 JavaScript Basics"

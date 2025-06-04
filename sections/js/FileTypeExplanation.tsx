@@ -7,7 +7,7 @@ import { fileExamples, fileComparison } from '@/data/js/fileTypes';
 
 export default function FileTypeExplanation() {
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800 text-white">
+    <div className="flex items-center justify-center min-h-screen p-6 bg-gradient-to-b from-gray-800 to-gray-500 text-white">
       <div className="mt-6 p-6 max-w-3xl mx-auto bg-gray-700 border border-gray-500 rounded">
         <SectionHeader
           title="📄 JS, JSX, TS, and TSX Explained"
