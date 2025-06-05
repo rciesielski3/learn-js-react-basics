@@ -19,5 +19,19 @@ module.exports = {
   theme: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-shadow': {
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
+        },
+        '.text-shadow-lg': {
+          textShadow: '3px 3px 5px rgba(0, 0, 0, 0.6)'
+        },
+        '.text-shadow-xl': {
+          textShadow: '3px 3px 5px rgba(0, 0, 0, 0.75)'
+        }
+      });
+    }
+  ]
 };
