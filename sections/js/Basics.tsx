@@ -25,7 +25,7 @@ export default function Basics() {
     <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
       <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
         <SectionHeader
-          title="📘 JavaScript Basics"
+          title="🔵 JavaScript Basics"
           description="Explore the fundamentals of JavaScript through examples covering variables, data types, functions, conditionals, and loops."
         />
         {jsBasicsExamples.map((example) => (

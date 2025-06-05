@@ -2,8 +2,8 @@ export const sidebarLinks = [
   {
     title: '📘 JavaScript Fundamentals',
     items: [
-      { label: 'Basics', path: '/js/basics', icon: '⚙️' },
-      { label: 'Functional', path: '/js/functional', icon: '➕' },
+      { label: 'Basics', path: '/js/basics', icon: '🔵' },
+      { label: 'Functional', path: '/js/functional', icon: '🔁' },
       { label: 'Understanding this', path: '/js/this', icon: '📖' },
       { label: 'JS Classes & Inheritance', path: '/js/classes', icon: '👑' },
       { label: 'Common JS Algorithms', path: '/js/algorithms', icon: '⚡' },
@@ -30,7 +30,7 @@ export const sidebarLinks = [
       { label: 'Portals', path: '/react/portals', icon: '🌀' },
       { label: 'Reconciliation & Key Prop', path: '/react/reconciliation', icon: '🔑' },
       { label: 'Controlled vs Uncontrolled', path: '/react/controlled', icon: '🎛️' },
-      { label: 'Hook Demos', path: '/react/hooks', icon: '🔁' },
+      { label: 'Hook Demos', path: '/react/hooks', icon: '❇️' },
       {
         label: 'Comparing Similar Hooks',
         path: '/react/comparison',
@@ -57,8 +57,8 @@ export const sidebarLinks = [
   {
     title: '⚡ Next.js Fundamentals',
     items: [
-      { label: 'Overview', path: '/nextjs/overview', icon: '📘' },
-      { label: 'Rendering & Hydration', path: '/nextjs/rendering', icon: '🧩' },
+      { label: 'Overview', path: '/nextjs/overview', icon: '🔲' },
+      { label: 'Rendering & Hydration', path: '/nextjs/rendering', icon: '💧' },
       { label: 'Routing (App vs Pages)', path: '/nextjs/routing', icon: '🗂️' },
       { label: 'Caching & Revalidation', path: '/nextjs/caching', icon: '🗃️' },
       { label: 'Server Components', path: '/nextjs/server-components', icon: '🧱' },
@@ -66,7 +66,7 @@ export const sidebarLinks = [
       { label: 'Optimization', path: '/nextjs/optimization', icon: '⚙️' },
       { label: 'Middleware', path: '/nextjs/middleware', icon: '🗼' },
       { label: 'Metadata API', path: '/nextjs/metadata', icon: '🔖' },
-      { label: 'Deploy & Monitor', path: '/nextjs/deploy-monitor', icon: '🚀' },
+      { label: 'Deploy & Monitor', path: '/nextjs/deploy-monitor', icon: '📊' },
       { label: 'Authentication', path: '/nextjs/authentication', icon: '🔐' },
       { label: 'Next.js vs React Summary', path: '/nextjs/summary', icon: '🔄' }
     ]
