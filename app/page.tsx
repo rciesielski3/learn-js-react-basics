@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col justify-between text-white bg-gradient-to-b from-gray-900 to-gray-500">
       <div className="p-8 max-w-4xl mx-auto">
-        <div className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 p-6 rounded-t-lg shadow text-center">
+        <div className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 p-6 rounded-t-lg shadow text-center text-shadow-xl">
           <h1 className="text-3xl font-bold mb-2">
             🚀 JavaScript, React & Next.js Fundamentals Lab
           </h1>

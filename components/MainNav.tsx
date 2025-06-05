@@ -12,30 +12,30 @@ export default function MainNav() {
       <div className="flex flex-wrap justify-center gap-4">
         <Link
           href="/glossary"
-          className="bg-purple-600 hover:bg-purple-700 hover:scale-105 text-white p-2 rounded font-bold"
+          className="bg-purple-600 hover:bg-purple-700 hover:scale-105 text-white p-2 rounded font-bold text-shadow-lg"
         >
           📚 Glossary
         </Link>
         <Link
           href="/flashcards"
-          className="bg-green-600 hover:bg-green-700 hover:scale-105 text-white p-2 rounded font-bold"
+          className="bg-green-600 hover:bg-green-700 hover:scale-105 text-white p-2 rounded font-bold text-shadow-lg"
         >
           🧾 Flashcards
         </Link>
         <Link
           href="/quiz"
-          className="bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white p-2 rounded font-bold"
+          className="bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white p-2 rounded font-bold text-shadow-lg"
         >
           🧠 Quiz
         </Link>
         <Link
           href="https://buycoffee.to/adateo"
           target="_blank"
-          className="bg-indigo-700 hover:bg-indigo-900 hover:scale-105 text-white p-2 rounded font-bold"
+          className="bg-indigo-700 hover:bg-indigo-900 hover:scale-105 text-white p-2 rounded font-bold text-shadow-lg"
         >
           ☕ Buy Me a Coffee
         </Link>
-        <p className="text-white p-2 rounded font-bold bg-gray-800">
+        <p className="text-white p-2 rounded font-bold bg-gray-800 text-shadow-lg">
           👁️ Visitors:{' '}
           <span className="text-blue-500 font-semibold">
             {count !== null ? count : 'Loading...'}
