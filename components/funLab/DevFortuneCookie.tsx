@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import { fortuneMessages } from '@/data/funLab/devFortuneCookie.js';
 
 export const DevFortuneCookie = () => {
