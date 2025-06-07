@@ -1,4 +1,5 @@
 import MainNav from '@/components/MainNav';
+import FunLab from '@/components/FunLab';
 import Sidebar from '@/components/Sidebar';
 
 export default function HomePage() {
@@ -15,7 +16,8 @@ export default function HomePage() {
           </p>
         </div>
         <MainNav />
-        <div className="pt-8">
+        <FunLab />
+        <div className="pt-5">
           <Sidebar />
         </div>
       </div>
