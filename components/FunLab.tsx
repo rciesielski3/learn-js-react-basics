@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+
 import { DevFortuneCookie } from './funLab/DevFortuneCookie';
+import { DebugPuzzle } from './funLab/DebugPuzzle';
 
 const features = [
   {
@@ -9,22 +11,28 @@ const features = [
     label: '🥠 Dev Fortune Cookie',
     description: 'Get a random JavaScript wisdom cookie.',
     component: <DevFortuneCookie />
+  },
+  {
+    id: 'debug',
+    label: '🧩 Debug Puzzle',
+    component: <DebugPuzzle />
   }
 ];
 
 export default function FunLab() {
-  const [active, setActive] = React.useState<string | null>(null);
+  const [active, setActive] = React.useState<string | null>('fortune');
+  const activeComponent = features.find((f) => f.id === active)?.component;
 
   return (
-    <div className="mt-5 bg-gray-900 rounded-lg p-6 shadow-lg">
-      <h2 className="text-xl font-bold text-white mb-4">🎮 FunLab Playground</h2>
-      <ul className="flex gap-4 border-b border-gray-600">
+    <div className="bg-teal-950 rounded-lg p-4 shadow-lg">
+      <h2 className="text-lg font-bold text-white mb-4">🎮 FunLab Playground</h2>
+      <ul className="flex gap-1 border-b border-gray-600">
         {features.map((f) => (
           <li key={f.id}>
             <button
-              className={`py-2 px-4 bg-slate-800 rounded-t-lg ${
+              className={`py-2 px-4 bg-slate-900 rounded-t-lg ${
                 active === f.id
-                  ? 'border-b-2 border-blue-500 text-blue-500'
+                  ? 'border-t-2 border-x-2 border-emerald-600 text-blue-500 bg-slate-700'
                   : 'text-gray-400 hover:text-white'
               }`}
               onClick={() => setActive(f.id)}
@@ -34,7 +42,9 @@ export default function FunLab() {
           </li>
         ))}
       </ul>
-      <div>{features.find((f) => f.id === active)?.component}</div>
+      <div className="-mt-0.5 border-2 border-emerald-600 rounded-b-lg bg-slate-600 px-4 py-6">
+        {activeComponent}
+      </div>
     </div>
   );
 }
