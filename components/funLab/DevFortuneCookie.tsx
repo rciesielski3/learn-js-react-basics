@@ -13,15 +13,15 @@ export const DevFortuneCookie = () => {
   };
 
   return (
-    <div className="rounded-xl bg-yellow-900 p-4 text-center shadow mt-6">
+    <div className="rounded-xl bg-gray-700 p-4 text-center">
       <p className="mb-2 font-medium text-lg">🥠 Dev Fortune Cookie</p>
       <button
         onClick={getRandomFortune}
-        className="bg-yellow-600 px-4 py-1 rounded hover:bg-yellow-700"
+        className="p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105 font-bold"
       >
         Crack a Cookie
       </button>
-      {fortune && <p className="mt-3 italic">“{fortune}”</p>}
+      {fortune && <p className="mt-3 italic text-orange-600">“{fortune}”</p>}
     </div>
   );
 };
