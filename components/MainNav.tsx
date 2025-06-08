@@ -5,8 +5,15 @@ import Link from 'next/link';
 
 import { useVisitorCount } from './hooks/useVisitorCount';
 
-export default function MainNav() {
+export default function MainNavMainNav({
+  showFunLab,
+  setShowFunLab
+}: {
+  showFunLab: boolean;
+  setShowFunLab: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const count = useVisitorCount();
+
   return (
     <div className="w-full py-2 px-4 border-t border-b rounded-b-lg border-gray-600 bg-gray-600 text-center">
       <div className="flex flex-wrap justify-center gap-4">
@@ -28,6 +35,12 @@ export default function MainNav() {
         >
           🧠 Quiz
         </Link>
+        <button
+          onClick={() => setShowFunLab((prev) => !prev)}
+          className="text-white p-2 rounded font-bold bg-emerald-800 hover:bg-emerald-900 hover:scale-105 text-shadow-lg"
+        >
+          🎲 FunLab {showFunLab ? '▲' : '▼'}
+        </button>
         <Link
           href="https://buycoffee.to/adateo"
           target="_blank"
