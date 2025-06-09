@@ -1,10 +1,17 @@
+'use client';
+
+import React from 'react';
+
 import MainNav from '@/components/MainNav';
+import FunLab from '@/components/FunLab';
 import Sidebar from '@/components/Sidebar';
 
 export default function HomePage() {
+  const [showFunLab, setShowFunLab] = React.useState(false);
+
   return (
     <main className="min-h-screen flex flex-col justify-between text-white bg-gradient-to-b from-gray-900 to-gray-500">
-      <div className="p-8 max-w-4xl mx-auto">
+      <div className="p-8 max-w-5xl mx-auto">
         <div className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 p-6 rounded-t-lg shadow text-center text-shadow-xl">
           <h1 className="text-3xl font-bold mb-2">
             🚀 JavaScript, React & Next.js Fundamentals Lab
@@ -14,8 +21,13 @@ export default function HomePage() {
             React and Next.js.
           </p>
         </div>
-        <MainNav />
-        <div className="pt-8">
+        <MainNav showFunLab={showFunLab} setShowFunLab={setShowFunLab} />
+        {showFunLab && (
+          <div className="mt-4">
+            <FunLab />
+          </div>
+        )}
+        <div className="pt-5">
           <Sidebar />
         </div>
       </div>
