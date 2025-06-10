@@ -31,7 +31,7 @@ export const DebugPuzzle = () => {
         <div className="justify-self-center">
           <button
             onClick={() => setShowAnswer(true)}
-            className="mt-4 p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105 font-bold"
+            className="mt-4 p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105"
           >
             ✅ Show answer
           </button>
@@ -45,7 +45,7 @@ export const DebugPuzzle = () => {
           <div className="justify-self-center">
             <button
               onClick={handleNext}
-              className="mt-3 p-2 bg-green-600 hover:bg-green-700 rounded hover:scale-105 font-bold"
+              className="mt-3 p-2 bg-green-600 hover:bg-green-700 rounded hover:scale-105"
             >
               Next card ➡️
             </button>
