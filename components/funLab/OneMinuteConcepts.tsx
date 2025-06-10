@@ -2,10 +2,14 @@
 
 import React from 'react';
 
+import { ConceptsModal } from '../shared';
+
 import { conceptData } from '@/data/funLab/oneMinuteConcepts';
 
 export const OneMinuteConcepts = () => {
   const [index, setIndex] = React.useState(0);
+  const [showModal, setShowModal] = React.useState(false);
+
   const concept = conceptData[index];
 
   const nextConcept = () => {
@@ -23,14 +27,29 @@ export const OneMinuteConcepts = () => {
         <p className="font-bold mb-1 text-white">📘 {concept.title}</p>
         <p className="text-sm italic text-yellow-300">{concept.summary}</p>
       </div>
-      <div className="justify-self-center">
+
+      <div className="mt-4 flex gap-2 justify-center">
         <button
           onClick={nextConcept}
-          className="mt-4 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded hover:scale-105"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded hover:scale-105"
         >
           Next Concept ⏭️
         </button>
+        <button
+          onClick={() => setShowModal(true)}
+          className="bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 rounded"
+        >
+          View All Concepts 📚
+        </button>
       </div>
+
+      {showModal && (
+        <ConceptsModal
+          title="📚 All One-Minute Concepts"
+          onClose={() => setShowModal(false)}
+          concepts={conceptData}
+        />
+      )}
     </div>
   );
 };
