@@ -21,9 +21,9 @@ export const DevFortuneCookie = () => {
       <div className="justify-self-center">
         <button
           onClick={getRandomFortune}
-          className="p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105 font-bold"
+          className="p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105"
         >
-          Crack a Cookie
+          🍪 Crack a Cookie
         </button>
       </div>
       {fortune && (
