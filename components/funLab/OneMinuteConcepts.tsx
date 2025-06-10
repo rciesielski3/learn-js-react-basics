@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import React from 'react';
 
 import { conceptData } from '@/data/funLab/oneMinuteConcepts';
 
 export const OneMinuteConcepts = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = React.useState(0);
   const concept = conceptData[index];
 
   const nextConcept = () => {
