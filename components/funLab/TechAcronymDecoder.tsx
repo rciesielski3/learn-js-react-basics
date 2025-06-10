@@ -2,10 +2,19 @@
 
 import React from 'react';
 
+import { ConceptsModal } from '../shared';
+
 import { techAcronyms } from '@/data/funLab/techAcronymDecoder';
 
 export const TechAcronymDecoder = () => {
   const [input, setInput] = React.useState('');
+  const [showModal, setShowModal] = React.useState(false);
+
+  const techAcronymsData = Object.entries(techAcronyms).map(([key, value]) => ({
+    title: key,
+    summary: value
+  }));
+
   const match = (techAcronyms as Record<string, string>)[input.trim().toUpperCase()];
 
   return (
@@ -31,6 +40,22 @@ export const TechAcronymDecoder = () => {
             <p className="text-red-600 italic">❓ Unknown acronym</p>
           )}
         </div>
+      )}
+      <div className="flex gap-2 justify-center">
+        <button
+          onClick={() => setShowModal(true)}
+          className="bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 rounded"
+        >
+          View All Acronyms 📚
+        </button>
+      </div>
+
+      {showModal && (
+        <ConceptsModal
+          title="📚 All Tech Acronym Decoder"
+          onClose={() => setShowModal(false)}
+          concepts={techAcronymsData}
+        />
       )}
     </div>
   );

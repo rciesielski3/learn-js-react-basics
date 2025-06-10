@@ -2,13 +2,10 @@
 
 import React from 'react';
 
-import { DevFortuneCookie } from './funLab/DevFortuneCookie';
 import { DebugPuzzle } from './funLab/DebugPuzzle';
-<<<<<<< HEAD
+import { DevFortuneCookie } from './funLab/DevFortuneCookie';
 import { OneMinuteConcepts } from './funLab/OneMinuteConcepts';
-=======
 import { TechAcronymDecoder } from './funLab/TechAcronymDecoder';
->>>>>>> main
 
 const features = [
   {
@@ -23,15 +20,14 @@ const features = [
     component: <DebugPuzzle />
   },
   {
-<<<<<<< HEAD
     id: 'concepts',
     label: '⏱️ One-Minute Concepts',
     component: <OneMinuteConcepts />
-=======
+  },
+  {
     id: 'acronym',
     label: '🔍 Acronym Decoder',
     component: <TechAcronymDecoder />
->>>>>>> main
   }
 ];
 
