@@ -4,6 +4,7 @@ import React from 'react';
 
 import { DevFortuneCookie } from './funLab/DevFortuneCookie';
 import { DebugPuzzle } from './funLab/DebugPuzzle';
+import { OneMinuteConcepts } from './funLab/OneMinuteConcepts';
 
 const features = [
   {
@@ -16,6 +17,11 @@ const features = [
     id: 'debug',
     label: '🧩 Debug Puzzle',
     component: <DebugPuzzle />
+  },
+  {
+    id: 'concepts',
+    label: '⏱️ One-Minute Concepts',
+    component: <OneMinuteConcepts />
   }
 ];
 
