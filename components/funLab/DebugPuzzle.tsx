@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+
 import { debugChallenges } from '@/data/funLab/debugPuzzle';
 
 export const DebugPuzzle = () => {
