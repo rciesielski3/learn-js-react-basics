@@ -5,6 +5,7 @@ import React from 'react';
 import { DevFortuneCookie } from './funLab/DevFortuneCookie';
 import { DebugPuzzle } from './funLab/DebugPuzzle';
 import { OneMinuteConcepts } from './funLab/OneMinuteConcepts';
+import { TechAcronymDecoder } from './funLab/TechAcronymDecoder';
 
 const features = [
   {
@@ -22,6 +23,11 @@ const features = [
     id: 'concepts',
     label: '⏱️ One-Minute Concepts',
     component: <OneMinuteConcepts />
+  },
+  {
+    id: 'acronym',
+    label: '🔍 Acronym Decoder',
+    component: <TechAcronymDecoder />
   }
 ];
 
@@ -32,7 +38,7 @@ export default function FunLab() {
   return (
     <div className="bg-teal-950 rounded-lg p-4 shadow-lg">
       <h2 className="text-lg font-bold text-white mb-4">🎮 FunLab Playground</h2>
-      <ul className="flex gap-1 border-b border-gray-600">
+      <ul className="flex gap-0.5 border-b border-gray-600">
         {features.map((f) => (
           <li key={f.id}>
             <button
