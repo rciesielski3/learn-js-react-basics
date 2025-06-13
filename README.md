@@ -38,8 +38,6 @@ An interactive playground to explore and understand **core JavaScript concepts**
 | Hook Comparisons        | `/sections/react/HookComparisons.tsx`   | Visualize subtle differences (e.g., `useEffect` vs `useLayoutEffect`)   |
 | Hooks Playground        | `/sections/hooks/Hooks.tsx`             | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
 | Virtual DOM             | `/sections/virtual-dom/VirtualDom.tsx`  | See how virtual DOM optimizes updates                                   |
-| Glossary                | `/sections/glossary/Glossary.tsx`       | Interactive glossary for terms used across JS/React/Next topics         |
-| Quiz                    | `/sections/quiz/Quiz.tsx`               | 10-question quiz with instant feedback and summary breakdown            |
 
 ### 🟩 Next.js Fundamentals
 
@@ -52,8 +50,6 @@ An interactive playground to explore and understand **core JavaScript concepts**
 | Server Components       | `/sections/nextjs/ServerComponents.tsx` | Render React components fully on the server                               |
 | Server Actions          | `/sections/nextjs/ServerActions.tsx`    | Server-side mutation handling without client roundtrips                   |
 | Optimization Techniques | `/sections/nextjs/Optimization.tsx`     | Built-in Next.js optimization like image, fonts, and script loading       |
-
----
 
 ## 📁 Project Structure
 
@@ -68,6 +64,7 @@ app/                  # Route-level grouping for JS and React examples
 │
 ├── glossary/         # Interactive glossary component and data
 ├── quiz/             # Quiz logic and question display
+├── funlab/           # 🚀 FunLab tab with mini-games & tools
 │
 components/           # UI components (hook demos, shared elements)
 │
@@ -88,7 +85,18 @@ public/               # Static assets
 
 ## 🎯 Bonus Features
 
-### 🧩 Glossary
+### 🎮 FunLab Playground (🚧 EXPERIMENTAL)
+
+| Feature                | Description                                                       |
+| ---------------------- | ----------------------------------------------------------------- |
+| 🥠 Dev Fortune Cookie  | Crack open developer-themed fortune cookie wisdom                 |
+| 🧩 Debug Puzzle        | Spot the bug in short JS snippets with solutions                  |
+| ⏱️ One-Minute Concepts | Quick explanations of core concepts with "View All" modal         |
+| 🔍 Acronym Decoder     | Decode tech acronyms (e.g. SSR, CSR, JSX, TTFB) with a search bar |
+
+> All FunLab tools are interactive and styled to match the overall UX
+
+### 📚 Glossary
 
 A quick-access glossary of essential terms and concepts used across the platform. Hover or click terms to reveal concise explanations. Ideal for beginners or quick review.
 
