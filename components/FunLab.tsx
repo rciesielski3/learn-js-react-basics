@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import { DevFortuneCookie } from './funLab/DevFortuneCookie';
 import { DebugPuzzle } from './funLab/DebugPuzzle';
+import { DevFortuneCookie } from './funLab/DevFortuneCookie';
 import { OneMinuteConcepts } from './funLab/OneMinuteConcepts';
 import { TechAcronymDecoder } from './funLab/TechAcronymDecoder';
 
