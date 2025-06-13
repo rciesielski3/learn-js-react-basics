@@ -25,13 +25,15 @@ export default function Glossary() {
           description="Quick reference for key terms in JavaScript, React, and Next.js."
         />
 
-        <div className="flex gap-2">
+        <div className="flex gap-0.5">
           {categories.map((key) => (
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`px-4 py-2 rounded-t-lg font-medium transition ${
-                activeTab === key ? 'bg-purple-900' : 'bg-gray-700 hover:bg-gray-600'
+              className={`w-full font-medium py-2 px-4 rounded-t-lg ${
+                activeTab === key
+                  ? 'border-t-2 border-x-2 border-emerald-600 text-blue-500 bg-gray-900'
+                  : 'bg-gray-700 hover:bg-gray-600'
               }`}
             >
               {categoryLabels[key]}
@@ -39,7 +41,7 @@ export default function Glossary() {
           ))}
         </div>
 
-        <ul className="text-sm text-gray-300 bg-gray-900 space-y-3 rounded-tl-none border border-gray-700 p-4">
+        <ul className="text-sm text-gray-300 bg-gray-900 space-y-3 rounded-tl-none rounded-b-lg border-2 p-4 border-x-2 border-emerald-600">
           {glossary[activeTab].map(({ term, definition }: { term: string; definition: string }) => (
             <li key={term}>
               <strong className="text-white">{term}:</strong> {definition}
