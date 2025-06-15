@@ -19,7 +19,7 @@ export default function Glossary() {
 
   return (
     <div className="flex items-center justify-center min-h-screen p-6 bg-gray-900 text-white">
-      <div className="max-w-3xl w-full bg-gray-800 p-6 rounded border border-gray-700 text-shadow-md">
+      <div className="max-w-3xl w-full bg-gray-700 p-6 rounded border border-gray-700 text-shadow-md">
         <SectionHeader
           title="📚 Glossary"
           description="Quick reference for key terms in JavaScript, React, and Next.js."
@@ -33,7 +33,7 @@ export default function Glossary() {
               className={`w-full font-medium py-2 px-4 rounded-t-lg ${
                 activeTab === key
                   ? 'border-t-2 border-x-2 border-emerald-600 text-blue-500 bg-gray-900'
-                  : 'bg-gray-700 hover:bg-gray-600'
+                  : 'bg-gray-800 hover:bg-gray-900'
               }`}
             >
               {categoryLabels[key]}
@@ -41,7 +41,7 @@ export default function Glossary() {
           ))}
         </div>
 
-        <ul className="text-sm text-gray-300 bg-gray-900 space-y-3 rounded-tl-none rounded-b-lg border-2 p-4 border-x-2 border-emerald-600">
+        <ul className="text-sm text-gray-300 bg-gray-800 space-y-3 rounded-tl-none rounded-b-lg border-2 p-4 border-x-2 border-emerald-600">
           {glossary[activeTab].map(({ term, definition }: { term: string; definition: string }) => (
             <li key={term}>
               <strong className="text-white">{term}:</strong> {definition}
