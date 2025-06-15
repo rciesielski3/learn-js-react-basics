@@ -44,9 +44,9 @@ export const TechAcronymDecoder = () => {
       <div className="flex gap-2 justify-center">
         <button
           onClick={() => setShowModal(true)}
-          className="bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 rounded"
+          className="bg-orange-700 hover:bg-orange-800 hover:scale-105 text-white px-4 py-2 rounded"
         >
-          View All Acronyms 📚
+          View all acronyms 📚
         </button>
       </div>
 

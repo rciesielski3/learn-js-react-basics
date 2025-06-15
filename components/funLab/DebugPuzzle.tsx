@@ -28,12 +28,18 @@ export const DebugPuzzle = () => {
       </pre>
 
       {!showAnswer ? (
-        <div className="justify-self-center">
+        <div className="flex gap-2 justify-center mt-4">
           <button
             onClick={() => setShowAnswer(true)}
-            className="mt-4 p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105"
+            className="p-2 bg-green-600 hover:bg-green-700 rounded hover:scale-105"
           >
             ✅ Show answer
+          </button>
+          <button
+            onClick={handleNext}
+            className="p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105"
+          >
+            Next card ➡️
           </button>
         </div>
       ) : (
@@ -45,7 +51,7 @@ export const DebugPuzzle = () => {
           <div className="justify-self-center">
             <button
               onClick={handleNext}
-              className="mt-3 p-2 bg-green-600 hover:bg-green-700 rounded hover:scale-105"
+              className="mt-3 p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105"
             >
               Next card ➡️
             </button>

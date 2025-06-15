@@ -33,13 +33,13 @@ export const OneMinuteConcepts = () => {
           onClick={nextConcept}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded hover:scale-105"
         >
-          Next Concept ⏭️
+          Next concept ⏭️
         </button>
         <button
           onClick={() => setShowModal(true)}
-          className="bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 rounded"
+          className="bg-orange-700 hover:bg-orange-800 hover:scale-105 text-white px-4 py-2 rounded"
         >
-          View All Concepts 📚
+          View all concepts 📚
         </button>
       </div>
 
