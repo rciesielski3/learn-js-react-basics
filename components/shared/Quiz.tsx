@@ -75,13 +75,13 @@ export default function QuizPage() {
                   <div
                     key={opt}
                     onClick={() => handleSelect(i, opt)}
-                    className={`cursor-pointer px-4 py-2 rounded border bg-gray-900 ${
+                    className={`cursor-pointer px-4 py-2 rounded border bg-gray-700 ${
                       isCorrect
                         ? 'border-green-500 bg-green-800'
                         : isWrong
                         ? 'border-red-500 bg-red-800'
                         : isSelected
-                        ? 'border-blue-500 bg-blue-800'
+                        ? 'border-blue-500 bg-blue-700'
                         : 'border-gray-600 hover:bg-gray-700'
                     }`}
                   >
