@@ -1,3 +1,4 @@
+import { ConceptsModal } from './ConceptsModal';
 import { ExampleBlock } from './ExampleBlock';
 import { ExampleModal } from './ExampleModal';
 import { InfoBox } from './InfoBox';
@@ -6,4 +7,13 @@ import { SectionHeader } from './SectionHeader';
 import { Tooltip } from './Tooltip';
 import { useLogger } from './useLogger';
 
-export { ExampleBlock, ExampleModal, InfoBox, LogBox, SectionHeader, Tooltip, useLogger };
+export {
+  ConceptsModal,
+  ExampleBlock,
+  ExampleModal,
+  InfoBox,
+  LogBox,
+  SectionHeader,
+  Tooltip,
+  useLogger
+};
