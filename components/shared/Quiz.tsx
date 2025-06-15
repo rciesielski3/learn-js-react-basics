@@ -81,7 +81,7 @@ export default function QuizPage() {
                         : isWrong
                         ? 'border-red-500 bg-red-800'
                         : isSelected
-                        ? 'border-blue-500 bg-blue-700'
+                        ? 'border-blue-500 bg-blue-500'
                         : 'border-gray-600 hover:bg-gray-700'
                     }`}
                   >

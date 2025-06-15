@@ -3,6 +3,7 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
   safelist: [
     'bg-blue-600',
+    'bg-blue-800',
     'bg-gray-600',
     'bg-orange-600',
     'bg-purple-600',
