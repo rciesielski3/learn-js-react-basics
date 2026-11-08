@@ -130,7 +130,7 @@ button { font: inherit; color: inherit; }
 
 .kinetic {
   margin: 28px 0 28px;
-  font: 800 clamp(2.25rem, 9.6vw, 9rem)/.98 Unbounded, Inter, sans-serif;
+  font: 800 clamp(2rem, 6.4vw, 5.5rem)/1 Unbounded, Inter, sans-serif;
   letter-spacing: -.02em;
   overflow-wrap: anywhere;
 }
@@ -329,7 +329,7 @@ button { font: inherit; color: inherit; }
   position: fixed; left: 50%; bottom: max(14px, env(safe-area-inset-bottom));
   transform: translateX(-50%); z-index: 60;
   display: flex; align-items: center; justify-content: center; gap: 6px;
-  width: min(720px, calc(100% - 2 * var(--gutter)));
+  width: min(960px, calc(100% - 2 * var(--gutter)));
   padding: 8px;
   border-radius: 22px;
   background: rgba(14, 17, 21, .58);
@@ -339,7 +339,7 @@ button { font: inherit; color: inherit; }
   box-shadow: 0 20px 60px -20px rgba(0, 0, 0, .8), inset 0 1px 0 rgba(255,255,255,.06);
 }
 .dock-btn {
-  flex: 1 1 0; min-width: 0;
+  flex: 1 1 auto; min-width: 0;
   display: flex; align-items: center; justify-content: center; gap: 8px;
   height: 48px; padding: 0 12px; border-radius: 15px;
   background: transparent; border: 0; cursor: pointer; text-decoration: none;
@@ -349,6 +349,7 @@ button { font: inherit; color: inherit; }
 }
 .dock-btn:hover { background: var(--surface-2); }
 .dock-btn .ico { font-size: 1.05rem; line-height: 1; }
+.dock-btn .lbl-s { display: none; }
 .dock-btn.primary { background: var(--js); color: #0b0d10; }
 .dock-btn.primary:hover { background: color-mix(in srgb, var(--js) 88%, white); }
 .dock-btn .caret { font-size: .7rem; opacity: .7; }
@@ -362,7 +363,7 @@ button { font: inherit; color: inherit; }
 
 .funlab {
   position: fixed; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 59;
-  width: min(720px, calc(100% - 2 * var(--gutter)));
+  width: min(960px, calc(100% - 2 * var(--gutter)));
   max-height: 58vh; overflow: auto;
   padding: 20px; border-radius: var(--r);
   background: rgba(14, 17, 21, .9);
@@ -418,6 +419,9 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
   .dock-btn { height: 46px; padding: 0 6px; font-size: 0; gap: 0; }
   .dock-btn .ico { font-size: 1.2rem; }
   .dock-btn .lbl, .dock-btn .caret { display: none; }
+  .dock-btn.primary { font-size: .8rem; gap: 6px; padding: 0 10px; }
+  .dock-btn.primary .lbl-s { display: inline; }
+  .dock-btn .lbl-s { display: none; }
   .dock-count { font-size: .8rem; padding: 0 8px; height: 46px; gap: 4px; }
   .dock-count .lbl { display: none; }
   .fun-grid { grid-template-columns: 1fr; }
@@ -550,14 +554,14 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
       <div class="dot" aria-hidden="true"></div>
       <div class="card reveal">
         <h3 id="s2-title">
-          <button class="acc-btn" id="b2" aria-expanded="false" aria-controls="p2">
+          <button class="acc-btn" id="b2" aria-expanded="true" aria-controls="p2">
             <span class="icon" aria-hidden="true">⚛️</span>
             <span class="ttl">React Core Concepts</span>
             <span class="count">17</span>
             <span class="chev" aria-hidden="true">▾</span>
           </button>
         </h3>
-        <div class="panel" id="p2" role="region" aria-labelledby="b2" inert>
+        <div class="panel is-open" id="p2" role="region" aria-labelledby="b2">
           <div class="inner">
             <ul>
               <li><a href="/react/basics"><span class="ico">🔶</span>Basics<span class="arrow">→</span></a></li>
@@ -595,14 +599,14 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
       <div class="dot" aria-hidden="true"></div>
       <div class="card reveal">
         <h3 id="s3-title">
-          <button class="acc-btn" id="b3" aria-expanded="false" aria-controls="p3">
+          <button class="acc-btn" id="b3" aria-expanded="true" aria-controls="p3">
             <span class="icon" aria-hidden="true">⚡</span>
             <span class="ttl">Next.js Fundamentals</span>
             <span class="count">12</span>
             <span class="chev" aria-hidden="true">▾</span>
           </button>
         </h3>
-        <div class="panel" id="p3" role="region" aria-labelledby="b3" inert>
+        <div class="panel is-open" id="p3" role="region" aria-labelledby="b3">
           <div class="inner">
             <ul>
               <li><a href="/nextjs/overview"><span class="ico">🔲</span>Overview<span class="arrow">→</span></a></li>
@@ -647,7 +651,7 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
   <a class="dock-btn" href="/flashcards" aria-label="Flashcards"><span class="ico" aria-hidden="true">🧾</span><span class="lbl">Flashcards</span></a>
   <a class="dock-btn" href="/quiz" aria-label="Quiz"><span class="ico" aria-hidden="true">🧠</span><span class="lbl">Quiz</span></a>
   <button class="dock-btn" id="funlab-btn" type="button" aria-expanded="false" aria-controls="funlab" aria-label="FunLab"><span class="ico" aria-hidden="true">🎲</span><span class="lbl">FunLab</span><span class="caret" aria-hidden="true">▼</span></button>
-  <a class="dock-btn primary" href="https://buycoffee.to/adateo" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee (opens in a new tab)"><span class="ico" aria-hidden="true">☕</span><span class="lbl">Buy Me a Coffee</span></a>
+  <a class="dock-btn primary" href="https://buycoffee.to/adateo" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee (opens in a new tab)"><span class="ico" aria-hidden="true">☕</span><span class="lbl">Buy Me a Coffee</span><span class="lbl-s">Coffee</span></a>
   <div class="dock-count" title="Visitors"><span aria-hidden="true">👁️</span><span class="lbl">Visitors</span><span id="visitors" aria-label="Visitors count">1,284</span></div>
 </nav>
 
@@ -697,7 +701,7 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
     });
   });
 
-  /* Accordion: one stage open at a time */
+  /* Accordion: each module toggles independently */
   const accButtons = $$('.acc-btn');
   const setOpen = (btn, on) => {
     btn.setAttribute('aria-expanded', String(on));
@@ -706,11 +710,7 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
     panel.inert = !on;
   };
   accButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const wasOpen = btn.getAttribute('aria-expanded') === 'true';
-      accButtons.forEach((b) => setOpen(b, false));
-      if (!wasOpen) setOpen(btn, true);
-    });
+    btn.addEventListener('click', () => setOpen(btn, btn.getAttribute('aria-expanded') !== 'true'));
   });
 
   /* Scroll-drawn path */
@@ -736,7 +736,7 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
       return { x: r.left - jr.left + r.width / 2, y: r.top - jr.top + r.height / 2 };
     });
     const seq = [{ x: pts[0].x, y: 0 }, ...pts, { x: pts[pts.length - 1].x, y: H }];
-    const amp = W >= 860 ? 110 : 0;   // winding only on desktop, straight on phones
+    const amp = 0;   // straight through the dot column, so the line never crosses text
 
     let d = `M${seq[0].x} ${seq[0].y}`;
     for (let i = 0; i < seq.length - 1; i++) {
