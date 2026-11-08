@@ -223,6 +223,8 @@ button { font: inherit; color: inherit; }
 }
 .stage[data-c="react"] { --c: var(--react); }
 .stage[data-c="next"] { --c: var(--next); }
+/* extra air after stage 01 and after the last stage (before the finish line) */
+.stage[data-c="js"], .stage[data-c="next"] { padding-bottom: 168px; }
 
 .info { grid-column: 1; grid-row: 1; padding-top: 14px; max-width: 420px; justify-self: end; text-align: right; }
 .card { grid-column: 3; grid-row: 1; }
@@ -403,6 +405,7 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
     min-height: auto;
     padding: 36px 0;
   }
+  .stage[data-c="js"], .stage[data-c="next"] { padding-bottom: 96px; }
   .dot { grid-column: 1; grid-row: 1 / span 2; margin: 30px auto 0; }
   .info, .stage.flip .info { grid-column: 2; grid-row: 1; justify-self: stretch; text-align: left; max-width: none; }
   .card, .stage.flip .card { grid-column: 2; grid-row: 2; margin-top: 18px; }
