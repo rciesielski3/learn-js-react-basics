@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JavaScript, React &amp; Next.js Fundamentals Lab - Aurora Glass mockup</title>
+<meta name="description" content="A curated interactive space to explore, learn, and master the fundamentals of JavaScript, React and Next.js.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Tokens ---------- */
+  :root {
+    --bg-0: #05070f;
+    --bg-1: #0a0f22;
+    --ink: #eef2ff;
+    --ink-2: #b7c0dd;          /* secondary text, ~9:1 on bg */
+    --ink-3: #8f9bc2;          /* tertiary text, ~6:1 on bg */
+    --cyan: #5eead4;
+    --cyan-strong: #22d3ee;
+    --violet: #a78bfa;
+    --violet-strong: #8b5cf6;
+    --glass: rgba(255, 255, 255, 0.055);
+    --glass-strong: rgba(255, 255, 255, 0.09);
+    --stroke: rgba(255, 255, 255, 0.11);
+    --radius: 18px;
+    --focus: #67e8f9;
+    --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --ease: cubic-bezier(.2,.7,.2,1);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) { --bg-0: #05070f; } /* mockup is dark-first; kept dark on purpose */
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { color-scheme: dark; scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font);
+    color: var(--ink);
+    background: radial-gradient(1200px 800px at 80% -10%, #111a3d 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 60%, #03040a 100%);
+    background-color: var(--bg-0);
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  a { color: var(--cyan); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: #99f6e4; }
+
+  /* ---------- Aurora background ---------- */
+  .aurora {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    filter: saturate(1.2);
+  }
+  .blob {
+    position: absolute;
+    width: 46vmax;
+    height: 46vmax;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .42;
+    mix-blend-mode: screen;
+    will-change: transform;
+    animation: drift 26s var(--ease) infinite alternate;
+  }
+  .blob--cyan   { background: radial-gradient(circle, #22d3ee 0%, rgba(34,211,238,0) 65%); top: -14vmax; left: -12vmax; }
+  .blob--violet { background: radial-gradient(circle, #8b5cf6 0%, rgba(139,92,246,0) 65%); top: 10vh; right: -18vmax; animation-duration: 31s; animation-delay: -6s; }
+  .blob--indigo { background: radial-gradient(circle, #3b82f6 0%, rgba(59,130,246,0) 65%); bottom: -20vmax; left: 25vw; opacity: .3; animation-duration: 36s; animation-delay: -12s; }
+
+  @keyframes drift {
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    50%  { transform: translate3d(6vw,4vh,0) scale(1.08); }
+    100% { transform: translate3d(-4vw,8vh,0) scale(.96); }
+  }
+
+  /* subtle grain + vignette so glass reads as glass */
+  .aurora::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(2,3,8,.7) 100%);
+  }
+
+  /* ---------- Layout ---------- */
+  .wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .shell {
+    padding: 28px 0 48px;
+    display: grid;
+    gap: 22px;
+  }
+
+  /* ---------- Glass primitive ---------- */
+  .glass {
+    position: relative;
+    background: linear-gradient(160deg, var(--glass-strong), var(--glass));
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 20px 50px -20px rgba(0,0,0,.6);
+    isolation: isolate;
+  }
+
+  /* Spotlight: follows the cursor via --mx / --my (set by JS) */
+  .spot {
+    --mx: 50%;
+    --my: 50%;
+    --spot-opacity: 0;
+    transition: border-color .4s var(--ease), box-shadow .4s var(--ease), transform .4s var(--ease);
+  }
+  .spot::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(260px circle at var(--mx) var(--my),
+                rgba(94,234,212,.95), rgba(167,139,250,.55) 40%, transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: var(--spot-opacity);
+    transition: opacity .35s var(--ease);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .spot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(360px circle at var(--mx) var(--my), rgba(94,234,212,.09), transparent 70%);
+    opacity: var(--spot-opacity);
+    transition: opacity .35s var(--ease);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .spot:hover, .spot:focus-within { --spot-opacity: 1; }
+  .spot:hover { border-color: rgba(94,234,212,.28); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: clamp(28px, 6vw, 56px) clamp(20px, 5vw, 48px);
+    text-align: center;
+    overflow: hidden;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font: 500 12px/1 var(--mono);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(94,234,212,.08);
+    border: 1px solid rgba(94,234,212,.25);
+  }
+  .pulse {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 0 0 rgba(94,234,212,.7);
+    animation: pulse 2.4s infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(94,234,212,.6); }
+    70%  { box-shadow: 0 0 0 10px rgba(94,234,212,0); }
+    100% { box-shadow: 0 0 0 0 rgba(94,234,212,0); }
+  }
+  h1 {
+    margin: 18px auto 14px;
+    font-size: clamp(1.9rem, 5.2vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+    font-weight: 800;
+    max-width: 18ch;
+  }
+  .grad-text {
+    background: linear-gradient(92deg, #a5f3fc 0%, #67e8f9 30%, #c4b5fd 70%, #f0abfc 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+  }
+  .hero p.lead {
+    margin: 0 auto;
+    max-width: 58ch;
+    color: var(--ink-2);
+    font-size: clamp(1rem, 2.2vw, 1.12rem);
+  }
+  .hero .rocket { display: inline-block; animation: bob 4s ease-in-out infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-6deg);} 50% { transform: translateY(-5px) rotate(4deg);} }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .stats span {
+    padding: 6px 10px;
+    border: 1px dashed rgba(255,255,255,.14);
+    border-radius: 999px;
+  }
+
+  /* ---------- Action bar ---------- */
+  .actions {
+    padding: 14px;
+  }
+  .actions ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .action {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 56px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--stroke);
+    background: rgba(255,255,255,.04);
+    color: var(--ink);
+    font: 600 15px/1.2 var(--font);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .25s var(--ease), background .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .action .ico { font-size: 18px; line-height: 1; }
+  .action:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.08);
+    color: #fff;
+  }
+  .action--glossary:hover   { border-color: rgba(167,139,250,.6); box-shadow: 0 10px 30px -10px rgba(167,139,250,.55); }
+  .action--flash:hover      { border-color: rgba(52,211,153,.6);  box-shadow: 0 10px 30px -10px rgba(52,211,153,.5); }
+  .action--quiz:hover       { border-color: rgba(96,165,250,.6);  box-shadow: 0 10px 30px -10px rgba(96,165,250,.55); }
+  .action--fun:hover        { border-color: rgba(94,234,212,.6);  box-shadow: 0 10px 30px -10px rgba(94,234,212,.5); }
+  .action--coffee:hover     { border-color: rgba(129,140,248,.7); box-shadow: 0 10px 30px -10px rgba(129,140,248,.6); }
+  .action[aria-expanded="true"] { border-color: rgba(94,234,212,.5); background: rgba(94,234,212,.08); }
+
+  .visitors {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    color: var(--ink-2);
+    background: rgba(0,0,0,.25);
+    border: 1px solid var(--stroke);
+  }
+  .visitors b {
+    font: 500 15px var(--mono);
+    color: var(--cyan);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* FunLab panel */
+  .funlab {
+    margin-top: 12px;
+    padding: 18px;
+    display: none;
+  }
+  .funlab.is-open { display: block; animation: rise .45s var(--ease) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: none; } }
+  .funlab h2 { margin: 0 0 6px; font-size: 1.05rem; }
+  .funlab p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .funlab .dice {
+    margin-top: 12px;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font: 500 14px var(--mono);
+    color: var(--ink);
+  }
+  .funlab .die {
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    border-radius: 10px;
+    background: linear-gradient(145deg, rgba(94,234,212,.2), rgba(167,139,250,.2));
+    border: 1px solid rgba(255,255,255,.18);
+    font-size: 18px;
+  }
+
+  /* ---------- Sections (accordion) ---------- */
+  .sections-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 4px;
+  }
+  .sections-head h2 { margin: 0; font-size: 1.25rem; letter-spacing: -.01em; }
+  .sections-head small { color: var(--ink-3); font: 500 12px var(--mono); }
+
+  .section { overflow: hidden; }
+  .section + .section { margin-top: 14px; }
+  .section-btn {
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: clamp(1.02rem, 2.3vw, 1.15rem);
+    color: var(--ink);
+    border-radius: var(--radius);
+  }
+  .section-btn:hover .section-title { color: #a5f3fc; }
+  .section-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+  .section-title { display: inline-flex; align-items: center; gap: 12px; transition: color .25s var(--ease); }
+  .section-title .emoji {
+    width: 38px; height: 38px;
+    display: grid; place-items: center;
+    border-radius: 12px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid var(--stroke);
+    font-size: 19px;
+  }
+  .section-meta { color: var(--ink-3); font: 500 12px var(--mono); margin-left: auto; white-space: nowrap; }
+  .chev {
+    flex: none;
+    width: 30px; height: 30px;
+    display: grid; place-items: center;
+    border-radius: 999px;
+    border: 1px solid var(--stroke);
+    color: var(--cyan);
+    transition: transform .4s var(--ease), background .25s var(--ease);
+  }
+  .section-btn[aria-expanded="true"] .chev { transform: rotate(180deg); background: rgba(94,234,212,.12); }
+
+  .panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .45s var(--ease);
+  }
+  .panel[data-open="true"] { grid-template-rows: 1fr; }
+  .panel > div { overflow: hidden; min-height: 0; }
+  .panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 4px 12px 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 8px;
+  }
+  .topic a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    border-radius: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    background: rgba(255,255,255,.03);
+    border: 1px solid transparent;
+    transition: background .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+    font-size: 15px;
+  }
+  .topic a:hover {
+    background: rgba(255,255,255,.07);
+    border-color: rgba(94,234,212,.35);
+    transform: translateX(3px);
+    color: #fff;
+  }
+  .topic .t-ico {
+    flex: none;
+    width: 30px; height: 30px;
+    display: grid; place-items: center;
+    border-radius: 9px;
+    background: rgba(0,0,0,.25);
+    font-size: 15px;
+  }
+  .topic .arrow { margin-left: auto; color: var(--ink-3); transition: color .2s, transform .2s var(--ease); }
+  .topic a:hover .arrow { color: var(--cyan); transform: translateX(3px); }
+
+  /* section accent tints */
+  .section--js   .emoji { box-shadow: 0 0 24px -6px rgba(250,204,21,.45); }
+  .section--react .emoji { box-shadow: 0 0 24px -6px rgba(34,211,238,.5); }
+  .section--next .emoji { box-shadow: 0 0 24px -6px rgba(167,139,250,.55); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 8px;
+    padding: 22px 20px;
+    text-align: center;
+    color: var(--ink-3);
+    font-size: 14px;
+  }
+  footer p { margin: 4px 0; }
+  footer a { color: var(--ink); font-weight: 600; }
+  footer a:hover { color: var(--cyan); }
+  .gh {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--stroke);
+    background: rgba(255,255,255,.04);
+    margin-top: 8px;
+    text-decoration: none !important;
+  }
+
+  /* ---------- Reveal on load ---------- */
+  .reveal { opacity: 0; transform: translateY(14px); animation: reveal .8s var(--ease) forwards; }
+  .reveal.d1 { animation-delay: .08s; }
+  .reveal.d2 { animation-delay: .16s; }
+  .reveal.d3 { animation-delay: .24s; }
+  @keyframes reveal { to { opacity: 1; transform: none; } }
+
+  /* ---------- Responsive ---------- */
+  @media (min-width: 760px) {
+    .shell { padding-top: 48px; }
+    .actions ul { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  }
+  @media (max-width: 759px) {
+    .actions ul > li:nth-child(6) { grid-column: 1 / -1; }
+    .section-meta { display: none; }
+    .panel ul { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 420px) {
+    .wrap { padding: 0 16px; }
+    .section-btn { padding: 16px; }
+  }
+
+  /* ---------- Reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .blob { animation: none; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true">
+  <div class="blob blob--cyan"></div>
+  <div class="blob blob--violet"></div>
+  <div class="blob blob--indigo"></div>
+</div>
+
+<div class="wrap shell">
+
+  <header class="glass spot hero reveal" id="top">
+    <span class="eyebrow"><span class="pulse" aria-hidden="true"></span> Interactive learning lab</span>
+    <h1><span class="rocket" aria-hidden="true">🚀</span> <span class="grad-text">JavaScript, React &amp; Next.js Fundamentals Lab</span></h1>
+    <p class="lead">A curated interactive space to explore, learn, and master the fundamentals of JavaScript, React and Next.js.</p>
+    <div class="stats" aria-label="Lab contents">
+      <span>3 topic groups</span>
+      <span>Interactive demos</span>
+      <span>Glossary &amp; flashcards</span>
+    </div>
+  </header>
+
+  <nav class="glass actions spot reveal d1" aria-label="Learning tools">
+    <ul>
+      <li>
+        <a class="action action--glossary" href="/glossary">
+          <span class="ico" aria-hidden="true">📚</span><span>Glossary</span>
+        </a>
+      </li>
+      <li>
+        <a class="action action--flash" href="/flashcards">
+          <span class="ico" aria-hidden="true">🧾</span><span>Flashcards</span>
+        </a>
+      </li>
+      <li>
+        <a class="action action--quiz" href="/quiz">
+          <span class="ico" aria-hidden="true">🧠</span><span>Quiz</span>
+        </a>
+      </li>
+      <li>
+        <button type="button" class="action action--fun" id="funlab-toggle" aria-expanded="false" aria-controls="funlab">
+          <span class="ico" aria-hidden="true">🎲</span><span>FunLab</span><span aria-hidden="true" id="funlab-arrow">▼</span>
+        </button>
+      </li>
+      <li>
+        <a class="action action--coffee" href="https://buycoffee.to/adateo" target="_blank" rel="noopener">
+          <span class="ico" aria-hidden="true">☕</span><span>Buy Me a Coffee</span>
+        </a>
+      </li>
+      <li>
+        <p class="visitors"><span aria-hidden="true">👁️</span> Visitors: <b id="visitors">1,284</b></p>
+      </li>
+    </ul>
+
+    <div class="glass funlab" id="funlab" role="region" aria-labelledby="funlab-h">
+      <h2 id="funlab-h">🎲 FunLab</h2>
+      <p>Small playful experiments that bend the rules of the topics below. Roll the dice to pick a random concept to explore.</p>
+      <div class="dice">
+        <span class="die" id="die" aria-live="polite">⚛️</span>
+        <button type="button" class="action" id="roll" style="min-height:40px;padding:8px 14px;font-size:14px;">Roll</button>
+        <span id="roll-out">React Context</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="sections" id="main">
+    <div class="sections-head reveal d2">
+      <h2>Topics</h2>
+      <small>3 sections · 41 topics</small>
+    </div>
+
+    <section class="glass section section--js spot reveal d2" aria-labelledby="s1-title">
+      <h3 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">
+        <span id="s1-title">JavaScript Fundamentals</span>
+      </h3>
+      <button class="section-btn" type="button" aria-expanded="true" aria-controls="p1" data-acc>
+        <span class="section-title"><span class="emoji" aria-hidden="true">📘</span> JavaScript Fundamentals</span>
+        <span class="section-meta">12 topics</span>
+        <span class="chev" aria-hidden="true">▼</span>
+      </button>
+      <div class="panel" id="p1" data-open="true">
+        <div>
+          <ul>
+            <li class="topic"><a href="/js/basics"><span class="t-ico" aria-hidden="true">🔵</span>Basics<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/functional"><span class="t-ico" aria-hidden="true">🔁</span>Functional<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/this"><span class="t-ico" aria-hidden="true">📖</span>Understanding this<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/classes"><span class="t-ico" aria-hidden="true">👑</span>JS Classes &amp; Inheritance<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/algorithms"><span class="t-ico" aria-hidden="true">⚡</span>Common JS Algorithms<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/object-oriented"><span class="t-ico" aria-hidden="true">📦</span>Object-Oriented<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/promises"><span class="t-ico" aria-hidden="true">🕊️</span>Promises &amp; Async/Await<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/event-loop"><span class="t-ico" aria-hidden="true">⏱️</span>Event Loop &amp; Async<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/closures"><span class="t-ico" aria-hidden="true">🚸</span>Closures &amp; Scope<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/modules"><span class="t-ico" aria-hidden="true">📥</span>Modules &amp; Import/Export<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/js-vs-ts"><span class="t-ico" aria-hidden="true">🆚</span>JavaScript vs TypeScript<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/js/types-explanation"><span class="t-ico" aria-hidden="true">📄</span>JS, JSX, TS, and TSX Explained<span class="arrow" aria-hidden="true">→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="glass section section--react spot reveal d3" aria-labelledby="s2-title">
+      <h3 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">
+        <span id="s2-title">React Core Concepts</span>
+      </h3>
+      <button class="section-btn" type="button" aria-expanded="false" aria-controls="p2" data-acc>
+        <span class="section-title"><span class="emoji" aria-hidden="true">⚛️</span> React Core Concepts</span>
+        <span class="section-meta">17 topics</span>
+        <span class="chev" aria-hidden="true">▼</span>
+      </button>
+      <div class="panel" id="p2" data-open="false">
+        <div>
+          <ul>
+            <li class="topic"><a href="/react/basics"><span class="t-ico" aria-hidden="true">🔶</span>Basics<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/architecture"><span class="t-ico" aria-hidden="true">🧠</span>Architecture<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/state"><span class="t-ico" aria-hidden="true">🔼</span>State Architecture<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/context"><span class="t-ico" aria-hidden="true">🌐</span>React Context<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/composition"><span class="t-ico" aria-hidden="true">🧩</span>Composition<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/use-ref"><span class="t-ico" aria-hidden="true">📍</span>UseRef<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/suspense"><span class="t-ico" aria-hidden="true">⏳</span>Suspense Examples<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/error-boundary"><span class="t-ico" aria-hidden="true">🚨</span>Error Boundary<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/portals"><span class="t-ico" aria-hidden="true">🌀</span>Portals<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/reconciliation"><span class="t-ico" aria-hidden="true">🔑</span>Reconciliation &amp; Key Prop<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/controlled"><span class="t-ico" aria-hidden="true">🎛️</span>Controlled vs Uncontrolled<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/hooks"><span class="t-ico" aria-hidden="true">❇️</span>Hook Demos<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/comparison"><span class="t-ico" aria-hidden="true">🔍</span>Comparing Similar Hooks<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/performance"><span class="t-ico" aria-hidden="true">🔋</span>Performance<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/lifecycle"><span class="t-ico" aria-hidden="true">🧬</span>Lifecycle Demo<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/virtual-dom"><span class="t-ico" aria-hidden="true">🧠</span>Virtual DOM Visualizer<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/react/devtools"><span class="t-ico" aria-hidden="true">🛠️</span>React DevTools<span class="arrow" aria-hidden="true">→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="glass section section--next spot reveal d3" aria-labelledby="s3-title">
+      <h3 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">
+        <span id="s3-title">Next.js Fundamentals</span>
+      </h3>
+      <button class="section-btn" type="button" aria-expanded="false" aria-controls="p3" data-acc>
+        <span class="section-title"><span class="emoji" aria-hidden="true">⚡</span> Next.js Fundamentals</span>
+        <span class="section-meta">12 topics</span>
+        <span class="chev" aria-hidden="true">▼</span>
+      </button>
+      <div class="panel" id="p3" data-open="false">
+        <div>
+          <ul>
+            <li class="topic"><a href="/nextjs/overview"><span class="t-ico" aria-hidden="true">🔲</span>Overview<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/rendering"><span class="t-ico" aria-hidden="true">💧</span>Rendering &amp; Hydration<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/routing"><span class="t-ico" aria-hidden="true">🗂️</span>Routing (App vs Pages)<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/caching"><span class="t-ico" aria-hidden="true">🗃️</span>Caching &amp; Revalidation<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/server-components"><span class="t-ico" aria-hidden="true">🧱</span>Server Components<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/server-actions"><span class="t-ico" aria-hidden="true">🛰️</span>Server Actions<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/optimization"><span class="t-ico" aria-hidden="true">⚙️</span>Optimization<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/middleware"><span class="t-ico" aria-hidden="true">🗼</span>Middleware<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/metadata"><span class="t-ico" aria-hidden="true">🔖</span>Metadata API<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/deploy-monitor"><span class="t-ico" aria-hidden="true">📊</span>Deploy &amp; Monitor<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/authentication"><span class="t-ico" aria-hidden="true">🔐</span>Authentication<span class="arrow" aria-hidden="true">→</span></a></li>
+            <li class="topic"><a href="/nextjs/summary"><span class="t-ico" aria-hidden="true">🔄</span>Next.js vs React Summary<span class="arrow" aria-hidden="true">→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass spot reveal d3">
+    <p>Built with 💡 by <a href="https://github.com/rciesielski3">Rafal Ciesielski</a></p>
+    <p>© <span id="year">2026</span> All rights reserved.</p>
+    <a class="gh" href="https://github.com/rciesielski3" aria-label="Rafal Ciesielski on GitHub">
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+      GitHub
+    </a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Spotlight: track cursor inside each .spot card
+  document.querySelectorAll('.spot').forEach(function (el) {
+    el.addEventListener('pointermove', function (e) {
+      var r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+    el.addEventListener('pointerleave', function () {
+      el.style.setProperty('--spot-opacity', '0');
+    });
+    el.addEventListener('pointerenter', function () {
+      el.style.removeProperty('--spot-opacity');
+    });
+  });
+
+  // Accordion sections (one open at a time, click again to close, like the app)
+  var buttons = document.querySelectorAll('[data-acc]');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        document.getElementById(b.getAttribute('aria-controls')).setAttribute('data-open', 'false');
+      });
+      if (!open) {
+        btn.setAttribute('aria-expanded', 'true');
+        document.getElementById(btn.getAttribute('aria-controls')).setAttribute('data-open', 'true');
+      }
+    });
+  });
+
+  // FunLab toggle
+  var fl = document.getElementById('funlab-toggle');
+  var panel = document.getElementById('funlab');
+  var arrow = document.getElementById('funlab-arrow');
+  fl.addEventListener('click', function () {
+    var open = fl.getAttribute('aria-expanded') === 'true';
+    fl.setAttribute('aria-expanded', String(!open));
+    arrow.textContent = open ? '▼' : '▲';
+    panel.classList.toggle('is-open', !open);
+  });
+
+  // FunLab dice (mockup only)
+  var topics = ['Closures & Scope', 'Event Loop & Async', 'React Context', 'Server Actions', 'Virtual DOM Visualizer', 'Caching & Revalidation'];
+  var icons = ['🚸', '⏱️', '🌐', '🛰️', '🧠', '🗃️'];
+  var roll = document.getElementById('roll');
+  var out = document.getElementById('roll-out');
+  var die = document.getElementById('die');
+  roll.addEventListener('click', function () {
+    var i = Math.floor(Math.random() * topics.length);
+    die.textContent = icons[i];
+    out.textContent = topics[i];
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Keyboard: Escape closes FunLab
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && fl.getAttribute('aria-expanded') === 'true') fl.click();
+  });
+})();
+</script>
+</body>
+</html>
