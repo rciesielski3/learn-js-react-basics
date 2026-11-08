@@ -737,8 +737,8 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
     });
     const seq = [{ x: pts[0].x, y: 0 }, ...pts, { x: pts[pts.length - 1].x, y: H }];
     // Winding stays inside the dot column, so it never reaches the cards
-    const amp = W >= 860 ? 62 : 11;
-    const wobble = [0.9, 0.35, 1, 0.6, 0.75, 0.25, 0.95];   // uneven, hand-drawn rhythm
+    const amp = W >= 860 ? 74 : 15;
+    const wobble = [1, 0.15, 0.9, 0.45, 1, 0.1, 0.7];   // uneven, hand-drawn rhythm
 
     let d = `M${seq[0].x} ${seq[0].y}`;
     for (let i = 0; i < seq.length - 1; i++) {
