@@ -3,6 +3,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { ui } from './theme';
+
 interface ConceptsModalProps {
   title: string;
   onClose: () => void;
@@ -11,23 +13,25 @@ interface ConceptsModalProps {
 
 export const ConceptsModal = ({ title, onClose, concepts }: ConceptsModalProps) => {
   return ReactDOM.createPortal(
-    <div className="fixed inset-0 z-20 bg-black bg-opacity-60 flex items-center justify-center">
-      <div className="bg-gray-800 p-0 rounded-lg max-w-4xl w-full shadow-lg relative overflow-y-auto max-h-[90vh]">
-        <div className="sticky top-0 z-10 bg-gray-800 p-6 border-b border-gray-700 flex items-center justify-between">
-          <h2 className="text-xl font-bold text-white">{title}</h2>
-          <button
-            onClick={onClose}
-            className="text-sm bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
-          >
+    <div
+      className="fixed inset-0 z-20 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
+    >
+      <div className={`${ui.card} relative max-h-[90vh] w-full max-w-4xl overflow-y-auto p-0`}>
+        <div className="sticky top-0 z-10 flex items-center justify-between gap-4 rounded-t-[22px] border-b border-white/10 bg-jt-bg/90 p-6 backdrop-blur-md">
+          <h2 className={ui.h2}>{title}</h2>
+          <button onClick={onClose} className={ui.btn}>
             Close
           </button>
         </div>
 
-        <ul className="grid sm:grid-cols-2 gap-4 p-6">
+        <ul className="grid gap-4 p-6 sm:grid-cols-2">
           {concepts.map((c, i) => (
-            <li key={i} className="bg-gray-900 p-4 rounded shadow">
-              <p className="text-lg font-semibold text-white mb-1">📘 {c.title}</p>
-              <p className="text-sm italic text-yellow-300">{c.summary}</p>
+            <li key={i} className={ui.cardInner}>
+              <p className={`${ui.h3} mb-1`}>📘 {c.title}</p>
+              <p className="text-sm italic text-accent">{c.summary}</p>
             </li>
           ))}
         </ul>

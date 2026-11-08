@@ -2,12 +2,14 @@
 
 import React from 'react';
 
+import { ui } from '@/components/shared/theme';
+
 import { SectionHeader } from '@/components/shared';
 
 export default function ReactArchitecture() {
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
-      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
+    <div className="space-y-6">
+      <div className={ui.card}>
         <SectionHeader
           title="🧠 React Architecture Overview"
           description="Understand how React renders, updates, and manages components behind the scenes — including the role of Virtual DOM, Hooks, Effects, and more."

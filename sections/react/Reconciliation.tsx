@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import { ui } from '@/components/shared/theme';
+
 import { ExampleBlock, SectionHeader } from '@/components/shared';
 import { reconciliationExamples } from '@/data/react/reconciliation';
 
@@ -22,8 +24,8 @@ export default function ReconciliationKey() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
-      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
+    <div className="space-y-6">
+      <div className={ui.card}>
         <SectionHeader
           title="🧩 Reconciliation & Key Prop"
           description="Understand how React updates the DOM efficiently and why 'key' props are critical in lists."

@@ -3,28 +3,29 @@
 import React from "react";
 
 import { InfoBoxProps } from "./types";
+import { ui } from "./theme";
 
 export function InfoBox({ title, description, code, children }: InfoBoxProps) {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <div className="w-full mb-6 border border-gray-500 rounded bg-gray-800 text-white p-4">
+    <div className={`${ui.cardInner} mb-6 w-full`}>
       <div
-        className="flex justify-between items-center cursor-pointer"
+        className="flex cursor-pointer items-center justify-between gap-4"
         onClick={() => setExpanded((e) => !e)}
       >
-        <h3 className="font-semibold text-lg">{title}</h3>
-        <span className="text-xs text-gray-300">
+        <h3 className={ui.h3}>{title}</h3>
+        <span className="shrink-0 text-xs text-accent">
           {expanded ? "Hide Details" : "Show Details"}
         </span>
       </div>
 
       {expanded && (
         <div className="mt-3">
-          <p className="text-sm text-gray-300 mb-2 whitespace-pre-wrap">
+          <p className={`${ui.muted} mb-3 whitespace-pre-wrap`}>
             {description}
           </p>
-          <pre className="bg-gray-900 text-green-400 text-xs p-2 rounded overflow-x-auto">
+          <pre className="overflow-x-auto rounded-xl border border-white/10 bg-black/50 p-3 text-xs text-accent">
             <code>{code}</code>
           </pre>
 
