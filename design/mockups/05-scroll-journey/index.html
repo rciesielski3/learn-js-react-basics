@@ -215,7 +215,7 @@ button { font: inherit; color: inherit; }
 .stage {
   position: relative; z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 180px minmax(0, 1fr);
   align-items: start;
   min-height: 80vh;
   padding: 72px 0;
@@ -656,7 +656,7 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
 </nav>
 
 <footer>
-  <p>Built with 💡 by <a href="https://github.com/rciesielski3">Rafal Ciesielski</a></p>
+  <p>Built with 💡 by <a href="https://github.com/rciesielski3">Adateo Rafal Ciesielski</a></p>
   <p>© <span id="year">2026</span> All rights reserved.</p>
 </footer>
 
@@ -736,16 +736,20 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
       return { x: r.left - jr.left + r.width / 2, y: r.top - jr.top + r.height / 2 };
     });
     const seq = [{ x: pts[0].x, y: 0 }, ...pts, { x: pts[pts.length - 1].x, y: H }];
-    const amp = 0;   // straight through the dot column, so the line never crosses text
+    // Winding stays inside the dot column, so it never reaches the cards
+    const amp = W >= 860 ? 62 : 11;
+    const wobble = [0.9, 0.35, 1, 0.6, 0.75, 0.25, 0.95];   // uneven, hand-drawn rhythm
 
     let d = `M${seq[0].x} ${seq[0].y}`;
     for (let i = 0; i < seq.length - 1; i++) {
       const a = seq[i], b = seq[i + 1];
       const dy = b.y - a.y;
       const side = i % 2 === 0 ? 1 : -1;
-      const bulge = i === 0 || i === seq.length - 2 ? 0 : amp * side;
+      const k = wobble[i % wobble.length];
+      const edge = i === 0 || i === seq.length - 2;
+      const bulge = edge ? 0 : amp * side * k;
       const c1x = a.x + bulge, c1y = a.y + dy * 0.5;
-      const c2x = b.x + bulge, c2y = b.y - dy * 0.5;
+      const c2x = b.x - bulge * 0.6, c2y = b.y - dy * 0.5;
       d += ` C${c1x.toFixed(1)} ${c1y.toFixed(1)} ${c2x.toFixed(1)} ${c2y.toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}`;
     }
     trail.setAttribute('d', d);
