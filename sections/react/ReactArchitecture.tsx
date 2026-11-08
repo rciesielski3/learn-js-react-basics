@@ -15,7 +15,7 @@ export default function ReactArchitecture() {
           description="Understand how React renders, updates, and manages components behind the scenes — including the role of Virtual DOM, Hooks, Effects, and more."
         />
 
-        <ul className="list-disc list-inside mb-6 text-sm text-gray-300">
+        <ul className="list-disc list-inside mb-6 text-sm text-jt-muted">
           <li>
             <strong>Component Tree:</strong> Built using JSX & composed from functions
           </li>
@@ -48,7 +48,7 @@ export default function ReactArchitecture() {
           </li>
         </ul>
 
-        <div className="text-sm text-yellow-300 font-mono bg-gray-900 p-4 rounded mb-4 border border-gray-600">
+        <div className="text-sm text-yellow-200 font-mono bg-black/40 p-4 rounded mb-4 border border-white/10">
           {`// Simplified lifecycle
 User Action → setState()
  → Re-render (Virtual DOM diff)
@@ -57,7 +57,7 @@ User Action → setState()
 `}
         </div>
 
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-jt-muted">
           Understanding this cycle helps you write performant, predictable, and robust React apps.
         </p>
       </div>
