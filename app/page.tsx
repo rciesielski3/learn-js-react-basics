@@ -1,45 +1,25 @@
-'use client';
+import { Inter, Unbounded } from 'next/font/google';
 
-import React from 'react';
+import JourneyHome from '@/components/home/JourneyHome';
 
-import MainNav from '@/components/MainNav';
-import FunLab from '@/components/FunLab';
-import Sidebar from '@/components/Sidebar';
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-inter',
+  display: 'swap'
+});
+
+const unbounded = Unbounded({
+  subsets: ['latin'],
+  weight: ['600', '800'],
+  variable: '--font-unbounded',
+  display: 'swap'
+});
 
 export default function HomePage() {
-  const [showFunLab, setShowFunLab] = React.useState(false);
-
   return (
-    <main className="min-h-screen flex flex-col justify-between text-white bg-gradient-to-b from-gray-900 to-gray-500">
-      <div className="p-8 max-w-5xl mx-auto">
-        <div className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 p-6 rounded-t-lg shadow text-center text-shadow-xl">
-          <h1 className="text-3xl font-bold mb-2">
-            🚀 JavaScript, React & Next.js Fundamentals Lab
-          </h1>
-          <p className="text-sm text-gray-200">
-            A curated interactive space to explore, learn, and master the fundamentals of JavaScript
-            React and Next.js.
-          </p>
-        </div>
-        <MainNav showFunLab={showFunLab} setShowFunLab={setShowFunLab} />
-        {showFunLab && (
-          <div className="mt-4">
-            <FunLab />
-          </div>
-        )}
-        <div className="pt-5">
-          <Sidebar />
-        </div>
-      </div>
-      <footer className="bg-gray-800 border-t border-gray-700 text-center text-sm text-gray-400 py-4 mt-auto">
-        <p>
-          Built with 💡 by{' '}
-          <a href="https://github.com/rciesielski3" className="underline">
-            Rafal Ciesielski
-          </a>
-        </p>
-        <p>© {new Date().getFullYear()} All rights reserved.</p>
-      </footer>
-    </main>
+    <div className={`${inter.variable} ${unbounded.variable}`}>
+      <JourneyHome />
+    </div>
   );
 }
