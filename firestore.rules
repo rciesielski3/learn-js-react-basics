@@ -1,0 +1,16 @@
+rules_version = '2';
+
+// Visitor counter: anyone may read it and increment it by exactly one.
+// Nobody may set an arbitrary value or delete it.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /visitors/counter {
+      allow read: if true;
+      allow create: if request.resource.data.count == 1
+        && request.resource.data.keys().hasOnly(['count']);
+      allow update: if request.resource.data.count == resource.data.count + 1
+        && request.resource.data.keys().hasOnly(['count']);
+      allow delete: if false;
+    }
+  }
+}
