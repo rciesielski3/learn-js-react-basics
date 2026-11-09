@@ -34,7 +34,7 @@ export default function HookComparisons() {
         <div className="mb-4 flex gap-4 flex-wrap">
           <button
             onClick={() => setLogs([])}
-            className="px-3 py-1 rounded-xl border border-orange-400/50/30 bg-orange-500/15 text-orange-200 font-medium transition hover:bg-orange-500/25 hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-orange-400/50 bg-orange-500/15 text-orange-200 font-medium transition hover:bg-orange-500/25 hover:scale-105"
           >
             Clear Logs
           </button>

@@ -15,7 +15,7 @@ export default function HooksSection() {
         </p>
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 mb-6">
           <p className="text-sm mb-4">Click on the demo name to see the code and live example:</p>
-          <nav className="flex gap-6 flex-wrap text-sm text-blue-200 mt-5">
+          <nav className="flex gap-6 flex-wrap text-sm text-sky-200 mt-5">
             {demos.map(({ id, label }) => (
               <a key={id} href={`#${id}`} className="hover:scale-105 bg-white/[0.03] rounded px-2 py-1">
                 {label}

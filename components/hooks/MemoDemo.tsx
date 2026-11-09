@@ -28,31 +28,31 @@ export function MemoDemo() {
         visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
-        <p className="text-base text-gray-400 mb-2">
+        <p className="text-base text-jt-muted mb-2">
           🛠️ Try adjusting A or B values using the buttons:
         </p>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setA(a + 1)}
-            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-green-400/50 bg-green-500/15 text-green-200 font-medium transition hover:bg-green-500/25 hover:scale-105"
           >
             A +1
           </button>
           <button
             onClick={() => setA(a - 1)}
-            className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-red-400/50 bg-red-500/15 text-red-200 font-medium transition hover:bg-red-500/25 hover:scale-105"
           >
             A -1
           </button>
           <button
             onClick={() => setB(b + 1)}
-            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105 transition-transform"
+            className="px-3 py-1 rounded-xl border border-green-400/50 bg-green-500/15 text-green-200 font-medium transition hover:bg-green-500/25 hover:scale-105 transition-transform"
           >
             B +1
           </button>
           <button
             onClick={() => setB(b - 1)}
-            className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105 transition-transform"
+            className="px-3 py-1 rounded-xl border border-red-400/50 bg-red-500/15 text-red-200 font-medium transition hover:bg-red-500/25 hover:scale-105 transition-transform"
           >
             B -1
           </button>

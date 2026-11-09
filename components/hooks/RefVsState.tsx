@@ -39,24 +39,24 @@ export default function RefVsState({ log }: Props) {
 const [state, setState] = useState(0);`}
     >
       <div className="flex gap-4">
-        <div className="w-full sm:w-1/2 border border-purple-400 rounded p-4">
-          <p className="text-purple-300 font-semibold">useRef (no re-render)</p>
-          <p className="text-white">Value: {refValue.current}</p>
+        <div className="w-full sm:w-1/2 border border-purple-400/50 rounded p-4">
+          <p className="text-purple-200 font-semibold">useRef (no re-render)</p>
+          <p className="text-jt-ink">Value: {refValue.current}</p>
         </div>
-        <div className="w-full sm:w-1/2 border border-green-400 rounded p-4">
-          <p className="text-green-300 font-semibold">useState</p>
-          <p className="text-white">Value: {stateValue}</p>
+        <div className="w-full sm:w-1/2 border border-green-400/50 rounded p-4">
+          <p className="text-green-200 font-semibold">useState</p>
+          <p className="text-jt-ink">Value: {stateValue}</p>
         </div>
       </div>
 
-      <p className="text-base text-gray-400 py-2">🛠️ Interact below:</p>
+      <p className="text-base text-jt-muted py-2">🛠️ Interact below:</p>
       <div className="flex gap-2 mt-2">
         <button
           onClick={() => {
             refValue.current += 1;
             setPendingRefLog(`[useRef] refValue.current = ${refValue.current}`);
           }}
-          className="px-3 py-1 bg-purple-600 text-white rounded hover:scale-105"
+          className="px-3 py-1 rounded-xl border border-purple-400/50 bg-purple-500/15 text-purple-200 font-medium transition hover:bg-purple-500/25 hover:scale-105"
         >
           Update Ref
         </button>
@@ -65,14 +65,14 @@ const [state, setState] = useState(0);`}
             setStateValue((s) => s + 1);
             setPendingStateLog(`[useState] setStateValue -> ${stateValue + 1}`);
           }}
-          className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
+          className="px-3 py-1 rounded-xl border border-green-400/50 bg-green-500/15 text-green-200 font-medium transition hover:bg-green-500/25 hover:scale-105"
         >
           Update State
         </button>
 
         <Tooltip
           content={
-            <div className="text-sm text-white max-w-xs">
+            <div className="text-sm text-jt-ink max-w-xs">
               <ul className="list-disc list-inside ml-2">
                 <li>
                   <b>useRef</b> keeps values stable but doesn’t re-render.
@@ -85,7 +85,7 @@ const [state, setState] = useState(0);`}
           }
           position="right"
         >
-          <span className="text-gray-300 hover:text-white cursor-help text-lg">
+          <span className="text-jt-muted hover:text-jt-ink cursor-help text-lg">
             ℹ️
           </span>
         </Tooltip>

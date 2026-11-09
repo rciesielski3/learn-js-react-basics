@@ -35,19 +35,19 @@ export default function Lifecycle() {
         <div className="flex gap-2 flex-wrap mb-4">
           <button
             onClick={() => setCount((c) => c + 1)}
-            className="px-3 py-1 rounded-xl border border-green-400/50/30 bg-green-500/15 text-green-200 font-medium transition hover:bg-green-500/25"
+            className="px-3 py-1 rounded-xl border border-green-400/50 bg-green-500/15 text-green-200 font-medium transition hover:bg-green-500/25"
           >
             +1 Count
           </button>
           <button
             onClick={() => setLogs([])}
-            className="px-3 py-1 rounded-xl border border-orange-400/50/30 bg-orange-500/15 text-orange-200 font-medium transition hover:bg-orange-500/25"
+            className="px-3 py-1 rounded-xl border border-orange-400/50 bg-orange-500/15 text-orange-200 font-medium transition hover:bg-orange-500/25"
           >
             Clear Logs
           </button>
           <button
             onClick={() => setShowChild((v) => !v)}
-            className="px-3 py-1 rounded-xl border border-blue-400/50/30 bg-blue-500/15 text-blue-200 font-medium transition hover:bg-blue-500/25"
+            className="px-3 py-1 rounded-xl border border-blue-400/50 bg-blue-500/15 text-sky-200 font-medium transition hover:bg-blue-500/25"
           >
             {showChild ? 'Unmount Child' : 'Mount Child'}
           </button>
@@ -68,7 +68,7 @@ export default function Lifecycle() {
           </p>
           <button
             onClick={() => setShowLayoutDemo((v) => !v)}
-            className="px-3 py-1 rounded-xl border border-purple-400/50/30 bg-purple-500/15 text-purple-200 font-medium transition hover:bg-purple-500/25 mb-2 hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-purple-400/50 bg-purple-500/15 text-purple-200 font-medium transition hover:bg-purple-500/25 mb-2 hover:scale-105"
           >
             {showLayoutDemo ? 'Hide Layout Demo' : 'Show Layout Demo'}
           </button>
@@ -82,7 +82,7 @@ export default function Lifecycle() {
           </p>
           <button
             onClick={() => setShowCleanupDemo((v) => !v)}
-            className="px-3 py-1 rounded-xl border border-purple-400/50/30 bg-purple-500/15 text-purple-200 font-medium transition hover:bg-purple-500/25 mb-2 hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-purple-400/50 bg-purple-500/15 text-purple-200 font-medium transition hover:bg-purple-500/25 mb-2 hover:scale-105"
           >
             {showCleanupDemo ? 'Hide Cleanup Demo' : 'Start Cleanup Demo'}
           </button>

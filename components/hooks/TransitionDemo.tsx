@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import { ui } from '@/components/shared/theme';
+
 import { ExampleBlock } from '@/components/shared';
 import { hookData } from '@/data/react/hooks';
 
@@ -34,7 +36,7 @@ export function TransitionDemo() {
         visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
-        <p className="text-sm text-gray-400 mb-2">
+        <p className="text-sm text-jt-muted mb-2">
           ⌛ Type in the input and see non-blocking updates:
         </p>
         <input
@@ -42,10 +44,10 @@ export function TransitionDemo() {
           value={input}
           onChange={handleChange}
           placeholder="Start typing..."
-          className="px-3 py-1 rounded bg-gray-900 border border-gray-600 text-white w-full mb-2"
+          className={`${ui.input} mb-2`}
         />
-        {isPending && <p className="text-yellow-400 text-sm mb-2">Rendering large list...</p>}
-        <div className="h-32 overflow-auto bg-gray-950 text-xs p-2 rounded border border-gray-700">
+        {isPending && <p className="text-yellow-300 text-sm mb-2">Rendering large list...</p>}
+        <div className="h-32 overflow-auto bg-black/40 text-xs p-2 rounded border border-white/10">
           {list.slice(0, 20).map((item, i) => (
             <div key={i}>{item}</div>
           ))}

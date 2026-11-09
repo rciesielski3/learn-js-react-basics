@@ -34,19 +34,19 @@ export function ReducerDemo() {
         visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
-        <p className="text-base text-gray-400 mb-2">
+        <p className="text-base text-jt-muted mb-2">
           🛠️ Dispatch increment or decrement actions below:
         </p>
         <div className="flex gap-2">
           <button
             onClick={() => dispatch({ type: 'dec' })}
-            className="px-3 py-1 bg-red-600 text-white rounded hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-red-400/50 bg-red-500/15 text-red-200 font-medium transition hover:bg-red-500/25 hover:scale-105"
           >
             Decrement
           </button>
           <button
             onClick={() => dispatch({ type: 'inc' })}
-            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-green-400/50 bg-green-500/15 text-green-200 font-medium transition hover:bg-green-500/25 hover:scale-105"
           >
             Increment
           </button>

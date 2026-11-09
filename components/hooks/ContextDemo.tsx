@@ -9,7 +9,7 @@ const CountContext = React.createContext<number>(42);
 
 function ContextChild() {
   const value = React.useContext(CountContext);
-  return <p className="text-sm text-yellow-300">Accessed from context: {value}</p>;
+  return <p className="text-sm text-yellow-200">Accessed from context: {value}</p>;
 }
 
 export function ContextDemo() {

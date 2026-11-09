@@ -27,19 +27,19 @@ export function CallbackDemo() {
         visualReprezentation={visualReprezentation}
       />
       <div className="px-6 pb-2 -mt-3">
-        <p className="text-sm text-gray-400 mb-2">
+        <p className="text-sm text-jt-muted mb-2">
           🧠 Update the state or fire the callback to see changes:
         </p>
         <div className="flex gap-2 flex-wrap">
           <button
             onClick={() => setCount((c) => c + 1)}
-            className="px-3 py-1 bg-green-600 text-white rounded hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-green-400/50 bg-green-500/15 text-green-200 font-medium transition hover:bg-green-500/25 hover:scale-105"
           >
             Count +1
           </button>
           <button
             onClick={callback}
-            className="px-3 py-1 bg-blue-600 text-white rounded hover:scale-105"
+            className="px-3 py-1 rounded-xl border border-blue-400/50 bg-blue-500/15 text-sky-200 font-medium transition hover:bg-blue-500/25 hover:scale-105"
           >
             Fire Callback
           </button>
