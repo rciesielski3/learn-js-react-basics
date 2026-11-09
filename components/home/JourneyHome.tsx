@@ -40,6 +40,13 @@ const STAGES = [
   }
 ] as const;
 
+/* Path wave sizing (desktop, >= 860px). The middle column is 2 * (amp + WAVE_MARGIN)
+ * wide, so each side keeps WAVE_MARGIN px of clear space next to the content.
+ * On narrower desktops the amplitude shrinks so the cards keep MIN_CARD_W px. */
+const WAVE_AMP_MAX = 110;
+const WAVE_MARGIN = 20;
+const MIN_CARD_W = 300;
+
 const TITLE_LINES = [
   { text: 'JavaScript,', cls: 'c-js', x: 0.04 },
   { text: 'React &', cls: 'c-react', x: -0.03 },
@@ -122,16 +129,28 @@ export default function JourneyHome() {
       H = journey.offsetHeight;
       svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
 
+      // Desktop: amplitude comes from the content width (stage width, which does not
+      // depend on the column itself). The middle column is then set to exactly
+      // 2 * (amp + WAVE_MARGIN). This must run before the dots are measured.
+      let amp = 15; // mobile: the 40px dot column cannot hold the margin, so amp stays small
+      if (W >= 860) {
+        const contentW = stages[0].clientWidth;
+        amp = Math.min(WAVE_AMP_MAX, Math.floor((contentW - 2 * WAVE_MARGIN - 2 * MIN_CARD_W) / 2));
+        journey.style.setProperty('--wave-gutter', `${2 * (amp + WAVE_MARGIN)}px`);
+      } else {
+        journey.style.removeProperty('--wave-gutter');
+      }
+
       pts = dots.map((d) => {
         const r = d.getBoundingClientRect();
         return { x: r.left - jr.left + r.width / 2, y: r.top - jr.top + r.height / 2 };
       });
       const seq = [{ x: pts[0].x, y: 0 }, ...pts, { x: pts[pts.length - 1].x, y: H }];
 
-      // Desktop dot column is 180px wide (±90px around the dot). Control points
-      // sit at most 74px off the dot, leaving ~16px inside the column; the drawn
-      // curve itself bulges about a third of that, so it never reaches the cards.
-      const amp = W >= 860 ? 74 : 15;
+      // Control points sit at most `amp` px from the dot center, so the curve stays
+      // within +/- amp of the center line. The middle column is 2 * (amp + WAVE_MARGIN)
+      // wide, which leaves WAVE_MARGIN px of clear space on each side of the wave.
+      // The drawn curve only reaches about a third of amp, so the real gap is larger.
       const wobble = [1, 0.15, 0.9, 0.45, 1, 0.1, 0.7]; // uneven, hand-drawn rhythm
 
       let d = `M${seq[0].x} ${seq[0].y}`;
