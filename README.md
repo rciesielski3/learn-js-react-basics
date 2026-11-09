@@ -6,7 +6,7 @@ An interactive playground to explore and understand **core JavaScript concepts**
 
 ## 🌍 Live Demo
 
-▶️ [learn-js-react-basics.vercel.app](https://learn-js-react-basics.vercel.app/)
+▶️ [fundamentals-lab.vercel.app](https://fundamentals-lab.vercel.app/)
 
 ---
 

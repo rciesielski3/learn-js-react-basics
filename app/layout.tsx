@@ -8,7 +8,7 @@ import '@fontsource/rubik/latin-400-italic.css';
 import '@fontsource/rubik/latin-500-italic.css';
 import '@fontsource/rubik/latin-700-italic.css';
 
-const SITE_URL = 'https://learn-js-react-basics.vercel.app';
+const SITE_URL = 'https://fundamentals-lab.vercel.app';
 const DESCRIPTION =
   'Interactive lab to learn JavaScript, React and Next.js fundamentals, with live examples, quizzes, flashcards and a glossary.';
 
