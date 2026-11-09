@@ -140,23 +140,27 @@ app/                  # App Router routes
 └── quiz/            # Quiz page
 │
 components/           # UI components
+│   ├── FunLab.tsx    # FunLab container on the home page
 │   ├── home/         # Home page journey (JourneyHome, styles)
 │   ├── hooks/        # Hook demos and useVisitorCount
 │   ├── funLab/       # FunLab mini-games and tools
-│   └── shared/       # Shared UI: PageShell, Glossary, Quiz, Flashcards, etc.
+│   ├── livecycle/    # Lifecycle demo child component
+│   └── shared/       # Shared UI: PageShell, Glossary, Quiz, Flashcards, theme.ts, etc.
 │
-sections/             # Topic demo views grouped by section (js, react, nextjs, hooks)
+sections/             # Topic demo views grouped by section (js, react, nextjs)
+│   └── react/hooks/  # Hook demo views (under react, not a top-level section)
 │
 data/                 # Static content: code examples, glossary, quiz/flashcard data
 │   ├── js/           # Data for JS topics
-│   ├── react/        # Data for React topics
+│   ├── react/        # Data for React topics (incl. hooks/)
 │   ├── nextjs/       # Data for Next.js topics
 │   ├── funLab/       # Data for FunLab tools
 │   ├── navElements/  # Glossary and quiz content
 │   └── navigation.js # Home page navigation and topic links
 │
-lib/                  # Third-party setup (Firebase client)
+lib/                  # Third-party setup (Firebase client, lib/firebase.ts)
 public/               # Static assets
+.firebaserc           # Firebase project alias (learn-js-react-basics)
 firebase.json         # Firebase config (Firestore rules)
 firestore.rules       # Firestore security rules
 ```
