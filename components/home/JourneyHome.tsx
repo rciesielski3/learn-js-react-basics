@@ -147,26 +147,39 @@ export default function JourneyHome() {
       });
       const seq = [{ x: pts[0].x, y: 0 }, ...pts, { x: pts[pts.length - 1].x, y: H }];
 
-      // Control points sit at most `amp` px from the dot center, so the curve stays
-      // within +/- amp of the center line. The middle column is 2 * (amp + WAVE_MARGIN)
-      // wide, which leaves WAVE_MARGIN px of clear space on each side of the wave.
-      // The drawn curve only reaches about a third of amp, so the real gap is larger.
+      // The curve passes through the dots (on the center line) and through a midpoint
+      // between each pair of inner dots, pushed to the side by amp * k. Those midpoints
+      // sit at the full wobble amplitude, so the curve really reaches +/- amp * k. Each
+      // midpoint is at most `amp` from the center line, which keeps the wave within
+      // the middle column. That column is 2 * (amp + WAVE_MARGIN) wide, so WAVE_MARGIN px
+      // of clear space stays on each side of the wave.
       const wobble = [1, 0.15, 0.9, 0.45, 1, 0.1, 0.7]; // uneven, hand-drawn rhythm
 
-      let d = `M${seq[0].x} ${seq[0].y}`;
+      const ctrl: { x: number; y: number }[] = [seq[0]];
       for (let i = 0; i < seq.length - 1; i++) {
         const a = seq[i];
         const b = seq[i + 1];
-        const dy = b.y - a.y;
-        const side = i % 2 === 0 ? 1 : -1;
-        const k = wobble[i % wobble.length];
         const edge = i === 0 || i === seq.length - 2;
-        const bulge = edge ? 0 : amp * side * k;
-        const c1x = a.x + bulge;
-        const c1y = a.y + dy * 0.5;
-        const c2x = b.x - bulge * 0.6;
-        const c2y = b.y - dy * 0.5;
-        d += ` C${c1x.toFixed(1)} ${c1y.toFixed(1)} ${c2x.toFixed(1)} ${c2y.toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}`;
+        if (!edge) {
+          const side = i % 2 === 0 ? 1 : -1;
+          const k = wobble[i % wobble.length];
+          ctrl.push({ x: (a.x + b.x) / 2 + side * amp * k, y: (a.y + b.y) / 2 });
+        }
+        ctrl.push(b);
+      }
+
+      // Catmull-Rom (uniform, tension 0.5) through the points, as cubic Bezier segments.
+      let d = `M${ctrl[0].x.toFixed(1)} ${ctrl[0].y.toFixed(1)}`;
+      for (let i = 0; i < ctrl.length - 1; i++) {
+        const p0 = ctrl[Math.max(i - 1, 0)];
+        const p1 = ctrl[i];
+        const p2 = ctrl[i + 1];
+        const p3 = ctrl[Math.min(i + 2, ctrl.length - 1)];
+        const c1x = p1.x + (p2.x - p0.x) / 6;
+        const c1y = p1.y + (p2.y - p0.y) / 6;
+        const c2x = p2.x - (p3.x - p1.x) / 6;
+        const c2y = p2.y - (p3.y - p1.y) / 6;
+        d += ` C${c1x.toFixed(1)} ${c1y.toFixed(1)} ${c2x.toFixed(1)} ${c2y.toFixed(1)} ${p2.x.toFixed(1)} ${p2.y.toFixed(1)}`;
       }
       trail.setAttribute('d', d);
       glow.setAttribute('d', d);
