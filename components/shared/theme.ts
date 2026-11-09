@@ -2,6 +2,7 @@
    Accent colors come from PageShell (js = lime, react = teal, next = orange). */
 export const ui = {
   card: 'rounded-[22px] border border-white/10 bg-white/[0.04] backdrop-blur-md p-6 md:p-8',
+  cardFlush: 'rounded-[22px] border border-white/10 bg-white/[0.04] backdrop-blur-md',
   cardInner: 'rounded-2xl border border-white/10 bg-white/[0.03] p-4',
   title: 'text-2xl md:text-3xl font-semibold text-jt-ink',
   h2: 'text-lg font-semibold text-jt-ink',

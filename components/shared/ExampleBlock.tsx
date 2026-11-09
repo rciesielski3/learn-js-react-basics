@@ -48,11 +48,15 @@ export function ExampleBlock({
           <span className={`${ui.muted} font-medium`}>
             Sample Snippet and Visual Breakdown:
           </span>
-          <div
-            className="flex justify-between items-center cursor-pointer mt-2"
-            onClick={() => setExpanded(true)}
-          >
-            <div className={ui.btn}>Show Example</div>
+          <div className="flex justify-between items-center mt-2">
+            <button
+              type="button"
+              className={`${ui.btn} cursor-pointer`}
+              aria-haspopup="dialog"
+              onClick={() => setExpanded(true)}
+            >
+              Show Example
+            </button>
           </div>
         </>
       )}

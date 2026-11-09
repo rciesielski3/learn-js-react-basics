@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import { ModalProps } from "./types";
 import { ui } from "./theme";
+import { useDialog } from "./useDialog";
 
 export function ExampleModal({
   name,
@@ -10,8 +11,11 @@ export function ExampleModal({
   sampleSnippet,
   visualReprezentation,
 }: ModalProps) {
+  const dialogRef = useDialog<HTMLDivElement>(onClose);
+
   return ReactDOM.createPortal(
     <div
+      ref={dialogRef}
       className="fixed inset-0 z-10 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
@@ -20,7 +24,7 @@ export function ExampleModal({
       <div className={`${ui.card} relative w-full max-w-4xl max-h-[90vh] overflow-y-auto`}>
         <div className="mb-4 flex items-center justify-between gap-4 pr-16">
           <p className={ui.h2}>{name}</p>
-          <button onClick={onClose} className={`${ui.btn} absolute right-5 top-5`}>
+          <button type="button" onClick={onClose} className={`${ui.btn} absolute right-5 top-5`}>
             Close
           </button>
         </div>

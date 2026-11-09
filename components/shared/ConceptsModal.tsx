@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { ui } from './theme';
+import { useDialog } from './useDialog';
 
 interface ConceptsModalProps {
   title: string;
@@ -12,6 +13,8 @@ interface ConceptsModalProps {
 }
 
 export const ConceptsModal = ({ title, onClose, concepts }: ConceptsModalProps) => {
+  const dialogRef = useDialog<HTMLDivElement>(onClose);
+
   return ReactDOM.createPortal(
     <div
       className="fixed inset-0 z-20 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
@@ -19,10 +22,13 @@ export const ConceptsModal = ({ title, onClose, concepts }: ConceptsModalProps) 
       aria-modal="true"
       aria-label={title}
     >
-      <div className={`${ui.card} relative max-h-[90vh] w-full max-w-4xl overflow-y-auto p-0`}>
+      <div
+        ref={dialogRef}
+        className={`${ui.cardFlush} relative max-h-[90vh] w-full max-w-4xl overflow-y-auto`}
+      >
         <div className="sticky top-0 z-10 flex items-center justify-between gap-4 rounded-t-[22px] border-b border-white/10 bg-jt-bg/90 p-6 backdrop-blur-md">
           <h2 className={ui.h2}>{title}</h2>
-          <button onClick={onClose} className={ui.btn}>
+          <button type="button" onClick={onClose} className={ui.btn}>
             Close
           </button>
         </div>
