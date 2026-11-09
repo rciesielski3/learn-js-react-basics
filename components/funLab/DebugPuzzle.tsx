@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+import { ui } from '@/components/shared/theme';
 import { debugChallenges } from '@/data/funLab/debugPuzzle';
 
 export const DebugPuzzle = () => {
@@ -16,14 +17,14 @@ export const DebugPuzzle = () => {
   };
 
   return (
-    <div className="bg-gray-700 rounded-xl p-4">
-      <h3 className="mb-2 font-medium text-lg place-self-center">🧩 Debug Puzzle #{index + 1}</h3>
-      <p className="text-sm mb-4 text-orange-600">
+    <div className={ui.cardInner}>
+      <h3 className="mb-2 place-self-center text-lg font-medium text-jt-ink">🧩 Debug Puzzle #{index + 1}</h3>
+      <p className="mb-4 text-sm text-jt-next">
         ℹ️ Identify the bug in the code block below and click &quot;Show answer&quot; to see the
         expected output.
       </p>
-      <span className="text-sm font-medium text-gray-400 justify-left">Code block:</span>
-      <pre className="bg-gray-800 text-green-300 p-2 rounded text-sm overflow-x-auto">
+      <span className="justify-left text-sm font-medium text-jt-muted">Code block:</span>
+      <pre className="overflow-x-auto rounded border border-white/10 bg-black/40 p-2 text-sm text-green-200">
         <code> {current.code}</code>
       </pre>
 
@@ -31,21 +32,21 @@ export const DebugPuzzle = () => {
         <div className="justify-self-center">
           <button
             onClick={() => setShowAnswer(true)}
-            className="mt-4 p-2 bg-blue-600 hover:bg-blue-700 rounded hover:scale-105"
+            className={`${ui.btn} mt-4 hover:scale-105`}
           >
             ✅ Show answer
           </button>
         </div>
       ) : (
         <div className="mt-4">
-          <span className="text-sm font-medium text-gray-400">Output:</span>
-          <pre className="bg-gray-900 text-yellow-300 p-2 rounded text-sm overflow-x-auto whitespace-pre-wrap break-words">
+          <span className="text-sm font-medium text-jt-muted">Output:</span>
+          <pre className="overflow-x-auto whitespace-pre-wrap break-words rounded border border-white/10 bg-black/40 p-2 text-sm text-yellow-200">
             <code>{current.explanation}</code>
           </pre>
           <div className="justify-self-center">
             <button
               onClick={handleNext}
-              className="mt-3 p-2 bg-green-600 hover:bg-green-700 rounded hover:scale-105"
+              className={`${ui.btn} mt-3 hover:scale-105`}
             >
               Next card ➡️
             </button>

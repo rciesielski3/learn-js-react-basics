@@ -87,6 +87,7 @@ export default function JourneyHome() {
   const travelerRef = React.useRef<SVGCircleElement>(null);
   const ringRef = React.useRef<SVGCircleElement>(null);
   const labelRef = React.useRef<HTMLParagraphElement>(null);
+  const funRef = React.useRef<HTMLElement>(null);
 
   const [openStages, setOpenStages] = React.useState<boolean[]>([true, true, true]);
   const [funOpen, setFunOpen] = React.useState(false);
@@ -127,7 +128,9 @@ export default function JourneyHome() {
       });
       const seq = [{ x: pts[0].x, y: 0 }, ...pts, { x: pts[pts.length - 1].x, y: H }];
 
-      // Winding stays inside the dot column, so it never reaches the cards
+      // Desktop dot column is 180px wide (±90px around the dot). Control points
+      // sit at most 74px off the dot, leaving ~16px inside the column; the drawn
+      // curve itself bulges about a third of that, so it never reaches the cards.
       const amp = W >= 860 ? 74 : 15;
       const wobble = [1, 0.15, 0.9, 0.45, 1, 0.1, 0.7]; // uneven, hand-drawn rhythm
 
@@ -198,6 +201,8 @@ export default function JourneyHome() {
 
     // Parallax + kinetic lines, one rAF per scroll
     let ticking = false;
+    let frameId = 0;
+    let layoutId = 0;
     const frame = () => {
       ticking = false;
       const sy = scrollY;
@@ -217,12 +222,15 @@ export default function JourneyHome() {
     const requestFrame = () => {
       if (!ticking) {
         ticking = true;
-        requestAnimationFrame(frame);
+        frameId = requestAnimationFrame(frame);
       }
     };
     addEventListener('scroll', requestFrame, { passive: true });
     addEventListener('resize', requestFrame);
-    const ro = new ResizeObserver(() => requestAnimationFrame(layout));
+    const ro = new ResizeObserver(() => {
+      cancelAnimationFrame(layoutId);
+      layoutId = requestAnimationFrame(layout);
+    });
     ro.observe(journey);
     addEventListener('load', layout);
 
@@ -266,11 +274,18 @@ export default function JourneyHome() {
       removeEventListener('scroll', requestFrame);
       removeEventListener('resize', requestFrame);
       removeEventListener('load', layout);
+      cancelAnimationFrame(frameId);
+      cancelAnimationFrame(layoutId);
       ro.disconnect();
       io.disconnect();
       if (fine && !reduce) document.removeEventListener('pointermove', onPointerMove);
     };
   }, []);
+
+  /* Move focus into the FunLab panel on open so Tab starts inside it */
+  React.useEffect(() => {
+    if (funOpen) funRef.current?.focus();
+  }, [funOpen]);
 
   /* Escape closes the FunLab panel */
   React.useEffect(() => {
@@ -441,7 +456,13 @@ export default function JourneyHome() {
 
       {/* FunLab panel (toggled from the dock) */}
       {funOpen && (
-        <section className="funlab" id="funlab-panel" aria-label="FunLab">
+        <section
+          ref={funRef}
+          tabIndex={-1}
+          className="funlab"
+          id="funlab-panel"
+          aria-label="FunLab"
+        >
           <FunLab />
         </section>
       )}
@@ -497,7 +518,9 @@ export default function JourneyHome() {
           Built with 💡 by{' '}
           <a href="https://github.com/rciesielski3">Adateo Rafal Ciesielski</a>
         </p>
-        <p>© {new Date().getFullYear()} All rights reserved.</p>
+        <p>
+          © <span suppressHydrationWarning>{new Date().getFullYear()}</span> All rights reserved.
+        </p>
       </footer>
     </div>
   );

@@ -4,6 +4,7 @@ import React from 'react';
 
 import { ConceptsModal } from '../shared';
 
+import { ui } from '@/components/shared/theme';
 import { conceptData } from '@/data/funLab/oneMinuteConcepts';
 
 export const OneMinuteConcepts = () => {
@@ -17,28 +18,22 @@ export const OneMinuteConcepts = () => {
   };
 
   return (
-    <div className="bg-gray-700 rounded-xl p-4">
-      <h3 className="mb-2 font-medium text-lg place-self-center">⏱️ One-Minute Concepts</h3>
-      <p className="text-sm mb-4 text-orange-600">
+    <div className={ui.cardInner}>
+      <h3 className="mb-2 place-self-center text-lg font-medium text-jt-ink">⏱️ One-Minute Concepts</h3>
+      <p className="mb-4 text-sm text-jt-next">
         ℹ️ Learn foundational JavaScript/React/Next.js concepts in under a minute.
       </p>
 
-      <div className="bg-gray-900 p-3 rounded text-black overflow-x-auto whitespace-pre-wrap break-words">
-        <p className="font-bold mb-1 text-white">📘 {concept.title}</p>
-        <p className="text-sm italic text-yellow-300">{concept.summary}</p>
+      <div className="overflow-x-auto whitespace-pre-wrap break-words rounded border border-white/10 bg-black/40 p-3">
+        <p className="mb-1 font-bold text-jt-ink">📘 {concept.title}</p>
+        <p className="text-sm italic text-yellow-200">{concept.summary}</p>
       </div>
 
-      <div className="mt-4 flex gap-2 justify-center">
-        <button
-          onClick={nextConcept}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded hover:scale-105"
-        >
+      <div className="mt-4 flex justify-center gap-2">
+        <button onClick={nextConcept} className={`${ui.btn} hover:scale-105`}>
           Next Concept ⏭️
         </button>
-        <button
-          onClick={() => setShowModal(true)}
-          className="bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 rounded"
-        >
+        <button onClick={() => setShowModal(true)} className={ui.btn}>
           View All Concepts 📚
         </button>
       </div>
