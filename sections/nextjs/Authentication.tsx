@@ -3,6 +3,7 @@
 import React from 'react';
 
 import { ExampleBlock, SectionHeader } from '@/components/shared';
+import { ui } from '@/components/shared/theme';
 import { authExamples } from '@/data/nextjs/authentication';
 
 export default function Authentication() {
@@ -22,24 +23,22 @@ export default function Authentication() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
-      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
-        <SectionHeader
-          title="🔐 Authentication"
-          description="Explore common authentication techniques in Next.js, including protecting routes and using session tokens."
+    <div className={`${ui.card} mx-auto max-w-3xl`}>
+      <SectionHeader
+        title="🔐 Authentication"
+        description="Explore common authentication techniques in Next.js, including protecting routes and using session tokens."
+      />
+      {authExamples.map((example) => (
+        <ExampleBlock
+          key={example.id}
+          id={example.id}
+          name={example.name}
+          description={example.description}
+          code={example.code}
+          usage={example.usage}
+          result={results[example.id]}
         />
-        {authExamples.map((example) => (
-          <ExampleBlock
-            key={example.id}
-            id={example.id}
-            name={example.name}
-            description={example.description}
-            code={example.code}
-            usage={example.usage}
-            result={results[example.id]}
-          />
-        ))}
-      </div>
+      ))}
     </div>
   );
 }

@@ -30,35 +30,35 @@ export default function EffectVsLayoutEffect({ log }: { log: (msg: string) => vo
       code={`useLayoutEffect(() => { ... }, [deps]);
 useEffect(() => { ... }, [deps]);`}
     >
-      <div className="text-sm font-medium text-gray-400 mb-1">Visual Comparison:</div>
+      <div className="text-sm font-medium text-jt-muted mb-1">Visual Comparison:</div>
       <div className="flex gap-4 ">
         <div
           style={{ backgroundColor: effectBg }}
-          className="transition-all duration-200 p-4 rounded w-full sm:w-1/2 border border-yellow-400"
+          className="transition-all duration-200 p-4 rounded w-full sm:w-1/2 border border-yellow-400/50"
         >
-          <p className="text-yellow-300 font-semibold">useEffect Box</p>
-          <p className="text-sm text-white">Count: {count}</p>
+          <p className="text-yellow-200 font-semibold">useEffect Box</p>
+          <p className="text-sm text-jt-ink">Count: {count}</p>
         </div>
         <div
           style={{ backgroundColor: layoutBg }}
-          className="transition-all duration-200 p-4 rounded w-full sm:w-1/2 border border-blue-400"
+          className="transition-all duration-200 p-4 rounded w-full sm:w-1/2 border border-blue-400/50"
         >
-          <p className="text-blue-300 font-semibold">useLayoutEffect Box</p>
-          <p className="text-sm text-white">Count: {count}</p>
+          <p className="text-sky-200 font-semibold">useLayoutEffect Box</p>
+          <p className="text-sm text-jt-ink">Count: {count}</p>
         </div>
       </div>
 
-      <p className="text-base text-gray-400 py-2">🛠️ Try these button:</p>
+      <p className="text-base text-jt-muted py-2">🛠️ Try these button:</p>
       <div className="flex gap-2 flex-wrap mt-2">
         <button
           onClick={() => setCount((c) => c + 1)}
-          className="px-3 py-1 bg-violet-600 text-white rounded hover:scale-105"
+          className="px-3 py-1 rounded-xl border border-violet-400/50 bg-violet-500/15 text-violet-200 font-medium transition hover:bg-violet-500/25 hover:scale-105"
         >
           Trigger Both
         </button>
         <Tooltip
           content={
-            <div className="text-sm text-white max-w-xs">
+            <div className="text-sm text-jt-ink max-w-xs">
               <p>🧠 On click:</p>
               <ul className="list-disc list-inside ml-2 mt-1">
                 <li>
@@ -73,7 +73,7 @@ useEffect(() => { ... }, [deps]);`}
           }
           position="right"
         >
-          <span className="text-gray-300 hover:text-white cursor-help text-lg">ℹ️</span>
+          <span className="text-jt-muted hover:text-jt-ink cursor-help text-lg">ℹ️</span>
         </Tooltip>
       </div>
     </InfoBox>

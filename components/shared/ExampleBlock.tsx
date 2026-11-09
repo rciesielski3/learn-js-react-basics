@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ExampleModal } from './ExampleModal';
 import { Props } from './types';
+import { ui } from './theme';
 
 export function ExampleBlock({
   name,
@@ -17,43 +18,45 @@ export function ExampleBlock({
   const canExpand = sampleSnippet && visualReprezentation;
 
   return (
-    <div className="bg-gray-800 p-4 rounded mb-6 relative">
-      <h2 className="font-semibold text-lg mb-2">{name}</h2>
-      {description && <p className="text-sm text-orange-500 mb-2">ℹ️ {description}</p>}
+    <div className={`${ui.cardInner} mb-6 relative`}>
+      <h2 className={`${ui.h2} mb-2`}>{name}</h2>
+      {description && <p className="text-sm text-accent mb-3">ℹ️ {description}</p>}
 
-      <div className="mb-2">
-        <span className="text-sm font-medium text-gray-400">Code block:</span>
-        <pre className="bg-gray-700 text-green-300 p-2 rounded text-sm overflow-x-auto">
+      <div className="mb-3">
+        <span className={`${ui.muted} font-medium`}>Code block:</span>
+        <pre className={`${ui.code} mt-1 p-3`}>
           <code>{code}</code>
         </pre>
       </div>
 
-      <div className="mb-2">
-        <span className="text-sm font-medium text-gray-400">Example usage:</span>
-        <pre className="bg-gray-700 text-blue-300 p-2 rounded text-sm">
+      <div className="mb-3">
+        <span className={`${ui.muted} font-medium`}>Example usage:</span>
+        <pre className="mt-1 overflow-x-auto rounded-xl border border-white/10 bg-black/50 p-3 text-sm text-accent">
           <code>{usage}</code>
         </pre>
       </div>
 
       <div>
-        <span className="text-sm font-medium text-gray-400">Output:</span>
-        <pre className="bg-gray-900 text-yellow-300 p-2 rounded text-sm">
+        <span className={`${ui.muted} font-medium`}>Output:</span>
+        <pre className={`${ui.code} mt-1 p-3`}>
           <code>{result ?? '...'}</code>
         </pre>
       </div>
 
       {canExpand && (
         <>
-          <span className="text-sm font-medium text-gray-400">
+          <span className={`${ui.muted} font-medium`}>
             Sample Snippet and Visual Breakdown:
           </span>
-          <div
-            className="flex justify-between items-center cursor-pointer mt-2"
-            onClick={() => setExpanded(true)}
-          >
-            <div className="px-3 py-1 bg-cyan-600 text-white rounded hover:scale-105 transition">
+          <div className="flex justify-between items-center mt-2">
+            <button
+              type="button"
+              className={`${ui.btn} cursor-pointer`}
+              aria-haspopup="dialog"
+              onClick={() => setExpanded(true)}
+            >
               Show Example
-            </div>
+            </button>
           </div>
         </>
       )}

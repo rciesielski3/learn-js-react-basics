@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { ui } from '@/components/shared/theme';
 
 import { SectionHeader, ExampleBlock } from '@/components/shared';
 import { closuresExamples } from '@/data/js/closures';
@@ -22,8 +23,8 @@ export default function Closures() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
-      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
+    <div className="space-y-6">
+      <div className={ui.card}>
         <SectionHeader
           title="🚸 Closures & Scope"
           description="Closures are functions that 'remember' the environment in which they were created. Understanding closures and lexical scope is key to mastering JavaScript."

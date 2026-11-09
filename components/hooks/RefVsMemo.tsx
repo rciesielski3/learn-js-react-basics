@@ -13,6 +13,8 @@ export default function RefVsMemo({ log }: Props) {
 
   const ref = React.useRef(Math.random().toFixed(3));
 
+  // trigger is intentionally not read in the callback: bumping it forces a recompute.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const memo = React.useMemo(() => Math.random().toFixed(3), [trigger]);
 
   React.useEffect(() => {
@@ -27,30 +29,30 @@ export default function RefVsMemo({ log }: Props) {
 const memo = useMemo(() => Math.random(), [deps]);`}
     >
       <div className="flex gap-4">
-        <div className="w-full sm:w-1/2 border border-purple-400 rounded p-4">
-          <p className="text-purple-300 font-semibold">useRef (persistent)</p>
-          <p className="text-white">Value: {ref.current}</p>
+        <div className="w-full sm:w-1/2 border border-purple-400/50 rounded p-4">
+          <p className="text-purple-200 font-semibold">useRef (persistent)</p>
+          <p className="text-jt-ink">Value: {ref.current}</p>
         </div>
-        <div className="w-full sm:w-1/2 border border-yellow-400 rounded p-4">
-          <p className="text-yellow-300 font-semibold">useMemo (dynamic)</p>
-          <p className="text-white">Value: {memo}</p>
+        <div className="w-full sm:w-1/2 border border-yellow-400/50 rounded p-4">
+          <p className="text-yellow-200 font-semibold">useMemo (dynamic)</p>
+          <p className="text-jt-ink">Value: {memo}</p>
         </div>
       </div>
 
-      <p className="text-base text-gray-400 py-2">
+      <p className="text-base text-jt-muted py-2">
         🛠️ Force memo to recalculate:
       </p>
       <div className="flex gap-2 mt-2">
         <button
           onClick={() => setTrigger((t) => t + 1)}
-          className="px-3 py-1 bg-orange-600 text-white rounded hover:scale-105"
+          className="px-3 py-1 rounded-xl border border-orange-400/50 bg-orange-500/15 text-orange-200 font-medium transition hover:bg-orange-500/25 hover:scale-105"
         >
           Recompute Memo
         </button>
 
         <Tooltip
           content={
-            <div className="text-sm text-white max-w-xs">
+            <div className="text-sm text-jt-ink max-w-xs">
               <ul className="list-disc list-inside ml-2">
                 <li>
                   <b>useRef</b> keeps the same value throughout — even if the
@@ -64,7 +66,7 @@ const memo = useMemo(() => Math.random(), [deps]);`}
           }
           position="right"
         >
-          <span className="text-gray-300 hover:text-white cursor-help text-lg">
+          <span className="text-jt-muted hover:text-jt-ink cursor-help text-lg">
             ℹ️
           </span>
         </Tooltip>

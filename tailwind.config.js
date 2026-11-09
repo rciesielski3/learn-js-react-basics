@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './sections/**/*.{js,ts,jsx,tsx,mdx}',
+    './data/**/*.{js,ts,jsx,tsx,mdx}',
+    './lib/**/*.{js,ts,jsx,tsx,mdx}'
+  ],
   safelist: [
     'bg-blue-600',
     'bg-gray-600',
@@ -19,7 +25,22 @@ module.exports = {
     'pt-10'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        // Shared dark palette (matches the home page .jh tokens)
+        jt: {
+          bg: '#050608',
+          surface: '#0b0d10',
+          ink: '#eef3ef',
+          muted: '#a3ada8',
+          js: '#d7ff4a',
+          react: '#38e1d0',
+          next: '#ff9a4d'
+        },
+        // Per-section accent, set by PageShell via the --accent CSS variable
+        accent: 'var(--accent)'
+      }
+    }
   },
   plugins: [
     function ({ addUtilities }) {

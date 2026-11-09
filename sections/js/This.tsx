@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { ui } from '@/components/shared/theme';
 
 import { ExampleBlock } from '@/components/shared/ExampleBlock';
 import { thisExamples } from '@/data/js/thisKeyword';
@@ -22,17 +23,17 @@ export default function This() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
-      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
-        <h1 className="text-xl font-bold mb-2 text-white">
-          ☝️ Understanding <code className="text-orange-500">this</code> in JavaScript
+    <div className="space-y-6">
+      <div className={ui.card}>
+        <h1 className={`${ui.title} mb-2`}>
+          ☝️ Understanding <code className="text-accent">this</code> in JavaScript
         </h1>
 
-        <p className="text-base text-gray-400 mb-6 max-w-2xl">
-          The value of <code className="text-orange-500">this</code> in JavaScript depends on how a
+        <p className="text-base text-jt-muted mb-6 max-w-2xl">
+          The value of <code className="text-accent">this</code> in JavaScript depends on how a
           function is called. It can refer to the global object, the current class instance, a bound
-          context, or even be <code className="text-orange-500">undefined</code> in strict mode or
-          arrow functions. The examples below explore these variations interactively.
+          context, or even be <code className="text-accent">undefined</code> in strict mode or arrow
+          functions. The examples below explore these variations interactively.
         </p>
 
         {thisExamples.map((example) => (

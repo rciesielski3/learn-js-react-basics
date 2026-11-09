@@ -5,6 +5,8 @@ import React from 'react';
 import { glossary } from '@/data/navElements/glossary';
 import { SectionHeader } from '@/components/shared';
 
+import { ui } from './theme';
+
 const categories = ['javascript', 'react', 'nextjs'] as const;
 type Category = (typeof categories)[number];
 
@@ -18,22 +20,23 @@ export default function Glossary() {
   const [activeTab, setActiveTab] = React.useState<Category>('javascript');
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-900 text-white">
-      <div className="max-w-3xl w-full bg-gray-800 p-6 rounded border border-gray-700 text-shadow-md">
+    <div className="flex justify-center">
+      <div className={`${ui.card} w-full max-w-3xl`}>
         <SectionHeader
           title="📚 Glossary"
           description="Quick reference for key terms in JavaScript, React, and Next.js."
         />
 
-        <div className="flex gap-0.5">
+        <div className="mb-4 flex flex-wrap gap-2">
           {categories.map((key) => (
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`w-full font-medium py-2 px-4 rounded-t-lg ${
+              aria-pressed={activeTab === key}
+              className={`flex-1 rounded-xl border px-4 py-2 text-sm font-medium transition ${
                 activeTab === key
-                  ? 'border-t-2 border-x-2 border-emerald-600 text-blue-500 bg-gray-900'
-                  : 'bg-gray-700 hover:bg-gray-600'
+                  ? 'border-accent bg-white/[0.08] text-accent'
+                  : 'border-white/10 bg-white/[0.03] text-jt-muted hover:bg-white/[0.07] hover:text-jt-ink'
               }`}
             >
               {categoryLabels[key]}
@@ -41,10 +44,10 @@ export default function Glossary() {
           ))}
         </div>
 
-        <ul className="text-sm text-gray-300 bg-gray-900 space-y-3 rounded-tl-none rounded-b-lg border-2 p-4 border-x-2 border-emerald-600">
+        <ul className={`${ui.cardInner} space-y-3 text-sm text-jt-muted`}>
           {glossary[activeTab].map(({ term, definition }: { term: string; definition: string }) => (
             <li key={term}>
-              <strong className="text-white">{term}:</strong> {definition}
+              <strong className="text-jt-ink">{term}:</strong> {definition}
             </li>
           ))}
         </ul>

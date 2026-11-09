@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import { ui } from '@/components/shared/theme';
+
 import { DebugPuzzle } from './funLab/DebugPuzzle';
 import { DevFortuneCookie } from './funLab/DevFortuneCookie';
 import { OneMinuteConcepts } from './funLab/OneMinuteConcepts';
@@ -36,16 +38,16 @@ export default function FunLab() {
   const activeComponent = features.find((f) => f.id === active)?.component;
 
   return (
-    <div className="bg-teal-950 rounded-lg p-4 shadow-lg">
-      <h2 className="text-1 text-lg font-bold text-white mb-4">🎮 FunLab Playground</h2>
-      <ul className="flex gap-0.5 border-b border-gray-600">
+    <div className={`${ui.cardInner} shadow-lg`}>
+      <h2 className="mb-4 text-lg font-bold text-jt-ink">🎮 FunLab Playground</h2>
+      <ul className="flex gap-0.5 border-b border-white/10">
         {features.map((f) => (
           <li key={f.id} className="flex-1">
             <button
-              className={`w-full py-2 px-4  rounded-t-lg ${
+              className={`w-full rounded-t-lg px-4 py-2 transition ${
                 active === f.id
-                  ? 'border-t-2 border-x-2 border-emerald-600 text-blue-500 bg-slate-700 hover:bg-gray-700'
-                  : 'text-gray-300 hover:text-white bg-slate-900 hover:bg-slate-700'
+                  ? 'border-x-2 border-t-2 border-jt-js/40 bg-white/10 text-jt-js'
+                  : 'bg-transparent text-jt-muted hover:bg-white/[0.06] hover:text-jt-ink'
               }`}
               onClick={() => setActive(f.id)}
             >
@@ -54,7 +56,7 @@ export default function FunLab() {
           </li>
         ))}
       </ul>
-      <div className="-mt-0.5 border-2 border-emerald-600 rounded-b-lg bg-slate-600 px-4 py-6">
+      <div className="-mt-0.5 rounded-b-lg border-2 border-jt-js/40 bg-black/40 px-4 py-6">
         {activeComponent}
       </div>
     </div>

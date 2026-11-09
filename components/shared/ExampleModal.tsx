@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { ModalProps } from "./types";
+import { ui } from "./theme";
+import { useDialog } from "./useDialog";
 
 export function ExampleModal({
   name,
@@ -9,29 +11,34 @@ export function ExampleModal({
   sampleSnippet,
   visualReprezentation,
 }: ModalProps) {
+  const dialogRef = useDialog<HTMLDivElement>(onClose);
+
   return ReactDOM.createPortal(
-    <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-gray-800 p-6 rounded-lg max-w-4xl w-full shadow-lg relative">
-        <div className="flex items-center justify-between mb-4">
-          <p className="mb-2 font-semibold text-lg">{name}</p>
-          <button
-            onClick={onClose}
-            className="absolute top-5 right-5 text-white bg-red-500 hover:bg-red-600 px-2 py-1 rounded text-sm"
-          >
+    <div
+      ref={dialogRef}
+      className="fixed inset-0 z-10 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-label={name}
+    >
+      <div className={`${ui.card} relative w-full max-w-4xl max-h-[90vh] overflow-y-auto`}>
+        <div className="mb-4 flex items-center justify-between gap-4 pr-16">
+          <p className={ui.h2}>{name}</p>
+          <button type="button" onClick={onClose} className={`${ui.btn} absolute right-5 top-5`}>
             Close
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <div>
-            <p className="text-sm text-gray-400 mb-2">🛠️ Sample Snippet</p>
-            <pre className="bg-gray-700 text-green-300 p-2 rounded text-sm overflow-x-auto max-h-80">
+        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="min-w-0">
+            <p className={`${ui.muted} mb-2`}>🛠️ Sample Snippet</p>
+            <pre className={`${ui.code} max-h-80 p-3`}>
               <code>{sampleSnippet}</code>
             </pre>
           </div>
-          <div>
-            <p className="text-sm text-gray-400 mb-2">🧠 Visual Breakdown</p>
-            <pre className="bg-gray-900 text-yellow-300 p-2 rounded text-sm overflow-x-auto max-h-80">
+          <div className="min-w-0">
+            <p className={`${ui.muted} mb-2`}>🧠 Visual Breakdown</p>
+            <pre className="max-h-80 overflow-x-auto rounded-xl border border-white/10 bg-black/50 p-3 text-sm text-accent">
               <code>{visualReprezentation}</code>
             </pre>
           </div>

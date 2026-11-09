@@ -9,7 +9,7 @@ export function Tooltip({ children, content, position = "top" }: TooltipProps) {
     <div className="relative group inline-block">
       {children}
       <div
-        className={`absolute z-50 hidden group-hover:block px-3 py-2 text-xs text-white bg-gray-900 rounded shadow-md w-max ${
+        className={`absolute z-50 hidden group-hover:block px-3 py-2 text-xs text-jt-ink bg-jt-bg/95 backdrop-blur-md border border-white/10 rounded-lg shadow-lg w-max ${
           position === "top"
             ? "bottom-full left-1/2 -translate-x-1/2 mb-2"
             : position === "bottom"

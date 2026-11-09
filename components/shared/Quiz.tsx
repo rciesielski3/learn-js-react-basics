@@ -6,6 +6,7 @@ import { SectionHeader } from '@/components/shared';
 import { quizQuestions } from '@/data/navElements/questions';
 
 import { QuizQuestion } from './types';
+import { ui } from './theme';
 
 const getRandomQuestions = (count = 10): QuizQuestion[] => {
   return [...quizQuestions]
@@ -42,8 +43,8 @@ export default function QuizPage() {
 
   if (!questions) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <p className="text-lg text-gray-400">Loading quiz...</p>
+      <div className="flex min-h-[40vh] items-center justify-center">
+        <p className={`${ui.body} text-lg`}>Loading quiz...</p>
       </div>
     );
   }
@@ -53,8 +54,8 @@ export default function QuizPage() {
   }, 0);
 
   return (
-    <div className="min-h-screen p-6 bg-gray-900 text-white flex justify-center">
-      <div className="max-w-3xl w-full bg-gray-800 p-6 rounded border border-gray-600">
+    <div className="flex justify-center">
+      <div className={`${ui.card} w-full max-w-3xl`}>
         <SectionHeader
           title="🧠 Interactive Quiz"
           description="Test your knowledge across JavaScript, React, and Next.js."
@@ -62,7 +63,7 @@ export default function QuizPage() {
 
         {questions.map((q, i) => (
           <div key={i} className="mb-6">
-            <h3 className="font-semibold mb-2 text-purple-300">
+            <h3 className={`${ui.h3} mb-3`}>
               {i + 1}. {q.question}
             </h3>
             <div className="space-y-2">
@@ -75,14 +76,14 @@ export default function QuizPage() {
                   <div
                     key={opt}
                     onClick={() => handleSelect(i, opt)}
-                    className={`cursor-pointer px-4 py-2 rounded border bg-gray-900 ${
+                    className={`cursor-pointer rounded-xl border px-4 py-2 text-sm transition ${
                       isCorrect
-                        ? 'border-green-500 bg-green-800'
+                        ? 'border-emerald-400/60 bg-emerald-400/15 text-emerald-100'
                         : isWrong
-                        ? 'border-red-500 bg-red-800'
+                        ? 'border-red-400/60 bg-red-500/15 text-red-100'
                         : isSelected
-                        ? 'border-blue-500 bg-blue-800'
-                        : 'border-gray-600 hover:bg-gray-700'
+                        ? 'border-accent bg-white/[0.08] text-jt-ink'
+                        : 'border-white/10 bg-white/[0.03] text-jt-muted hover:bg-white/[0.07] hover:text-jt-ink'
                     }`}
                   >
                     {opt}
@@ -94,22 +95,16 @@ export default function QuizPage() {
         ))}
 
         {!submitted ? (
-          <div className="mt-6 text-center text-lg">
-            <button
-              onClick={handleSubmit}
-              className="mt-4 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow"
-            >
+          <div className="mt-6 text-center">
+            <button onClick={handleSubmit} className={ui.btnPrimary}>
               Submit Quiz
             </button>
           </div>
         ) : (
-          <div className="mt-6 text-center text-lg">
-            ✅ You scored <span className="font-bold">{correctCount}</span> / {questions.length}
+          <div className="mt-6 text-center text-lg text-jt-ink">
+            ✅ You scored <span className="font-bold text-accent">{correctCount}</span> / {questions.length}
             <div className="mt-4">
-              <button
-                onClick={handleRestart}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded shadow"
-              >
+              <button onClick={handleRestart} className={ui.btnPrimary}>
                 🔄 Try Again
               </button>
             </div>

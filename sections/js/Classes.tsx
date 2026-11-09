@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { ui } from '@/components/shared/theme';
 
 import { ExampleBlock, SectionHeader } from '@/components/shared';
 import { classesExamples } from '@/data/js/classes';
@@ -21,8 +22,8 @@ export default function Classes() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gray-800">
-      <div className="mt-6 p-6 max-w-3xl mx-auto border border-gray-400 bg-gray-700 rounded">
+    <div className="space-y-6">
+      <div className={ui.card}>
         <SectionHeader
           title="📚 JS Classes & Inheritance"
           description="This page demonstrates class syntax, inheritance, overriding methods,
