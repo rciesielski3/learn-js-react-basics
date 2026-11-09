@@ -553,6 +553,11 @@ export default function JourneyHome() {
         <p>
           © <span suppressHydrationWarning>{new Date().getFullYear()}</span> All rights reserved.
         </p>
+        <p>
+          <Link href="/privacy" className="underline">
+            Privacy
+          </Link>
+        </p>
       </footer>
     </div>
   );

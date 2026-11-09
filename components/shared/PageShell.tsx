@@ -29,6 +29,7 @@ export function PageShell({ accent = 'neutral', children }: { accent?: Accent; c
             <Link href="/glossary" className="hover:text-jt-ink">Glossary</Link>
             <Link href="/flashcards" className="hover:text-jt-ink">Flashcards</Link>
             <Link href="/quiz" className="hover:text-jt-ink">Quiz</Link>
+            <Link href="/privacy" className="hover:text-jt-ink">Privacy</Link>
           </nav>
         </div>
       </header>
