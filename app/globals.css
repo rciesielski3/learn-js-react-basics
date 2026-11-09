@@ -5,6 +5,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-sans: 'Rubik', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-unbounded: 'Unbounded', Inter, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
