@@ -1,6 +1,6 @@
 # 🧪 Learn JS & React Fundamentals Lab
 
-An interactive playground to explore and understand **core JavaScript concepts** and **React fundamentals** – visually, experimentally, and in real-time.
+An interactive playground to explore and understand **core JavaScript concepts**, **React fundamentals** and **Next.js essentials** – visually, experimentally, and in real-time.
 
 ---
 
@@ -12,80 +12,31 @@ An interactive playground to explore and understand **core JavaScript concepts**
 
 ## 🧠 What's Inside?
 
-### 🔹 JavaScript Fundamentals
+The home page is a **Scroll Journey**: three stages (JavaScript → React → Next.js) that guide you through the learning path, with the FunLab and the visitor counter on the same page.
 
-| Topic                 | Path                              | Description                                                                     |
-| --------------------- | --------------------------------- | ------------------------------------------------------------------------------- |
-| Basics                | `/sections/js/JsBasics.tsx`       | Introduces JavaScript fundamentals                                              |
-| `this` keyword        | `/sections/js/ThisDemo.tsx`       | Compare how `this` behaves in different contexts (global, strict, arrow, class) |
-| Classes & Inheritance | `/sections/js/ClassesDemo.tsx`    | ES6 class syntax, prototypes, static/private fields                             |
-| Algorithms            | `/sections/js/AlgorithmsDemo.tsx` | Run and inspect classic and advanced algorithms                                 |
-| JS vs TS Comparison   | `/sections/js/TypeComparison.tsx` | Side-by-side comparison between TypeScript and JavaScript                       |
-| Event Loop            | `/sections/js/EventLoop.tsx`      | Understand JavaScript concurrency and event queue                               |
+The app contains **41 topics** split into three sections. Each topic is a route under `app/`:
 
-### 🔸 React Fundamentals
+### 🔹 JavaScript Fundamentals (12 topics, `/js/*`)
 
-| Topic                   | Path                                    | Description                                                             |
-| ----------------------- | --------------------------------------- | ----------------------------------------------------------------------- |
-| Basics                  | `/sections/react/ReactBasics.tsx`       | Introduces React                                                        |
-| State Management        | `/sections/react/StateManagement.tsx`   | Concepts like `useState`, derived state, controlled inputs              |
-| Component Composition   | `/sections/react/Composition.tsx`       | Composing components with children and slots                            |
-| Context API             | `/sections/react/ContextManagement.tsx` | Global state sharing with useContext and custom providers               |
-| useRef                  | `/sections/react/UseRef.tsx`            | Referencing DOM elements, storing persistent values, layout measurement |
-| Lifecycle               | `/sections/react/Lifecycle.tsx`         | Observe component mount/update/unmount patterns and logs                |
-| Suspense & Lazy Loading | `/sections/react/SuspenseExamples.tsx`  | Async components with React.lazy and Suspense fallback                  |
-| Error Boundaries        | `/sections/react/ErrorBoundary.tsx`     | Catch render errors using class components and fallback UI              |
-| Hook Comparisons        | `/sections/react/HookComparisons.tsx`   | Visualize subtle differences (e.g., `useEffect` vs `useLayoutEffect`)   |
-| Hooks Playground        | `/sections/hooks/Hooks.tsx`             | Experiment with `useState`, `useReducer`, `useMemo`, etc. interactively |
-| Virtual DOM             | `/sections/virtual-dom/VirtualDom.tsx`  | See how virtual DOM optimizes updates                                   |
+`basics` · `this` · `closures` · `classes` · `object-oriented` · `functional` · `promises` · `event-loop` · `modules` · `algorithms` · `js-vs-ts` · `types-explanation`
 
-### 🟩 Next.js Fundamentals
+### 🔸 React Fundamentals (17 topics, `/react/*`)
 
-| Topic                   | Path                                    | Description                                                               |
-| ----------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
-| Overview                | `/sections/nextjs/Overview.tsx`         | Intro to Next.js vs React, features like routing, caching, SSR, hydration |
-| Rendering & Hydration   | `/sections/nextjs/Rendering.tsx`        | Covers SSR, CSR, SSG, ISR, hydration flow                                 |
-| Routing (App vs Pages)  | `/sections/nextjs/Routing.tsx`          | Differences between App Router and Pages Router                           |
-| Caching & Revalidation  | `/sections/nextjs/Caching.tsx`          | Static caching, revalidation, and ISR                                     |
-| Server Components       | `/sections/nextjs/ServerComponents.tsx` | Render React components fully on the server                               |
-| Server Actions          | `/sections/nextjs/ServerActions.tsx`    | Server-side mutation handling without client roundtrips                   |
-| Optimization Techniques | `/sections/nextjs/Optimization.tsx`     | Built-in Next.js optimization like image, fonts, and script loading       |
+`basics` · `state` · `composition` · `context` · `use-ref` · `lifecycle` · `suspense` · `error-boundary` · `comparison` · `hooks` · `virtual-dom` · `controlled` · `reconciliation` · `portals` · `performance` · `devtools` · `architecture`
 
-## 📁 Project Structure
+### 🟩 Next.js Fundamentals (12 topics, `/nextjs/*`)
 
-```
-app/                  # Route-level grouping for JS and React examples
-│
-├── js/               # JavaScript-focused pages
-│
-├── react/            # React-focused pages
-│
-├── nextjs/           # Next.js-focused pages
-│
-├── glossary/         # Interactive glossary component and data
-├── quiz/             # Quiz logic and question display
-├── funlab/           # 🚀 FunLab tab with mini-games & tools
-│
-components/           # UI components (hook demos, shared elements)
-│
-sections/             # Feature views grouped by topic (JS, Hooks, Lifecycle, etc.)
-│
-data/                 # Static example data (code + visual breakdowns)
-│   ├── react/        # Data for React basics
-│   ├── nextjs/       # Data for Nextjs basics
-│   ├── js/           # Data for JS concept examples
-│   ├── glossary      # Glossary for JS, React and Nextjs
-│   └── navigation    # Main Page navigation elements
-│
-shared/               # Shared utilities, types, UI blocks
-public/               # Static assets
-```
+`overview` · `rendering` · `routing` · `caching` · `server-components` · `server-actions` · `middleware` · `authentication` · `metadata` · `optimization` · `deploy-monitor` · `summary`
+
+Each topic page combines explanations, interactive demos, live logs and visual breakdowns.
 
 ---
 
 ## 🎯 Bonus Features
 
 ### 🎮 FunLab Playground (🚧 EXPERIMENTAL)
+
+Available on the home page:
 
 | Feature                | Description                                                       |
 | ---------------------- | ----------------------------------------------------------------- |
@@ -94,21 +45,34 @@ public/               # Static assets
 | ⏱️ One-Minute Concepts | Quick explanations of core concepts with "View All" modal         |
 | 🔍 Acronym Decoder     | Decode tech acronyms (e.g. SSR, CSR, JSX, TTFB) with a search bar |
 
-> All FunLab tools are interactive and styled to match the overall UX
+### 📚 Glossary (`/glossary`)
 
-### 📚 Glossary
+A quick-access glossary of essential terms and concepts used across JavaScript, React and Next.js. Hover or click terms to reveal concise explanations.
 
-A quick-access glossary of essential terms and concepts used across the platform. Hover or click terms to reveal concise explanations. Ideal for beginners or quick review.
+### 🃏 Flashcards (`/flashcards`)
 
-### 🧠 Quiz Mode
+Review key concepts with flashcards for quick repetition.
 
-Test your understanding with a dynamic quiz mode! Each session presents:
+### 🧠 Quiz (`/quiz`)
 
-- 10 randomized multiple-choice questions
-- Immediate feedback per question
-- End-of-quiz summary with correct/incorrect stats
+Test your understanding with multiple-choice questions, get immediate feedback per question and see a summary at the end.
 
-Great for reinforcing concepts interactively.
+### 👀 Visitor Counter
+
+The home page shows a visitor count stored in Cloud Firestore (document `visitors/counter`). A browser is counted once (tracked with a `hasVisited` flag in `localStorage`), and each page load shares a single request, so StrictMode double-runs do not inflate the count. Storage errors are handled gracefully and never break rendering.
+
+Firestore rules (`firestore.rules`) allow anyone to read the counter and only increment it by exactly 1; setting arbitrary values and deleting the document are forbidden.
+
+---
+
+## 🛠️ Tech Stack
+
+- [Next.js 15](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v3](https://tailwindcss.com/)
+- [Firebase](https://firebase.google.com/) – Cloud Firestore (visitor counter)
+- [lucide-react](https://lucide.dev/) icons
 
 ---
 
@@ -122,21 +86,80 @@ cd learn-js-react-basics
 # Install dependencies
 npm install
 
-# Run locally
+# Run locally (http://localhost:3000)
 npm run dev
+```
+
+Other scripts:
+
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # ESLint via next lint
 ```
 
 > ⚠️ Requires **Node.js ≥ 18** and **npm ≥ 9**
 
+### Environment variables
+
+Firebase is configured in `lib/firebase.ts` from the following variables. Create a `.env.local` file in the project root and fill in the values from your Firebase project settings. Do not commit real values.
+
+```bash
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
+```
+
+### Deploying Firestore rules
+
+Firestore rules live in `firestore.rules` and are wired up through `firebase.json` and `.firebaserc` (project `learn-js-react-basics`). To publish rule changes:
+
+```bash
+npm install -g firebase-tools   # once
+firebase login                  # once
+firebase deploy --only firestore:rules
+```
+
 ---
 
-## 🛠️ Built With
+## 📁 Project Structure
 
-- [Next.js 15](https://nextjs.org/)
-- [React 19](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- Functional examples, logs, transitions, and reactive visuals
+```
+app/                  # App Router routes
+│
+├── page.tsx          # Home page (Scroll Journey, FunLab, visitor counter)
+├── js/              # JavaScript topic pages (/js/*)
+├── react/           # React topic pages (/react/*)
+├── nextjs/          # Next.js topic pages (/nextjs/*)
+├── glossary/        # Glossary page
+├── flashcards/      # Flashcards page
+└── quiz/            # Quiz page
+│
+components/           # UI components
+│   ├── home/         # Home page journey (JourneyHome, styles)
+│   ├── hooks/        # Hook demos and useVisitorCount
+│   ├── funLab/       # FunLab mini-games and tools
+│   └── shared/       # Shared UI: PageShell, Glossary, Quiz, Flashcards, etc.
+│
+sections/             # Topic demo views grouped by section (js, react, nextjs, hooks)
+│
+data/                 # Static content: code examples, glossary, quiz/flashcard data
+│   ├── js/           # Data for JS topics
+│   ├── react/        # Data for React topics
+│   ├── nextjs/       # Data for Next.js topics
+│   ├── funLab/       # Data for FunLab tools
+│   ├── navElements/  # Glossary and quiz content
+│   └── navigation.js # Home page navigation and topic links
+│
+lib/                  # Third-party setup (Firebase client)
+public/               # Static assets
+firebase.json         # Firebase config (Firestore rules)
+firestore.rules       # Firestore security rules
+```
 
 ---
 
