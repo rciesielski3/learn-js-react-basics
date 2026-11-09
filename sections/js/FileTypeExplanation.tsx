@@ -55,7 +55,7 @@ export default function FileTypeExplanation() {
             don’t need JSX or static typing.
           </p>
           <p>
-            Choose <code className="text-accent">.jsx</code> if you're writing React components
+            Choose <code className="text-accent">.jsx</code> if you&apos;re writing React components
             using JavaScript.{' '}
           </p>
           <p>
