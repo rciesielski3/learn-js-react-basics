@@ -91,7 +91,7 @@ export default function JourneyHome() {
 
   const [openStages, setOpenStages] = React.useState<boolean[]>([true, true, true]);
   const [funOpen, setFunOpen] = React.useState(false);
-  const visitors = useVisitorCount();
+  const { count: visitors, failed: visitorsFailed } = useVisitorCount();
 
   /* Scroll-drawn path, parallax, stage activation, reveal and magnetic dock. */
   React.useEffect(() => {
@@ -508,7 +508,7 @@ export default function JourneyHome() {
           <span aria-hidden="true">👁️</span>
           <span className="lbl">Visitors</span>
           <span id="visitors" aria-label="Visitors count">
-            {visitors !== null ? visitors.toLocaleString('en-US') : '…'}
+            {visitors !== null ? visitors.toLocaleString('en-US') : visitorsFailed ? '—' : '…'}
           </span>
         </div>
       </nav>
