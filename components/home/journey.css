@@ -220,7 +220,7 @@ body:has(.jh) { background: var(--bg, #050608); }
 .jh .stage {
   position: relative; z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 180px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) var(--wave-gutter, 260px) minmax(0, 1fr);
   align-items: start;
   min-height: 80vh;
   padding: 72px 0;
